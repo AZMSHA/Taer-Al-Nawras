@@ -5,9 +5,20 @@
     --fontSec: 'Oswald', Tahoma, Geneva, Verdana, sans-serif;
     --fontTer: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
     --colorPri: black;
-    --colorSec: goldenrod;
+    --colorSec: #c0a055;
     --colorTer: white;
+    --btnRadius:100px;
+    --btnPadding:0.35rem 1rem;
     font-family: var(--fontPri);
     background-color: var(--colorPri);
     color: var(--colorTer);
 }
+
+body {
+    padding: 0%;
+    margin: 0%;
+}
+
+/* Font sizes used:
+    Nav links:1.2rem
+    Buttons:1.2rem */

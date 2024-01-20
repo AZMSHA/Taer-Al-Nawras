@@ -1,11 +1,24 @@
 nav {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     font-family: var(--fontSec);
+    display: flex;
+    justify-content: center;
     ul {
+        transform: translate(-50%);
         padding: 0;
         list-style-type: none;
         display: flex;
         justify-content:flex-start;
         align-items: center;
+
+        img {
+            width: 8rem;
+            margin-right: 1rem;
+        }
+
         * {
             font-size: 1.2rem;
             margin-left: 2rem;
