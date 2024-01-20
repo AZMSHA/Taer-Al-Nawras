@@ -1,8 +1,16 @@
-# React + Vite
+TAER AL NAWRAS:
+ A signage company in dubai with over 7 years of work in the field.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app is built with REACT and styled with SCSS.
 
-Currently, two official plugins are available:
+Some special features that need to be built in:
+An image gallery.
+A way to get quotes sent to email.
+for contact numbers to be opened in whatsapp or either the phone app of phones.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Challenges:
+Image gallery
+Email forwarding
+micro-animations
+Performance
+
