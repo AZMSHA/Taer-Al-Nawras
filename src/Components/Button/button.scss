@@ -1,0 +1,12 @@
+@mixin button($fontColor:var(--colorTer),$backgroundColor:var(--colorPri),$borderColor:var(--colorSec)) {
+    font-family: var(--fontSec);
+    color: $fontColor;
+    background-color: $backgroundColor;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: solid 0.2rem $borderColor;
+}
+
+.btn-pri {
+    @include button
+}
