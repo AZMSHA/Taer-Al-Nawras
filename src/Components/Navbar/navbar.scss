@@ -14,9 +14,16 @@ nav {
         justify-content:flex-start;
         align-items: center;
 
-        img {
+        svg {
             width: 12rem;
-            margin-right: 1rem;
+            margin-right: 2rem;
+            .fil0{
+                transition: all 0.2s;
+            }
+        }
+
+        svg:hover .fil0{
+            fill: var(--colorQua);
         }
 
         * {
@@ -26,7 +33,7 @@ nav {
         }
 
         *:hover {
-            color: $black;
+            color: var(--colorQua);
             cursor: pointer;
         }
     }

@@ -1,12 +1,12 @@
 import "./navbar.scss"
 import Button from "../Button/button"
-import Logo from "../../assets/LogoNoOutline.svg"
+import Logo from "../../assets/LogoNoOutline.svg?react"
 
 function Navbar({links}) {
     return(
     <nav>
         <ul>
-            <img src={Logo} alt="Taer Al Nawras" />
+            <Logo/>
             {links.map((link,index)=>{
                 if(index===links.length-1){
                     return <Button key={index} Text={link} Class={"btn-pri"}/>
