@@ -1,0 +1,42 @@
+section[class^="main-sec"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60rem;
+}
+.main-sec1 {
+    padding-top: 4rem;
+    background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
+    .circleB {
+        animation: orbit 60s linear 0s infinite forwards;
+        z-index: 1;
+    }
+    .circleWrapper {
+        z-index: 0;
+        position: absolute;
+        animation: orbit 6s linear 0s infinite forwards;
+        transform: rotateZ(10deg);
+        .circleS{
+            transform: translate(110%,110%) rotateZ(0deg);
+            animation: spin 30s linear 0s infinite
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: translate(110%,110%) rotateZ(0deg);
+        }
+        to {
+            transform: translate(110%,110%) rotateZ(360deg);
+        }
+    }
+
+    @keyframes orbit {
+        from {
+            transform: rotateZ(0deg)
+        }
+        to {
+            transform: rotateZ(360deg)
+        }
+    }
+}
