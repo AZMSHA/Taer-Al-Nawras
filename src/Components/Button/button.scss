@@ -1,5 +1,6 @@
-@mixin button($fontColor:var(--colorTer),$backgroundColor:rgba(0, 0, 0, 0),$borderColor:var(--colorSec)) {
+@mixin button($fontColor,$backgroundColor,$borderColor) {
     font-family: var(--fontSec);
+    font-size: 1.2rem;
     color: $fontColor;
     background-color: $backgroundColor;
     padding: var(--btnPadding);
@@ -7,6 +8,28 @@
     border: solid 0.2rem $borderColor;
 }
 
+%buttonHover {
+    cursor: pointer;
+}
+
 .btn-pri {
-    @include button;
+    @include button(var(--colorTer),var(---colorPri),var(--colorSec));
+    transition: box-shadow 0.2s;
+}
+
+.btn-pri:hover {
+    $hallow:rgba(0,0,0,0);
+    color: inherit;
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem var(--colorSec);
+    animation: Shine 0.5s linear 0s 1 normal forwards;
+    background-image: linear-gradient(70deg,$hallow,$hallow,$hallow,$hallow,$hallow,var(--colorSec),$hallow,$hallow,$hallow,$hallow,$hallow);
+    background-position: 20rem 0px;
+    background-size: 1000%;
+}
+
+@keyframes Shine {
+    to {
+        background-position: 50rem 0px;
+    }
 }
