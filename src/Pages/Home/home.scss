@@ -1,42 +1,128 @@
-section[class^="main-sec"] {
+main {
+    [class^="main-sec"] {
     display: flex;
     justify-content: center;
     align-items: center;
     height:60rem;
-}
-.main-sec1 {
-    padding-top: 4rem;
-    background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
-    .circleB {
-        animation: orbit 60s linear 0s infinite forwards;
-        z-index: 1;
-    }
-    .circleWrapper {
-        z-index: 0;
-        position: absolute;
-        animation: orbit 6s linear 0s infinite forwards;
-        transform: rotateZ(10deg);
-        .circleS{
-            transform: translate(110%,110%) rotateZ(0deg);
-            animation: spin 30s linear 0s infinite
-        }
     }
 
-    @keyframes spin {
-        from {
-            transform: translate(110%,110%) rotateZ(0deg);
-        }
-        to {
-            transform: translate(110%,110%) rotateZ(360deg);
-        }
-    }
+    .main-sec1 {
+        padding-top: 4rem;
+        background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
 
-    @keyframes orbit {
-        from {
-            transform: rotateZ(0deg)
+        .balls {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45rem;
+            height: 45rem;
         }
-        to {
-            transform: rotateZ(360deg)
+
+        .circleB {
+            width: 39rem;
+            position: absolute;
+            animation: orbit 60s linear 0s infinite forwards;
+            z-index: 1;
+        }
+        .center {
+            z-index: 0;
+            position: absolute;
+            animation: orbit 6s linear 0s infinite forwards;
+            .circleS{
+                width: 12rem;
+                animation: spin 30s linear 0s infinite alternate
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: translate(110%,-90%) rotateZ(0deg);
+            }
+            to {
+                transform: translate(110%,-90%) rotateZ(360deg);
+            }
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotateZ(0deg)
+            }
+            to {
+                transform: rotateZ(360deg)
+            }
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h6 {
+                z-index: 2;
+                margin: 0;
+                line-height: 7rem;
+
+                %letterRules {
+                    color: var(--colorTer);
+                    font-family: var(--fontSec);
+                    font-weight: 500;
+                    font-size: 7rem;
+                    opacity: 0;
+                }
+
+                .sentence1 {
+                    display: flex;
+                    @for $i from 0 through 10 {
+                        .letter#{$i}{
+                            @extend %letterRules;
+                            @if $i < 10{
+                                color: var(--colorPri);
+
+                            } @else if $i == 10{
+                                padding-left:1rem;
+                            }
+                            animation: Swim 0.6s ease-in calc(0s + (90ms * $i)) forwards;
+                        }
+                    }
+                }
+
+                .sentence2 {
+                    display: flex;
+                    padding-left: 0.25rem;
+                    @for $i from 0 through 12 {
+                        .letter#{$i}{
+                        @extend %letterRules;
+                        animation: Swim 0.6s ease-out calc(0.9s + (90ms * $i)) forwards;
+                        }
+                    }
+                }
+
+                @keyframes Swim {
+                    from {
+                        opacity: 0;
+                        transform: translate(0px,4rem) rotateX(90deg) skewX(-15deg);
+                    }
+
+                    60% {
+                        opacity: 0.4;
+                    }
+
+                    85% {
+                        transform: translate(0px,-0.2rem) rotateX(5deg) skewX(0deg)
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translate(0px,0px) rotateX(0deg) skewX(0deg);
+                    }
+                }
+            }
+
+            p {
+                opacity: 0;
+                max-width: 30rem;
+                animation: Swim 0.6s ease-out 2s forwards;
+            }
         }
     }
 }

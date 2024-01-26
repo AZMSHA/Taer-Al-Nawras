@@ -1,4 +1,5 @@
 @mixin button($fontColor,$backgroundColor,$borderColor) {
+    white-space: nowrap;
     font-family: var(--fontSec);
     font-size: 1.2rem;
     color: $fontColor;
