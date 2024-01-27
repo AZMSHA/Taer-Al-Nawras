@@ -7,21 +7,16 @@ main {
     }
 
     .main-sec1 {
-        padding-top: 4rem;
         background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
 
         .balls {
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45rem;
-            height: 45rem;
         }
 
         .circleB {
-            width: 39rem;
-            position: absolute;
+            width: 31rem;
             animation: orbit 60s linear 0s infinite forwards;
             z-index: 1;
         }
@@ -30,7 +25,7 @@ main {
             position: absolute;
             animation: orbit 6s linear 0s infinite forwards;
             .circleS{
-                width: 12rem;
+                width: 9.6rem;
                 animation: spin 30s linear 0s infinite alternate
             }
         }
@@ -122,6 +117,24 @@ main {
                 opacity: 0;
                 max-width: 30rem;
                 animation: Swim 0.6s ease-out 2s forwards;
+            }
+        }
+
+        .imageStrip {
+
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            img {
+                min-width: 14.5rem;
+                max-width: 45%;
+                border-radius: 1rem;
+            }
+
+            [src$="2.png"] {
+                order: -1;
             }
         }
     }

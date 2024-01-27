@@ -1,6 +1,6 @@
 import "./navbar.scss"
 import Button from "../Button/button"
-import Logo from "../../assets/LogoNoOutline.svg?react"
+import Logo from "../../assets/Logos/LogoNoOutline.svg?react"
 
 function Navbar({links}) {
     return(

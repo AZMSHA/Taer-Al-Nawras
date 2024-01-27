@@ -8,7 +8,7 @@ nav {
     justify-content: center;
     z-index: 9999;
     ul {
-        margin-right: 20%;
+        margin-right: 25rem;
         padding: 0;
         list-style-type: none;
         display: flex;
@@ -17,8 +17,6 @@ nav {
 
         svg {
             width: 10rem;
-            margin-right: 4rem;
-            margin-left: 0rem;
             .fil0{
                 transition: all 0.2s;
             }
