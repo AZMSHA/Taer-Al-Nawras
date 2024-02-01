@@ -1,7 +1,9 @@
-import "../home.scss"
+import "./section1.scss"
 import CircleBig from "../assets/circle-big.png"
 import CircleSmall from "../assets/circle-small.png"
-import Strip from "./imageStrip";
+import { lazy } from "react";
+
+const LazyStrip = lazy(()=>import("./imageStrip"))
 
 function Section1() {
     function letterfy(str) {
@@ -14,11 +16,11 @@ function Section1() {
 
     return (
             <section className="main-sec1">
+                <header>
                 <div className="balls">
                     <img className="circleB" src={CircleBig} alt="Big Sphere" />
                     <span className="center"><img className="circleS" src={CircleSmall} alt="Small Sphere" /></span>
                 </div>
-                <header>
                     <h6>
                         <div className="sentence1">
                             {letterfy("Creativity&")}
@@ -29,7 +31,9 @@ function Section1() {
                     </h6>
                     <p>Such a massive increase of year-over-year revenue can only mean one thing for a digital marketing company.</p>
                 </header>
-            <section className="imageStrip"><Strip/></section>
+            <section className="imageStrip">
+                <LazyStrip/>
+                </section>
             </section>)}
 
 export default Section1

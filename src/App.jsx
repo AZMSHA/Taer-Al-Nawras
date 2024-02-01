@@ -5,8 +5,8 @@ import Navbar from './Components/Navbar/navbar'
 function App() {
   return (
     <>
-      <Navbar links={["Home","About us","Services","Contact us!"]}/>
-      <Home/>
+        <Navbar links={["Home","About us","Services","Contact us!"]}/>
+        <Home/>
     </>
   );
 }

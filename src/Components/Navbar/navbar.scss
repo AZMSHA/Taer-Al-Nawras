@@ -6,7 +6,7 @@ nav {
     font-family: var(--fontSec);
     display: flex;
     justify-content: center;
-    z-index: 9999;
+    z-index: 3;
     ul {
         margin-right: 25rem;
         padding: 0;
@@ -16,7 +16,7 @@ nav {
         align-items: center;
 
         svg {
-            width: 10rem;
+            width: 9rem;
             .fil0{
                 transition: all 0.2s;
             }
@@ -36,6 +36,16 @@ nav {
         *:hover {
             color: var(--colorQua);
             cursor: pointer;
+        }
+    }
+
+    @media screen and (max-width: 912px) {
+        ul {
+            margin-right: 0px;
+
+            svg {
+                margin-left: 0px;
+            }
         }
     }
 }

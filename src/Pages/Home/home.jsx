@@ -4,7 +4,7 @@ import Section1 from "./components/section1"
 function Home() {
     return (
         <main>
-            <Section1/>
+            <div className="bg-wrapper bg-blue-gradient"><Section1/></div>
             <section className="main-sec2">
                 second Section
             </section>

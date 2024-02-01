@@ -1,7 +1,13 @@
 TAER AL NAWRAS:
 - A signage company in dubai with over 7 years of work in the field.
 
-This app is built with REACT and styled with SCSS.
+This is solely a React app, using a framework like Next.js was considered but not enough SSR will be going on.
+
+DEPENDENCIES:
+- Vite
+- SCSS
+- SVGR
+- React Router
 
 The inspiration for this webapp comes from [BH advertisers](https://bhadvertisers.ae/)
 
