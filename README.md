@@ -4,9 +4,10 @@ TAER AL NAWRAS:
 This is solely a React app, using a framework like Next.js was considered but not enough SSR will be going on.
 
 DEPENDENCIES:
-- Vite
-- SCSS
-- SVGR
+- "@vitejs/plugin-react": "^4.2.1"
+- "sass": "^1.70.0"
+- "vite-plugin-svgr": "^4.2.0"
+- "@rollup/plugin-dynamic-import-vars": "^2.1.2",
 - React Router
 
 The inspiration for this webapp comes from [BH advertisers](https://bhadvertisers.ae/)

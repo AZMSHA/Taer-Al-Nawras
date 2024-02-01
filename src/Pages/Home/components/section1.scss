@@ -140,12 +140,30 @@
         row-gap: 0.5rem;
         column-gap: 0.5rem;
         padding: 0.5rem;
+        overflow: hidden;
 
         img {
             filter: grayscale(1);
             width: 100%;
             border-radius: 0.5rem;
             transition: filter 0.25s;
+            animation: slide 0.7s ease-out;
+            animation-fill-mode: forwards;
+            animation-play-state:running;
+            transform: translate(0rem,30rem);
+            opacity: 0;
+        }
+
+        @for $index from 1 through 3 {
+            :nth-child(#{$index}) {
+            animation-delay: calc(70ms * $index);
+            }
+        }
+
+        @keyframes slide {
+            to {
+                opacity: 1;
+                transform: translate(0rem,0rem);}
         }
 
         img:hover {

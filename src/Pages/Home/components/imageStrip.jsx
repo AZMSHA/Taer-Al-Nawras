@@ -1,16 +1,50 @@
-import img1 from "../assets/imageStrip1.jpg"
-import img2 from "../assets/imageStrip2.png"
-import img3 from "../assets/imageStrip3.png"
+import { lazy, useState, useEffect } from "react"
 
-const Image = import("../assets/imageStrip1.jpg")
-console.log(Image.then((result)=>{result.default}))
-const Strip = () => {
-    const images = [img2,img1,img3,]
-   return (
-        <>
-        {images.map((image)=><img key={image} onLoad={console.log("loaded")} src={image}/>)}
-        </>
-    )
+function importImages(url, length) {
+
+  const promises = [];
+
+  for (let index = 1; index <= length; index++) {
+    promises.push(
+      import(`../assets/${url + index}.png`)
+        .then((result) => result.default)
+        .catch((err) => undefined)
+    );
+
+    promises.push(
+      import(`../assets/${url + index}.jpg`)
+        .then((result) => result.default)
+        .catch((err) => undefined)
+    );
+
+    promises.push(
+      import(`../assets/${url + index}.svg`)
+        .then((result) => result.default)
+        .catch((err) => undefined)
+    );
   }
 
-export default Strip
+  return Promise.all(promises); // Wait for all promises to be resolved
+}
+
+const Strip = ({animate,setLoaded}) => {
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    importImages("imageStrip", 3)
+      .then((src) => {
+        setImages(src.filter((item) => item !== undefined)); // Filter out errors from the result array
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <>
+      {images.map((image) => (
+        <img key={image} style={{animationPlayState:animate?"running":"paused"}} onLoad={() => setLoaded(counter => counter + 1)} src={image} />
+      ))}
+    </>
+  );
+};
+
+export default Strip;
+
