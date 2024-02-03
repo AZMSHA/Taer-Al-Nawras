@@ -1,31 +1,28 @@
+@import "../../global.scss";
+
 @mixin button($fontColor,$backgroundColor,$borderColor) {
     white-space: nowrap;
-    font-family: var(--fontSec);
+    font-family: $fontSec;
     font-size: 1.2rem;
     color: $fontColor;
     background-color: $backgroundColor;
-    padding: var(--btnPadding);
-    border-radius: var(--btnRadius);
+    padding: $btnPadding;
+    border-radius: $btnRadius;
     border: solid 0.2rem $borderColor;
 }
 
-%buttonHover {
-    cursor: pointer;
-}
-
 .btn-pri {
-    @include button(var(--colorTer),var(---colorPri),var(--colorSec));
+    @include button($colorTer,$hallow,$colorSec);
     transition: box-shadow 0.2s;
 }
 
 .btn-pri:hover {
-    $hallow:rgba(0,0,0,0);
-    border: solid 0.2rem var(--colorQua);
+    border: solid 0.2rem $colorQua;
     color: inherit;
     cursor: pointer;
-    box-shadow: 0 0 0.5rem var(--colorQua);
+    box-shadow: 0 0 0.5rem $colorQua;
     animation: Shine 0.5s linear 0s 1 normal forwards;
-    background-image: linear-gradient(70deg,$hallow,$hallow,$hallow,$hallow,$hallow,var(--colorQua),$hallow,$hallow,$hallow,$hallow,$hallow);
+    background-image: linear-gradient(70deg,$hallow,$hallow,$hallow,$hallow,$hallow,$colorQua,$hallow,$hallow,$hallow,$hallow,$hallow);
     background-position: 20rem 0px;
     background-size: 1000%;
 }

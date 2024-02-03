@@ -27,7 +27,7 @@ function importImages(url, length) {
   return Promise.all(promises); // Wait for all promises to be resolved
 }
 
-const Strip = ({animate,setLoaded}) => {
+const Strip = ({animate,count}) => {
   const [images, setImages] = useState([]);
   useEffect(() => {
     importImages("imageStrip", 3)
@@ -40,7 +40,7 @@ const Strip = ({animate,setLoaded}) => {
   return (
     <>
       {images.map((image) => (
-        <img key={image} style={{animationPlayState:animate?"running":"paused"}} onLoad={() => setLoaded(counter => counter + 1)} src={image} />
+        <img key={image} style={{animationPlayState:animate?"running":"paused"}} onLoad={count} src={image} />
       ))}
     </>
   );

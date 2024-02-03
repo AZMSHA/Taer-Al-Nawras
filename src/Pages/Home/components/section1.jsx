@@ -7,18 +7,23 @@ import { useState } from "react";
 
 function Section1() {
     const [loaded, setLoaded] = useState(0);
+    const condition = loaded===5;
+
+    function count () {
+        setLoaded(counter => counter + 1)
+    }
 
     return (
             <section className="main-sec1">
-                <Header/>
+                <Header animate={condition} count={count}/>
                 <section className="imageStrip">
-                    <Strip animate={(loaded===3)?true:false} setLoaded={setLoaded}/>
+                    <Strip animate={condition} count={count}/>
                 </section>
             </section>)}
 
 export default Section1
 
-function Header() {
+function Header(props) {
 
     function letterfy(str) {
         const charArray = Array.from(str);
@@ -29,7 +34,7 @@ function Header() {
     };
 
     return <header>
-        <Balls/>
+        <Balls {...props}/>
         <h6>
             <div className="sentence1">
                 {letterfy("Creativity&")}
@@ -42,9 +47,9 @@ function Header() {
     </header>;
 }
 
-function Balls() {
-    return <div className="balls">
-        <img className="circleB" src={CircleBig} alt="Big Sphere" />
-        <span className="center"><img className="circleS" src={CircleSmall} alt="Small Sphere" /></span>
+function Balls({count}) {
+    return <div className="balls" >
+        <img className="circleB" onLoad={count} src={CircleBig} alt="Big Sphere" />
+        <span className="center" ><img className="circleS" onLoad={count} src={CircleSmall} alt="Small Sphere" /></span>
     </div>;
 }

@@ -1,0 +1,17 @@
+$fontPri: 'Poppins', "Roboto Condensed", Tahoma, Geneva, Verdana, sans-serif;
+$fontSec: 'Oswald', Tahoma, Geneva, Verdana, sans-serif;
+$fontTer: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
+$colorPri: black;
+$colorSec: #c0a055;
+$colorTer: white;
+$colorQua: goldenrod;
+$btnRadius:100px;
+$btnPadding:0.35rem 1rem;
+$hallow:rgba(0,0,0,0);
+
+@mixin createFlex($direction:row,$justify:center,$align:center,){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}

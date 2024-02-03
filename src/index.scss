@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import "./global.scss";
 
 :root {
-    --fontPri: 'Poppins', "Roboto Condensed", Tahoma, Geneva, Verdana, sans-serif;
-    --fontSec: 'Oswald', Tahoma, Geneva, Verdana, sans-serif;
-    --fontTer: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
-    --colorPri: black;
-    --colorSec: #c0a055;
-    --colorTer: white;
-    --colorQua: goldenrod;
-    --btnRadius:100px;
-    --btnPadding:0.35rem 1rem;
-    font-family: var(--fontPri);
-    background-color: var(--colorPri);
-    color: var(--colorTer);
+    font-family: $fontPri;
+    background-color: $colorPri;
+    color: $colorTer;
 }
 
 body {
@@ -27,6 +19,7 @@ body {
 .bg-wrapper {
     width: 100%;
 }
+
 /* Font sizes used:
     Nav links: 1.2rem
     Buttons: 1.2rem

@@ -1,9 +1,11 @@
+@import "../../global.scss";
+
 nav {
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
-    font-family: var(--fontSec);
+    font-family: $fontSec;
     display: flex;
     justify-content: center;
     z-index: 3;
@@ -23,7 +25,7 @@ nav {
         }
 
         svg:hover .fil0{
-            fill: var(--colorQua);
+            fill: $colorQua;
         }
 
         * {
@@ -34,7 +36,7 @@ nav {
         }
 
         *:hover {
-            color: var(--colorQua);
+            color: $colorQua;
             cursor: pointer;
         }
     }
@@ -49,4 +51,3 @@ nav {
         }
     }
 }
-
