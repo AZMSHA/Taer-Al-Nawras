@@ -152,7 +152,7 @@
 
         @for $index from 1 through 3 {
             :nth-child(#{$index}) {
-            animation-delay: calc(70ms * $index);
+            animation-delay: calc(300ms + 70ms * $index);
             }
         }
 

@@ -3,7 +3,7 @@ import "./loading.scss"
 
 export default function Loading () {
     return (
-        <div className="bg-wrapper loader">
+        <div className="loader">
             <Logo/>
         </div>
     )

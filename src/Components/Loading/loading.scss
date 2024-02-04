@@ -1,8 +1,7 @@
 @import "../../global.scss";
 
-.bg-wrapper.loader {
+.loader {
     @include createFlex;
-    display: none;
     background-color: black;
     z-index: 999;
     position: fixed;
@@ -11,13 +10,21 @@
     left: 0;
     right: 0;
     svg {
-        width: 9rem;
-        .fil0{
-            transition: all 0.2s;
+        width: 15rem;
+        border-radius: 200px;
+        animation: shadow-glow 1s ease-in-out 0s infinite alternate backwards;
+
+        .fil0 {
+            animation: glow 1s ease-in-out 0s infinite alternate backwards;
         }
     }
 
-    svg:hover .fil0{
-        fill: $colorQua;
+    @keyframes shadow-glow {
+        to {box-shadow: 0 0 1rem $colorQua;}
+    }
+
+    @keyframes glow {
+        from {fill: $colorSec;}
+        to {fill: $colorQua;}
     }
 }

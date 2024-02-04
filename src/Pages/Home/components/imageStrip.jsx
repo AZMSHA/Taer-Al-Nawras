@@ -1,4 +1,4 @@
-import { lazy, useState, useEffect } from "react"
+import {useState, useEffect} from "react"
 
 function importImages(url, length) {
 
@@ -27,20 +27,25 @@ function importImages(url, length) {
   return Promise.all(promises); // Wait for all promises to be resolved
 }
 
-const Strip = ({animate,count}) => {
+const Strip = ({animate}) => {
+
   const [images, setImages] = useState([]);
+
   useEffect(() => {
+
     importImages("imageStrip", 3)
       .then((src) => {
         setImages(src.filter((item) => item !== undefined)); // Filter out errors from the result array
       })
       .catch((err) => console.log(err));
+
   }, []);
+
 
   return (
     <>
       {images.map((image) => (
-        <img key={image} style={{animationPlayState:animate?"running":"paused"}} onLoad={count} src={image} />
+        <img key={image} style={animate} src={image} />
       ))}
     </>
   );

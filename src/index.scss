@@ -3,11 +3,11 @@
 
 :root {
     font-family: $fontPri;
-    background-color: $colorPri;
     color: $colorTer;
 }
 
 body {
+    background-color: $colorPri;
     padding: 0%;
     margin: 0%;
 }
@@ -20,6 +20,25 @@ body {
     width: 100%;
 }
 
+#initial-loader {
+    animation: fadeAway 0.5s 0.3s linear forwards;
+    animation-play-state: paused;
+
+    svg {
+        transition: all 0.4s;
+    }
+
+    @keyframes fadeAway {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            display: none;
+            opacity: 0;
+        }
+    }
+}
 /* Font sizes used:
     Nav links: 1.2rem
     Buttons: 1.2rem
