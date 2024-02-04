@@ -12,6 +12,13 @@ body {
     margin: 0%;
 }
 
+h1 {
+    font-size: $FZ-h1;
+    font-family: $fontSec;
+    color: $colorTer;
+    line-height: 4.5rem;
+}
+
 .bg-blue-gradient {
     background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
 }
@@ -39,7 +46,4 @@ body {
         }
     }
 }
-/* Font sizes used:
-    Nav links: 1.2rem
-    Buttons: 1.2rem
-    Hero heading: 5rem */
+

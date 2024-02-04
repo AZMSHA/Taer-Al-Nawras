@@ -3,7 +3,7 @@
 @mixin button($fontColor,$backgroundColor,$borderColor) {
     white-space: nowrap;
     font-family: $fontSec;
-    font-size: 1.2rem;
+    font-size: $FZ-button;
     color: $fontColor;
     background-color: $backgroundColor;
     padding: $btnPadding;

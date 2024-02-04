@@ -42,7 +42,7 @@ function Header({animate}) {
     </header>;
 }
 
-function Balls({count}) {
+function Balls() {
     return <div className="balls" >
         <img className="circleB" src={CircleBig} alt="Big Sphere" />
         <span className="center" ><img className="circleS" src={CircleSmall} alt="Small Sphere" /></span>
