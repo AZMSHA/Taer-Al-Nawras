@@ -13,10 +13,19 @@ body {
 }
 
 h1 {
+    font-weight: 700;
     font-size: $FZ-h1;
     font-family: $fontSec;
     color: $colorTer;
     line-height: 4.5rem;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: $fontSec;
+    color: $colorTer;
+    line-height: 3.5rem;
 }
 
 .bg-blue-gradient {
@@ -25,6 +34,10 @@ h1 {
 
 .bg-wrapper {
     width: 100%;
+}
+
+.gold-color {
+    color: $colorSec;
 }
 
 #initial-loader {

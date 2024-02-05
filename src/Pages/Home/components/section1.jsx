@@ -9,7 +9,7 @@ function Section1() {
     const loaded = useContext(GContext).loaded
     const animate = {animationPlayState:loaded?"running":"paused"}
     return (
-            <section className="main-sec1">
+            <section className="sec1">
                 <Header animate={animate}/>
                 <section className="imageStrip">
                     <Strip animate={animate}/>
