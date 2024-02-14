@@ -9,7 +9,7 @@ function Navbar({links}) {
             <Logo/>
             {links.map((link,index)=>{
                 if(index===links.length-1){
-                    return <Button key={index} Text={link} Class={"btn-pri"}/>
+                    return <Button key={index} Class={"btn-pri"}>{link}</Button>
                 }
                 return <li key={index}>{link}</li>
             })}

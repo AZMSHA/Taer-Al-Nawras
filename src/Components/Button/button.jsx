@@ -1,8 +1,8 @@
 import "./button.scss"
 
- function Button({Text,onClick,onHover,Class}) {
+ function Button({onClick,onHover,Class,children}) {
     return (
-        <button className={Class} onClick={onClick} onMouseOver={onHover}>{Text}</button>
+        <button className={Class} onClick={onClick} onMouseOver={onHover}>{children}</button>
     )
  }
 

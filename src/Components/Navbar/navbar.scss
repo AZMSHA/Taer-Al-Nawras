@@ -36,8 +36,8 @@ nav {
         }
 
         *:hover {
+            @extend %C-pointer;
             color: $colorQua;
-            cursor: pointer;
         }
     }
 

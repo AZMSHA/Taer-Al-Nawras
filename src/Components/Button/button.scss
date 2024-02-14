@@ -6,29 +6,40 @@
     font-size: $FZ-button;
     color: $fontColor;
     background-color: $backgroundColor;
-    padding: $btnPadding;
+    padding: 0.35rem 1.5rem;
     border-radius: $btnRadius;
     border: solid 0.2rem $borderColor;
+    background-position: 10rem 0px;
+    transition: box-shadow 0.2s;
 }
 
 .btn-pri {
     @include button($colorTer,$hallow,$colorSec);
-    transition: box-shadow 0.2s;
 }
 
-.btn-pri:hover {
+%shine {
+    @extend %C-pointer;
     border: solid 0.2rem $colorQua;
     color: inherit;
-    cursor: pointer;
     box-shadow: 0 0 0.5rem $colorQua;
-    animation: Shine 0.5s linear 0s 1 normal forwards;
+    transition: background-position 0.5s linear;
     background-image: linear-gradient(70deg,$hallow,$hallow,$hallow,$hallow,$hallow,$colorQua,$hallow,$hallow,$hallow,$hallow,$hallow);
-    background-position: 20rem 0px;
+    background-position: 55rem 0px;
     background-size: 1000%;
 }
 
-@keyframes Shine {
-    to {
-        background-position: 50rem 0px;
-    }
+.btn-pri:hover {
+    @extend %shine;
+}
+
+.btn-pri-w {
+    @extend .btn-pri;
+    font-size: 1.5rem;
+    padding: 0.5rem 2.5rem;
+    background-position: 0rem 0px;
+}
+
+.btn-pri-w:hover {
+    @extend %shine;
+    background-position: 80rem 0px;
 }

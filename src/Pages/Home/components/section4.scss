@@ -1,0 +1,69 @@
+@import "../../../global.scss";
+
+.home .sec4 {
+    background-color: gray;
+    display: grid;
+    width: calc(100% - 8rem);
+    max-width: 1920px;
+    grid-template-columns: [grid-start] repeat(3,1fr) [grid-end];
+    column-gap: 3rem;
+    padding: 0rem 4rem 4rem;
+
+    h1 {
+        grid-column: grid;
+        margin: 4rem 0rem;
+        text-align: center;
+    }
+
+    .review {
+        display: grid;
+        background-color: $colorPri;
+        padding: 1rem 1rem;
+        position: relative;
+        border-radius: 5px ;
+        min-width: 10rem;
+        transition: all 0.15s;
+
+        .pfp {
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            border-radius: 50%;
+            width: 6rem;
+        }
+        .name {
+            margin-left: 3.5rem;
+            margin-top: 1rem;
+            font-size: $FZ-highlight;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+
+        .rating {
+            @include createFlex(row,flex-end);
+            .rating-star {
+                margin-right: 5px;
+                width: 2rem;
+            }
+        }
+
+        q.comment {
+            display: block;
+            margin: 1rem 0rem;
+            transition: all 0.15s;
+        }
+    }
+
+    .review:hover {
+        background-color: $colorTer;
+
+        .name{
+            color: $colorPri;
+        }
+
+        q.comment {
+            color: $colorPri;
+        }
+    }
+    margin-bottom: 50rem;
+}

@@ -4,22 +4,26 @@
     Buttons: 1.2rem
     Hero heading: 10rem
     Paragraph text: 1rem */
-
+$FZ-highlight:1.2rem;
 $FZ-h1: 4rem;
-$FZ-button: 1.2rem;
-$FZ-nav: 1.2rem;
+$FZ-button: $FZ-highlight;
+$FZ-nav: $FZ-highlight;
 $FZ-heroh6: 10rem;
-$FZ-Paragraph: 1rem;
-$fontPri: 'Poppins', "Roboto Condensed", Tahoma, Geneva, Verdana, sans-serif;
+$fontPri: 'Poppins', "Roboto", Tahoma, Geneva, Verdana, sans-serif;
 $fontSec: 'Oswald', Tahoma, Geneva, Verdana, sans-serif;
-$fontTer: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
+$fontTri: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
 $colorPri: black;
 $colorSec: #c0a055;
 $colorTer: white;
 $colorQua: goldenrod;
 $btnRadius:100px;
-$btnPadding:0.35rem 1rem;
 $hallow:rgba(0,0,0,0);
+%C-pointer {
+    cursor: pointer;
+}
+%C-text {
+    cursor: text;
+}
 
 @mixin createFlex($direction:row,$justify:center,$align:center,){
     display: flex;

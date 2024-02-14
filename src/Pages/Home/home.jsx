@@ -2,6 +2,7 @@ import "./home.scss"
 import Section1 from "./components/section1"
 import Section2 from "./components/section2"
 import Section3 from "./components/section3"
+import Section4 from "./components/section4"
 
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
             <div className="bg-wrapper bg-blue-gradient"><Section1/></div>
             <Section2/>
             <Section3/>
-            <section className="sec4"></section>
+            <Section4/>
         </main>
     )
 }
