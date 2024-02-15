@@ -50,11 +50,11 @@ function Review({pfp,name,rating,text}) {
     const stars = []
     for (let index = 1; index <= 5; index++) {
         if(filledStars){
-            stars.push(<Star filled={true}/>)
+            stars.push(<Star key={index} filled={true}/>)
             filledStars--
             continue
         }
-        stars.push(<Star filled={false}/>)
+        stars.push(<Star key={index} filled={false}/>)
     }
 
     return (

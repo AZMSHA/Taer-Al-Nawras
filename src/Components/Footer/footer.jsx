@@ -1,7 +1,6 @@
 import "./footer.scss"
 
-function Footer() {
-    return <div>This is the home page</div>
+export default function Footer() {
+    return <footer>THIS IS THE FOOTER</footer>
 }
 
-export default Footer

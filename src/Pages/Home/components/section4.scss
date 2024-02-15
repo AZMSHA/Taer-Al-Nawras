@@ -7,11 +7,11 @@
     max-width: 1920px;
     grid-template-columns: [grid-start] repeat(3,1fr) [grid-end];
     column-gap: 3rem;
-    padding: 0rem 4rem 4rem;
+    padding: 0rem 4rem 10rem;
 
     h1 {
         grid-column: grid;
-        margin: 4rem 0rem;
+        margin: 10rem 0rem;
         text-align: center;
     }
 
@@ -65,5 +65,4 @@
             color: $colorPri;
         }
     }
-    margin-bottom: 50rem;
 }

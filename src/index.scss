@@ -37,12 +37,22 @@ h2 {
     background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
 }
 
+.bg-gold-gradient-linear {
+    background-image: radial-gradient(circle farthest-side at left,rgb(254, 202, 72) 10%,#eab741 ,rgb(244, 185, 35),rgb(255, 194, 39),rgb(240, 180, 30) 90%,$colorQua );
+    background-attachment: fixed;
+    margin-bottom: 1rem;
+}
+
 .bg-wrapper {
     width: 100%;
 }
 
 .gold-color {
     color: $colorSec;
+}
+
+.flex {
+    @include createFlex;
 }
 
 #initial-loader {

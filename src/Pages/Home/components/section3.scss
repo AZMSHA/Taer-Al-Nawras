@@ -10,7 +10,7 @@
 
     h1 {
         grid-column: grid;
-        margin: 4rem 0rem;
+        margin: 10rem 0rem;
         text-align: center;
     }
 
@@ -49,6 +49,13 @@
         padding: 2rem 2rem calc(8vw) 2rem;
         backdrop-filter: blur(0.5rem) brightness(30%);
         transition: backdrop-filter 0.25s;
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid $colorSec;
+            margin-bottom: 0.5rem;
+            line-height: 2.5rem;
+        }
     }
 
     section:hover .backdrop{

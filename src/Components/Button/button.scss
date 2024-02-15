@@ -17,6 +17,61 @@
     @include button($colorTer,$hallow,$colorSec);
 }
 
+.btn-sec {
+    @include button($colorPri,$colorTer ,$colorTer );
+    position:relative;
+    z-index: 1;
+}
+
+.btn-sec::before {
+    z-index: -1;
+    position: absolute;
+    color: $colorTer;
+    content: "";
+    padding: 0rem;
+    border-radius: $btnRadius;
+    background-color: $colorTer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}
+
+.btn-sec::after {
+    z-index: -1;
+    position: absolute;
+    color: $colorTer;
+    content: "";
+    padding: 0rem;
+    border-radius: $btnRadius;
+    background-color: $colorTer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 1;
+
+}
+
+.btn-sec:hover::after{
+    animation: blow 0.4s linear 0s 1 normal backwards;
+}
+
+.btn-sec:hover::before{
+    animation: blow 0.43s linear 0s 1 normal backwards;
+}
+
+@keyframes blow {
+    to {
+        padding: 3rem 8rem;
+        opacity: 0;
+    }
+}
+.btn-sec:hover {
+    @extend %C-pointer;
+}
+
+
+
 %shine {
     @extend %C-pointer;
     border: solid 0.2rem $colorQua;
@@ -24,12 +79,12 @@
     box-shadow: 0 0 0.5rem $colorQua;
     transition: background-position 0.5s linear;
     background-image: linear-gradient(70deg,$hallow,$hallow,$hallow,$hallow,$hallow,$colorQua,$hallow,$hallow,$hallow,$hallow,$hallow);
-    background-position: 55rem 0px;
     background-size: 1000%;
 }
 
 .btn-pri:hover {
     @extend %shine;
+    background-position: 55rem 0px;
 }
 
 .btn-pri-w {
@@ -37,6 +92,15 @@
     font-size: 1.5rem;
     padding: 0.5rem 2.5rem;
     background-position: 0rem 0px;
+}
+
+.btn-pri-wider {
+    @extend .btn-pri-w;
+}
+
+.btn-pri-wider:hover {
+    @extend %shine;
+    background-position: 100rem 0px !important;
 }
 
 .btn-pri-w:hover {

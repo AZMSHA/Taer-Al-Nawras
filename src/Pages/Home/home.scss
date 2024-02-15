@@ -3,3 +3,11 @@
 main.home {
     @include createFlex(column)
 }
+
+aside {
+    width: 100%;
+
+    h2{
+        margin-right: 15vw;
+    }
+}
