@@ -101,7 +101,7 @@ export default function Section3 (){
     return(
     <>
       <section className="sec3">
-        <h1>WHAT WE DO?</h1>
+        <h1>OUR SERVICES</h1>
         {Lists}
         <div className="btn-area"><Button Class={"btn-pri-w"}>Learn more!</Button></div>
       </section>

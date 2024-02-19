@@ -4,27 +4,16 @@ import Section2 from "./components/section2"
 import Section3 from "./components/section3"
 import Section4 from "./components/section4"
 import Section5 from "./components/section5"
-import Button from "../../Components/Button/button"
-import Cheat from "./components/cheat"
-
 
 export default function Home() {
     return (
         <main className="home">
-            <div className="bg-wrapper bg-blue-gradient"><Section1/></div>
-            <Section2/>
+            <div className="bg-wrapper bg-gold-gradient"><Section1/></div>
+            <div className="bg-wrapper bg-grayscales-fixed"><Section2/></div>
             <Section3/>
-            <Section4/>
+            <div className="bg-wrapper bg-grayscales-fixed"><Section4/></div>
             <Section5/>
-            <Banner/>
-            <Cheat/>
         </main>
-    )
-}
-
-function Banner() {
-    return (
-        <aside className="flex bg-gold-gradient-linear"><h2>Want to consult with our team?</h2><Button Class={"btn-sec"}>Get a quote now!</Button></aside>
     )
 }
 

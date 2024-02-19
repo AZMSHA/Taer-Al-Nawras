@@ -1,1 +1,98 @@
 @import "../../global.scss";
+
+footer {
+    color: black;
+    font-weight: 600;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 2.5rem;
+    justify-items: center;
+    align-items: start;
+    width: calc(100% - 5rem);
+    max-width: 1920px;
+    padding: 10rem 2.5rem;
+
+    figure {
+        @include createFlex(column);
+        margin:0px;
+
+        svg {
+            width: 15rem;
+            .fil0{
+                transition: all 0.2s;
+            }
+        }
+
+        svg:hover{
+            @extend %C-pointer;
+        }
+        svg:hover .fil0{
+            fill: $colorQua;
+        }
+
+        figcaption {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+
+    iframe {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    section:hover h2{
+        color: $colorQua;
+    }
+
+    section {
+        justify-self: start;
+
+        address {
+            font-style: normal;
+        }
+        h2 {
+            white-space: nowrap;
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid $colorSec;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            padding: 0px;
+
+            #businessTiming:hover {
+                color: inherit;
+                @extend %C-text;
+            }
+        }
+
+        li {
+            font-size: $FZ-nav;
+            list-style: none;
+            padding: 0.5rem 0rem;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+
+        li:hover {
+            color: $colorQua;
+        }
+    }
+
+    aside.footer {
+        position: absolute;
+        border-radius: $borderRadius;
+        padding: 0px 3rem;
+        translate: 0 -50%;
+
+        h2{
+            margin-right: 15vw;
+        }
+    }
+}

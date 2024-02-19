@@ -4,6 +4,7 @@
 :root {
     font-family: $fontPri;
     color: $colorTer;
+    -webkit-font-smoothing: antialiased;
     cursor: default;
     ::selection {
         color: $colorTer;
@@ -27,28 +28,45 @@ h1 {
 
 h2 {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: $fontSec;
     color: $colorTer;
-    line-height: 3.5rem;
+    line-height: 2.5rem;
 }
 
-.bg-blue-gradient {
-    background-image: radial-gradient(circle farthest-side at right,rgb(113, 137, 255) 1%,rgb(58, 58, 176),navy,rgba(0, 0, 128, 0.553) 100%);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.bg-gold-gradient-linear {
-    background-image: radial-gradient(circle farthest-side at left,rgb(254, 202, 72) 10%,#eab741 ,rgb(244, 185, 35),rgb(255, 194, 39),rgb(240, 180, 30) 90%,$colorQua );
+.bg-gold-gradient {
+    background-image: radial-gradient(circle farthest-side at right,rgb(255, 218, 95) 1%, rgb(255, 184, 30), #cf931d, rgb(81, 58, 0) 100%);}
+
+.bg-gold-gradient-fixed {
+    background-image: radial-gradient(circle farthest-side at right,rgb(255, 218, 95) 1%, rgb(255, 184, 30), #cf931d, rgb(81, 58, 0) 100%);
     background-attachment: fixed;
-    margin-bottom: 1rem;
+}
+
+.bg-grayscales {
+    background: repeating-linear-gradient(45deg,black, rgb(54, 54, 54) 70px,gray 90px, $colorQua 100px, #ebf8e1 102px);
+}
+
+.bg-grayscales-fixed {
+    background: repeating-linear-gradient(45deg,black, rgb(54, 54, 54) 70px,gray 90px, $colorQua 100px, #ebf8e1 102px);
+    background-attachment: fixed;
 }
 
 .bg-wrapper {
     width: 100%;
+    @include createFlex;
 }
 
 .gold-color {
     color: $colorSec;
+}
+
+.bg-white {
+    background-color: $colorTer;
 }
 
 .flex {

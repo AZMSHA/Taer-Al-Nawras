@@ -1,7 +1,6 @@
 @import "../../../global.scss";
 
 .home .sec4 {
-    background-color: gray;
     display: grid;
     width: calc(100% - 8rem);
     max-width: 1920px;
@@ -20,7 +19,7 @@
         background-color: $colorPri;
         padding: 1rem 1rem;
         position: relative;
-        border-radius: 5px ;
+        border-radius: $borderRadius ;
         min-width: 10rem;
         transition: all 0.15s;
 

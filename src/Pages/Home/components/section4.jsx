@@ -40,7 +40,7 @@ function importImages(url, length) {
     }, [images]);
 
     return <section className="sec4">
-        <h1>{"CLIENT'S REVIEWS"}</h1>
+        <h1>{"YOUR TRUST IN US"}</h1>
         {reviews.map((review)=><Review key={review.name} {...review}/>)}
     </section>
 }
