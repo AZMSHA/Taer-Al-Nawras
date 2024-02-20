@@ -72,11 +72,31 @@ footer {
         }
 
         li {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: start;
+            align-items: start;
+            grid-template-columns: 2rem 1fr;
             font-size: $FZ-nav;
             list-style: none;
             padding: 0.5rem 0rem;
             transition: color 0.2s;
             white-space: nowrap;
+
+            i {
+                justify-self: center;
+                margin-right: 0.5rem;
+            }
+
+            i.fa-brands {
+                font-size: 1.6rem;
+            }
+
+            i.fa-solid {
+                padding-top: 0.3rem;
+            }
+
+            p{ margin: 0px;}
         }
 
 

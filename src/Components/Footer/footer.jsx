@@ -13,20 +13,21 @@ export default function Footer() {
                 <h2 className="gold-color">Get in touch</h2>
                 <address>
                     <ul>
-                        <li><a href="tel:+923026492834"><i class="fa-solid fa-phone"></i>Phone Number</a></li>
-                        <li><a href="mailto:azmsha2003@gmail.com">Email</a></li>
-                        <li><a href="">Address</a></li>
-                        <li id="businessTiming">Monday - Saturday : 9am - 6pm <br />Friday : 9 am - 11 :30 am <br />Sunday - Closed</li>
+                        <li><i className="fa-solid fa-phone"></i><a href="tel:+923026492834">Phone Number</a></li>
+                        <li><i className="fa-solid fa-phone"></i><a href="tel:+923026492834">Phone Number 2</a></li>
+                        <li><i className="fa-solid fa-envelope"></i><a href="mailto:azmsha2003@gmail.com">Email</a></li>
+                        <li><i className="fa-solid fa-map-location-dot"></i><a href="">Address</a></li>
+                        <li id="businessTiming"><i className="fa-solid fa-clock"></i><p>Monday - Saturday : 9am - 6pm <br />Friday : 9 am - 11 :30 am <br />Sunday - Closed</p></li>
                     </ul>
                 </address>
             </section>
             <section className="social-links">
                 <h2 className="gold-color">Check us out</h2>
                 <ul>
-                    <li><a href="https://www.instagram.com">{"INSTAGRAM"}</a></li>
-                    <li><a href="https://www.facebook.com">{"FACEBOOK"}</a></li>
-                    <li><a href="https://www.x.com">{"X (TWITTER)"}</a></li>
-                    <li><a href="https://www.linkedin.com">{"LINKEDIN"}</a></li>
+                    <li><i className="fa-brands fa-instagram"></i><a href="https://www.instagram.com">{"INSTAGRAM"}</a></li>
+                    <li><i className="fa-brands fa-facebook-f"></i><a href="https://www.facebook.com">{"FACEBOOK"}</a></li>
+                    <li><i className="fa-brands fa-x-twitter"></i><a href="https://www.x.com">{"X (TWITTER)"}</a></li>
+                    <li><i className="fa-brands fa-linkedin-in"></i><a href="https://www.linkedin.com">{"LINKEDIN"}</a></li>
                 </ul>
             </section>
             <figure>
