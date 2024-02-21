@@ -27,7 +27,7 @@ function importImages(url, length) {
   return Promise.all(promises); // Wait for all promises to be resolved
 }
 
-const Strip = ({animate}) => {
+const Strip = ({animate,multiply}) => {
 
   const [images, setImages] = useState([]);
 
@@ -44,8 +44,8 @@ const Strip = ({animate}) => {
 
   return (
     <>
-      {images.map((image) => (
-        <img key={image} style={animate} src={image} />
+      {images.map((image,index) => (
+        <img key={image} className={`img${index+multiply}`} style={animate} src={image} />
       ))}
     </>
   );

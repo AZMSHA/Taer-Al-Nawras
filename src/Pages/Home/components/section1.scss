@@ -1,214 +1,128 @@
 @import "../../../global.scss";
 
-.bg-wrapper {
-    @include createFlex;
-}
-
 .home .sec1 {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    justify-content:end;
-    align-items: center;
-    grid-auto-flow: column;
     width: 100%;
-    max-width: 1920px;
-    min-height: 56rem;
+    min-height: 100vh;}
 
-    header {
-        @include createFlex(column);
-        padding-left: 10rem;
+.hero-grid {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+    "spc0  spc0  spc0  spc0 spc0 spc0  spc0  spc0"
+    "spc1  img1  spc2  spc2 spc2 spc2  img2  spc3"
+    "spc4  spc4  titl  titl titl titl  spc5  spc5"
+    "img3  spc6  titl  titl titl titl  spc7  img4"
+    "spc8  spc8  titl  titl titl titl  spc9  spc9"
+    "spc11 img5  stxt  stxt stxt stxt  img6  spc14"
+    "spc15 spc15 stxt  stxt stxt stxt  spc16 spc16";
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(7,1fr);
 
-        .balls {
-            transform: translate(-15rem,0rem);
-            z-index: 0;
-            position: absolute;
-            @include createFlex;
-        }
-
-        .circleB {
-            width: 31rem;
-            z-index: 1;
-        }
-        .center {
-            z-index: 0;
-            position: absolute;
-            animation: orbit 6s linear 0s infinite forwards;
-            .circleS{
-                width: 9.6rem;
-                animation: spin 30s linear 0s infinite alternate
-            }
-        }
-
-        @keyframes spin {
-            from {
-                transform: translate(110%,-90%) rotateZ(0deg);
-            }
-            to {
-                transform: translate(110%,-90%) rotateZ(360deg);
-            }
-        }
-
-        @keyframes orbit {
-            from {
-                transform: rotateZ(0deg)
-            }
-            to {
-                transform: rotateZ(360deg)
-            }
-        }
-
-        h6 {
-            z-index: 2;
-            margin: 0;
-            line-height: 9rem;
-
-            %letterRules {
-                color: $colorTer;
-                font-family: $fontSec;
-                font-weight: 500;
-                font-size: $FZ-heroh6;
-                opacity: 0;
-            }
-
-            .sentence1 {
-                display: flex;
-                @for $i from 0 through 10 {
-                    .letter#{$i}{
-                        @extend %letterRules;
-                        @if $i < 10{
-                            color: $colorPri;
-
-                        } @else if $i == 10{
-                            padding-left:1rem;
-                        }
-                        animation: Swim 0.6s ease-in calc(0s + (90ms * $i)) forwards;
-                    }
-                }
-            }
-
-            .sentence2 {
-                display: flex;
-                padding-left: 0.25rem;
-                @for $i from 0 through 12 {
-                    .letter#{$i}{
-                    @extend %letterRules;
-                    animation: Swim 0.6s ease-out calc(0.9s + (90ms * $i)) forwards;
-                    }
-                }
-            }
-
-            @keyframes Swim {
-                from {
-                    opacity: 0;
-                    transform: translate(0px,4rem) rotateX(90deg) skewX(-15deg);
-                }
-
-                60% {
-                    opacity: 0.4;
-                }
-
-                85% {
-                    transform: translate(0px,-0.2rem) rotateX(5deg) skewX(0deg)
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translate(0px,0px) rotateX(0deg) skewX(0deg);
-                }
-            }
-        }
-
-        p {
-            opacity: 0;
-            max-width: 30rem;
-            animation: Swim 0.6s ease-out 2s forwards;
-        }
+    img {
+        filter: grayscale(1);
+        width: 14.27vh;
+        height: 14.27vh;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.5rem;
+        transition: all 0.25s;
+        animation: slide 0.7s ease-out;
+        animation-fill-mode: forwards;
+        animation-play-state:running;
+        transform: translate(0rem,-30rem);
+        opacity: 0;
     }
 
-    .imageStrip {
-        z-index: 5;
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        grid-auto-columns: 14rem;
-        grid-auto-flow: column;
-        row-gap: 0.5rem;
-        column-gap: 0.5rem;
-        padding: 0.5rem;
-        overflow: hidden;
-
-        img {
-            filter: grayscale(1);
-            width: 100%;
-            border-radius: 0.5rem;
-            transition: filter 0.25s;
-            animation: slide 0.7s ease-out;
-            animation-fill-mode: forwards;
-            animation-play-state:running;
-            transform: translate(0rem,30rem);
-            opacity: 0;
-            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-        }
-
-        @for $index from 1 through 3 {
-            :nth-child(#{$index}) {
+    @for $index from 1 through 6 {
+        img:nth-child(#{$index}) {
             animation-delay: calc(300ms + 70ms * $index);
-            }
+            grid-area: img#{$index};
         }
 
-        @keyframes slide {
-            to {
-                box-shadow: -1px 1px 6px 0px rgba(0, 0, 0, 0.333);
-                opacity: 1;
-                transform: translate(0rem,0rem);
-            }
-        }
-
-        img:hover {
-            filter: grayscale(0);
+        img:nth-child(#{$index}):hover {
+            box-shadow:
+            1px 1px 0.1rem adjust-hue(blue, $index * 36),
+            1px 1px 1rem adjust-hue(blue, $index * 36);
         }
     }
 
-    @media screen and (max-width: 1280px) {
-
-        header {
-            %letterRules {
-                font-size: 6rem;
-            }
-
-            h6 {
-                line-height: 6rem
-            }
-
-            .balls {
-                transform: translate(-1rem,0rem);
-
-                .circleB {
-                    width: 35rem;
-                }
-
-                .circleS {
-                    width: 6rem;
-                }
-            }
-
-            @keyframes spin {
-                from {
-                    transform: translate(250%,-90%) rotateZ(0deg);
-                }
-                to {
-                    transform: translate(250%,-90%) rotateZ(360deg);
-                }
-            }
+    @keyframes slide {
+        to {
+            opacity: 1;
+            transform: translate(0rem,0rem);
         }
     }
 
-    @media screen and (max-width: 912px) {
-        header {
-            padding-left: 1.5rem;
-        }
-        .imageStrip {
-            display: none;
-        }
+    img:hover {
+        filter: grayscale(0);
     }
 }
+
+.neon-p {
+    text-align: center;
+    align-self: baseline;
+    margin: 5rem;
+    grid-area: stxt;
+    z-index: 1;
+}
+
+.neon {
+    position: relative;
+    font-weight: 300;
+    margin: 0px;
+    text-align: center;
+    opacity: 1;
+    grid-area: titl;
+    color: white;
+
+    text-shadow:
+    0 0 0.1em $colorQua,
+    0 0 0.5em $colorQua,
+    0 0 1em $colorQua,
+    0 0 0.3em $colorQua;
+
+    box-shadow:
+    inset 0 0 0.5em $colorQua,
+    inset 0 0 1em $colorQua,
+    0 0 0.1em $colorQua,
+    0 0 1em $colorQua,
+    0 0 8em $colorQua;
+
+    animation: pulsate 1s linear infinite alternate forwards;
+    border: white solid 0.2em;
+    border-radius: 0.25em;
+    padding: 5vw;
+}
+
+.neon::before {
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: $colorQua;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+
+@keyframes pulsate {
+    to {
+        text-shadow:
+        0 0 0.1em $colorQua,
+        0 0 0.5em $colorQua,
+        0 0 1em $colorQua,
+        0 0 1em $colorQua;
+    }
+}
+

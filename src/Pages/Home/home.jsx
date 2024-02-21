@@ -8,8 +8,7 @@ import Section5 from "./components/section5"
 export default function Home() {
     return (
         <main className="home">
-            <div className="bg-wrapper bg-gold-gradient"><Section1/></div>
-            <div className="bg-wrapper bg-grayscales-fixed"><Section2/></div>
+            <Section1/>
             <Section3/>
             <div className="bg-wrapper bg-grayscales-fixed"><Section4/></div>
             <Section5/>
