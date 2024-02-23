@@ -1,7 +1,7 @@
 import React from "react"
-import "./section5.scss"
+import "./Styles/Steps.scss"
 
-export default function Section5() {
+export default function Steps() {
     const faqs = [
         [{title:"Request a design",description:"contact us via our website or at 050 719 3694. Share your project details and design requirements, and let's craft something exceptional together!",},
         {question:"What design options does Bushrat Hussain Advertising Signage offer?",answer:"We provide a wide array of design options, ranging from modern and minimalist to bold and vibrant, catering to diverse client preferences."},
@@ -21,7 +21,7 @@ export default function Section5() {
     ]
 
     return (
-        <section className="sec5">
+        <section className="steps">
         <h1>HOW IT WORKS</h1>
         <dl>
             {faqs.map((section,index1)=>{

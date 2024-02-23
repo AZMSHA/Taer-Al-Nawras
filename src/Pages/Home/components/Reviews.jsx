@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react"
-import "./section4.scss"
+import "./Styles/Reviews.scss"
 import starFilled from "../assets/star-filled.png"
 import star from "../assets/star.png"
 
@@ -18,7 +18,7 @@ function importImages(url, length) {
     return Promise.all(promises);
   }
 
-  export default function Section4 (){
+  export default function Reviews (){
 
     const [images, setImages] = useState([]);
 
@@ -39,7 +39,7 @@ function importImages(url, length) {
         .catch((err) => console.log(err));
     }, [images]);
 
-    return <section className="sec4">
+    return <section className="reviews">
         <h1>{"YOUR TRUST IN US"}</h1>
         {reviews.map((review)=><Review key={review.name} {...review}/>)}
     </section>

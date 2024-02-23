@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
 import Button from "../../../Components/Button/button";
-import "./section3.scss"
+import "./Styles/Services.scss"
 
 function importImages(url, length) {
 
@@ -35,7 +35,7 @@ function importImages(url, length) {
   return Promise.all(promises);
 }
 
-export default function Section3 (){
+export default function Services (){
 
   const [images, setImages] = useState([]);
 
@@ -100,7 +100,7 @@ export default function Section3 (){
 
     return(
     <>
-      <section className="sec3">
+      <section className="services">
         <h1>OUR SERVICES</h1>
         {Lists}
         <div className="btn-area"><Button Class={"btn-pri-w"}>Learn more!</Button></div>

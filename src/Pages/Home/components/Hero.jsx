@@ -1,13 +1,13 @@
-import "./section1.scss"
+import "./Styles/Hero.scss"
 import Strip from "./imageStrip";
 import { GContext } from "../../../App";
 import { useContext } from "react";
 
-function Section1() {
+function Hero() {
     const loaded = useContext(GContext).loaded
     const animate = {animationPlayState:loaded?"running":"paused"}
     return (
-            <section className="sec1">
+            <section className="hero">
                 <div className="hero-grid">
                     <Strip multiply={1} animate={animate}/>
                     <Strip multiply={4} animate={animate}/>
@@ -16,7 +16,7 @@ function Section1() {
                 </div>
             </section>)}
 
-export default Section1
+export default Hero
 
 /**function Header({animate}) {
 
