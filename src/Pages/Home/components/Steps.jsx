@@ -21,7 +21,7 @@ export default function Steps() {
     ]
 
     return (
-        <section className="steps">
+        <section id="steps">
         <h1>HOW IT WORKS</h1>
         <dl>
             {faqs.map((section,index1)=>{

@@ -32,7 +32,7 @@ function Navbar({links}) {
                     if(index===links.length-1){
                         return <Button key={index} Class={"btn-pri"}>{link}</Button>
                     }
-                    return <li key={index}><a href="#about">{link}</a></li>
+                    return <li key={index}>{link}</li>
                 })}
             </ul>
         </nav>
