@@ -1,16 +1,31 @@
 import "./about.scss"
+import img1 from "./assets/imageStrip1.jpg"
 
 export default function About () {
 
     return <section id="about">
         <h1>ABOUT US</h1>
-        <article>
-            <h2>Heading 1 depicting motivations of the company</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde impedit, suscipit ut quidem ipsam fuga quisquam optio mollitia nesciunt necessitatibus, praesentium quasi! Enim pariatur, nesciunt iste quos corrupti est optio quisquam placeat, accusantium nobis animi sapiente officia ipsa autem sit cum illum. Optio recusandae qui natus a. Quasi quibusdam esse corporis facere culpa iste ad quaerat ratione laudantium pariatur, asperiores, nam perferendis rerum sunt minima sequi recusandae. Fugit perspiciatis ex repellat reiciendis tempore aspernatur aperiam, dicta dolore iure magnam aut nesciunt libero? Itaque praesentium consequuntur tempore quidem eos. Eveniet ab dolor ipsum, ad magni, libero perferendis temporibus maiores reprehenderit sequi hic porro dolorum amet itaque optio praesentium ipsa earum officia adipisci eum eaque. Eligendi cum dolor incidunt ea illo soluta deserunt dicta minima modi sequi unde enim cupiditate a dolores necessitatibus molestiae aut iusto rem id quam saepe, aliquam veniam pariatur quia! Repellat eius vitae dignissimos tenetur repellendus iste corporis hic quasi temporibus veritatis dolores quod accusantium voluptates, nisi, ut ex quaerat beatae. Ad sapiente ipsam maiores nihil, veniam esse ipsum, fugiat, incidunt aspernatur id modi. Odit animi voluptates, est corrupti reprehenderit non tenetur eaque numquam nemo quam totam iure adipisci necessitatibus cupiditate natus, nostrum iste consequuntur autem magni fugit deleniti? Inventore dolorum sapiente distinctio asperiores rem quis veniam nesciunt vel aspernatur doloremque nobis itaque ut ipsa, qui aperiam. Unde nulla molestias corrupti!</p>
-        </article>
-        <article>
-            <h2>Header 2 to show your professionalism and sell yours skills/product</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde impedit, suscipit ut quidem ipsam fuga quisquam optio mollitia nesciunt necessitatibus, praesentium quasi! Enim pariatur, nesciunt iste quos corrupti est optio quisquam placeat, accusantium nobis animi sapiente officia ipsa autem sit cum illum. Optio recusandae qui natus a. Quasi quibusdam esse corporis facere culpa iste ad quaerat ratione laudantium pariatur, asperiores, nam perferendis rerum sunt minima sequi recusandae. Fugit perspiciatis ex repellat reiciendis tempore aspernatur aperiam, dicta dolore iure magnam aut nesciunt libero? Itaque praesentium consequuntur tempore quidem eos. Eveniet ab dolor ipsum, ad magni, libero perferendis temporibus maiores reprehenderit sequi hic porro dolorum amet itaque optio praesentium ipsa earum officia adipisci eum eaque. Eligendi cum dolor incidunt ea illo soluta deserunt dicta minima modi sequi unde enim cupiditate a dolores necessitatibus molestiae aut iusto rem id quam saepe, aliquam veniam pariatur quia! Repellat eius vitae dignissimos tenetur repellendus iste corporis hic quasi temporibus veritatis dolores quod accusantium voluptates, nisi, ut ex quaerat beatae. Ad sapiente ipsam maiores nihil, veniam esse ipsum, fugiat, incidunt aspernatur id modi. Odit animi voluptates, est corrupti reprehenderit non tenetur eaque numquam nemo quam totam iure adipisci necessitatibus cupiditate natus, nostrum iste consequuntur autem magni fugit deleniti? Inventore dolorum sapiente distinctio asperiores rem quis veniam nesciunt vel aspernatur doloremque nobis itaque ut ipsa, qui aperiam. Unde nulla molestias corrupti!</p>
-        </article>
+        <div id="about-grid">
+            <section>
+                <div className="aboutImages">
+                    <img src={img1} alt="" />
+                    <img src={img1} alt="" />
+                </div>
+                <article>
+                    <h2>Heading 1 depicting motivations of the company</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis ratione ducimus fugit dolor, nemo excepturi nobis unde debitis nihil nesciunt minus doloremque! Repellendus, ab. Magni necessitatibus animi est dolorem assumenda delectus facilis pariatur, corrupti expedita ex minima, blanditiis, aspernatur sunt neque! Blanditiis facilis rerum veniam? Nemo corrupti sit possimus, deserunt, quidem veniam corporis enim totam obcaecati, fuga modi et quaerat exercitationem nihil maiores debitis quae. Similique doloremque, nobis, odit laboriosam sit, nam nostrum exercitationem eaque laudantium libero recusandae alias at facilis veniam sint assumenda. Quae quia consectetur labore pariatur ratione, doloremque, recusandae iure voluptas possimus nemo accusantium modi dolorem repellat? corrupti!</p>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h2>Header 2 to show your professionalism and sell yours skills/product</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto sit excepturi quaerat rem aut, expedita obcaecati iste deleniti quas sequi doloremque asperiores ipsa quibusdam minus odio ullam corrupti consectetur nostrum? Veritatis facere at officiis dolores, enim cupiditate voluptatibus ipsum iusto nobis quidem optio atque repellendus odit, tempora, expedita laudantium fuga modi maiores. Incidunt officiis voluptatum nobis voluptatibus assumenda rerum explicabo officia animi aliquam, quis, minima labore sequi quo. Ipsa porro omnis earum reiciendis, corrupti maiores inventore, quam deserunt cumque sequi ipsum. Dolorem numquam autem at dignissimos ad minus inventore unde vitae rerum quam, animi nihil placeat iure sit debitis! Suscipit!</p>
+                </article>
+                <div className="aboutImages">
+                    <img src={img1} alt="" />
+                    <img src={img1} alt="" />
+                </div>
+            </section>
+        </div>
     </section>
 }
