@@ -2,6 +2,7 @@
 
 
 #about {
+    backdrop-filter:  blur(0.5rem) brightness(30%);
     @include createFlex(column);
     h1 {
         margin: 10rem 0rem;
@@ -12,9 +13,9 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    row-gap: 10rem;
+    row-gap: 20rem;
     max-width: 1920px;
-    padding: 0rem 10rem 10rem;
+    padding: 0rem 10rem 20rem;
 
     .aboutImages {
         width: 100%;

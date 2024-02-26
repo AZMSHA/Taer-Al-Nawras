@@ -60,6 +60,9 @@ a {
 .bg-wrapper {
     width: 100%;
     @include createFlex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .gold-color {
@@ -91,6 +94,40 @@ a {
             display: none;
             opacity: 0;
         }
+    }
+}
+
+.swim {
+    animation: Swim 0.6s ease-out forwards;
+
+    [class^="letter"] {
+    animation: Swim 0.6s ease-out forwards;
+    }
+
+    @for $i from 0 through 200 {
+        .letter#{$i}{
+        animation-delay: calc(0s + (15ms * $i))
+        }
+    }
+}
+
+@keyframes Swim {
+    from {
+        opacity: 0;
+        transform: translate(0px,4rem) rotateX(90deg) skewX(-15deg);
+    }
+
+    60% {
+        opacity: 0.4;
+    }
+
+    85% {
+        transform: translate(0px,-0.2rem) rotateX(5deg) skewX(0deg)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0px,0px) rotateX(0deg) skewX(0deg);
     }
 }
 

@@ -24,8 +24,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        border-radius: $borderRadius;
         overflow: hidden;
+        border-radius: $borderRadius;
 
         ul{
             padding: 0;
@@ -47,7 +47,7 @@
     .backdrop {
         @include createFlex(column,start,start);
         padding: 2rem 2rem calc(8vw) 2rem;
-        backdrop-filter: blur(0.5rem) brightness(30%);
+        backdrop-filter: blur(8px) brightness(30%);
         transition: backdrop-filter 0.25s;
 
         h2 {

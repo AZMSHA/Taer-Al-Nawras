@@ -26,18 +26,18 @@
     grid-template-rows: repeat(7,1fr);
 
     img {
-        filter: grayscale(1);
-        width: 14.27vh;
-        height: 14.27vh;
+        filter: grayscale(1) brightness(0.5);
+        opacity: 0;
+        border-radius: 50%;
+        height: 10vh;
+        width: 10vh;
         object-fit: cover;
         object-position: center;
-        border-radius: 0.5rem;
         transition: all 0.25s;
         animation: slide 0.7s ease-out;
         animation-fill-mode: forwards;
         animation-play-state:running;
         transform: translate(0rem,-30rem);
-        opacity: 0;
     }
 
     @for $index from 1 through 6 {
@@ -61,7 +61,10 @@
     }
 
     img:hover {
-        filter: grayscale(0);
+        filter: grayscale(0) saturate(2) ;
+        border-radius: 0.5rem;
+        width: 14.27vh;
+        height: 14.27vh;
     }
 }
 
