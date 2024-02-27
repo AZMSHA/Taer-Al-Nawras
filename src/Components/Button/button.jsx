@@ -15,8 +15,6 @@ import { useState } from 'react';
     }
   };
 
-  console.log(Class + (pressed ? ' pressed' : ''))
-
     return (
         <button className={Class + (pressed ? ' pressed' : '')} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} onClick={onClick} onMouseOver={onHover}>{children}</button>
     )

@@ -1,6 +1,7 @@
 import Home from './Pages/Home/home.jsx'
 import Navbar from './Components/Navbar/navbar.jsx'
 import Footer from './Components/Footer/footer.jsx';
+import Form from './Components/Form/Form.jsx';
 import { useState , useEffect ,createContext } from 'react';
 
 export const GContext = createContext()
@@ -44,6 +45,7 @@ function App() {
         <Navbar links={["Home","About us","Services","Contact us"]}/>
         <Home/>
         <Footer/>
+        <Form/>
       </GContext.Provider>
   );
 }
