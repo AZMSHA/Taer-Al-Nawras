@@ -1,6 +1,9 @@
 import "./footer.scss"
 import Logo from "../../assets/Logos/LogoNoOutline.svg?react"
 import Button from "../Button/button"
+import { GContext } from "../../App";
+import { useContext } from "react";
+
 
 
 export default function Footer() {
@@ -43,7 +46,8 @@ function Map () {
 }
 
 function Banner() {
+    const open = useContext(GContext).openModal
     return (
-        <aside className="footer flex bg-gold-gradient-fixed"><h2>It's very easy to get a quote</h2><Button Class={"btn-sec"}>Get a quote now!</Button></aside>
+        <aside className="footer flex bg-gold-gradient-fixed"><h2>It's very easy to get a quote</h2><Button onClick={open} Class={"btn-sec"}>Get a quote now!</Button></aside>
     )
 }

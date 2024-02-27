@@ -2,6 +2,7 @@ import Home from './Pages/Home/home.jsx'
 import Navbar from './Components/Navbar/navbar.jsx'
 import Footer from './Components/Footer/footer.jsx';
 import Form from './Components/Form/Form.jsx';
+import {useDisclosure} from '@chakra-ui/react'
 import { useState , useEffect ,createContext } from 'react';
 
 export const GContext = createContext()
@@ -39,13 +40,14 @@ function App() {
     })
 
 }
+  const controls = useDisclosure()
 
   return (
-      <GContext.Provider value={{loaded:loaded}}>
+      <GContext.Provider value={{loaded:loaded,openModal:controls.onOpen}}>
         <Navbar links={["Home","About us","Services","Contact us"]}/>
         <Home/>
         <Footer/>
-        <Form/>
+        <Form {...controls}/>
       </GContext.Provider>
   );
 }
