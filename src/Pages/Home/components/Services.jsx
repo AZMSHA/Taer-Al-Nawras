@@ -80,7 +80,7 @@ export default function Services (){
       <section id="services">
         <h1>OUR SERVICES</h1>
         {Lists}
-        <div className="btn-area"><Button Class={"btn-pri-w"}>Learn more!</Button></div>
+        <div className="btn-area"><Button Class={"btn-pri-w"}>Learn more</Button></div>
       </section>
     </>)
 }

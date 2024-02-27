@@ -41,7 +41,7 @@ function App() {
 
   return (
       <GContext.Provider value={{loaded:loaded}}>
-        <Navbar links={["Home","About us","Services","Contact us!"]}/>
+        <Navbar links={["Home","About us","Services","Contact us"]}/>
         <Home/>
         <Footer/>
       </GContext.Provider>

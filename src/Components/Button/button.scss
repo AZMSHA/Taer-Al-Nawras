@@ -6,24 +6,62 @@
     font-size: $FZ-highlight;
     color: $fontColor;
     background-color: $backgroundColor;
-    padding: 0.35rem 1.5rem;
+    padding: 0.35em 1.2em;
     border-radius: $btnRadius;
     border: solid 0.2rem $borderColor;
-    background-position: 10rem 0px;
-    transition: box-shadow 0.2s;
+    transition: all 0.2s;
 }
 
-.btn-pri {
+[class^="btn"]:hover {
+    @extend %C-pointer
+}
+
+[class^="btn-pri"] {
     @include button($colorTer,$hallow,$colorSec);
 }
 
-.btn-sec {
+.btn-pri-w {
+    font-size: 1.5rem;
+    padding: 0.5rem 2.5rem;
+}
+
+[class^="btn-pri"]:hover , [class^="btn-pri"]:focus  {
+    @extend %shine;
+}
+
+%shine {
+    border: solid 0.2rem $colorQua;
+    color: inherit;
+    box-shadow: inset 0 0 0.5rem $colorQua, 0 0 0.5rem $colorQua;
+}
+
+[class^="btn-pri"]:active {
+    background-color: $colorQua;
+    color: $colorPri;
+    box-shadow: 0 0 1rem $colorQua,
+}
+
+[class^="btn-pri"].pressed {
+    background-color: $colorQua !important;
+    color: $colorPri !important;
+    box-shadow: 0 0 1rem $colorQua !important;
+}
+
+[class^="btn-sec"] {
     @include button($colorPri,$colorTer ,$colorTer );
     position:relative;
     z-index: 1;
 }
 
-.btn-sec::before {
+[class^="btn-sec"]:active {
+    box-shadow: inset 0px 0px 0.5rem $colorPri;
+}
+
+[class^="btn-sec"].pressed {
+    box-shadow: inset 0px 0px 0.5rem $colorPri;
+}
+
+.btn-sec::before , .btn-sec::after {
     z-index: -1;
     position: absolute;
     color: $colorTer;
@@ -31,79 +69,21 @@
     padding: 0rem;
     border-radius: $btnRadius;
     background-color: $colorTer;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    @extend %center;
     opacity: 1;
 }
 
-.btn-sec::after {
-    z-index: -1;
-    position: absolute;
-    color: $colorTer;
-    content: "";
-    padding: 0rem;
-    border-radius: $btnRadius;
-    background-color: $colorTer;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    opacity: 1;
-
-}
-
-.btn-sec:hover::after{
+[class^="btn-sec"]:hover::after , [class^="btn-sec"]:focus::after{
     animation: blow 0.4s linear 0s 1 normal backwards;
 }
 
-.btn-sec:hover::before{
+[class^="btn-sec"]:hover::before , [class^="btn-sec"]:focus::before{
     animation: blow 0.43s linear 0s 1 normal backwards;
 }
 
 @keyframes blow {
     to {
-        padding: 3rem 8rem;
+        padding: 2.5em 7em;
         opacity: 0;
     }
-}
-.btn-sec:hover {
-    @extend %C-pointer;
-}
-
-
-
-%shine {
-    @extend %C-pointer;
-    border: solid 0.2rem $colorQua;
-    color: inherit;
-    box-shadow: 0 0 0.5rem $colorQua;
-    transition: background-position 0.5s linear;
-    background-image: linear-gradient(70deg,$hallow,$hallow,$hallow,$hallow,$hallow,$colorQua,$hallow,$hallow,$hallow,$hallow,$hallow);
-    background-size: 1000%;
-}
-
-.btn-pri:hover {
-    @extend %shine;
-    background-position: 55rem 0px;
-}
-
-.btn-pri-w {
-    @extend .btn-pri;
-    font-size: 1.5rem;
-    padding: 0.5rem 2.5rem;
-    background-position: 0rem 0px;
-}
-
-.btn-pri-wider {
-    @extend .btn-pri-w;
-}
-
-.btn-pri-wider:hover {
-    @extend %shine;
-    background-position: 100rem 0px !important;
-}
-
-.btn-pri-w:hover {
-    @extend %shine;
-    background-position: 80rem 0px;
 }

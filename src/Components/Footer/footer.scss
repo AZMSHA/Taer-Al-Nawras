@@ -27,9 +27,9 @@ footer {
 
         svg:hover{
             @extend %C-pointer;
-        }
-        svg:hover .fil0{
-            fill: $colorQua;
+            .fil0 {
+                fill: $colorQua;
+            }
         }
 
         figcaption {
@@ -44,8 +44,10 @@ footer {
         width: 20rem;
     }
 
-    section:hover h2{
-        color: $colorQua;
+    section:hover {
+        h2{
+            color: $colorQua;
+        }
     }
 
     section {
@@ -98,7 +100,6 @@ footer {
 
             p{ margin: 0px;}
         }
-
 
         li:hover {
             color: $colorQua;
