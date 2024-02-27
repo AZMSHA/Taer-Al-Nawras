@@ -29,7 +29,7 @@
         filter: grayscale(1) brightness(0.5);
         opacity: 0;
         transform: translate(0rem,-20rem);
-        border-radius: 50%;
+        border-radius: $circleRadius;
         height: 10vh;
         width: 10vh;
         object-fit: cover;
@@ -62,7 +62,7 @@
 
     img:hover {
         filter: grayscale(0) saturate(2) ;
-        border-radius: 0.5rem;
+        border-radius: $borderRadius;
         width: 14.27vh;
         height: 14.27vh;
     }
@@ -100,7 +100,7 @@
 
     animation: pulsate 1s linear infinite alternate forwards;
     border: white solid 0.2em;
-    border-radius: 0.25em;
+    border-radius: $borderRadius;
     padding: 5vw;
 }
 

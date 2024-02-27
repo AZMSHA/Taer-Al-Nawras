@@ -12,7 +12,7 @@ export default function Services (){
         case "jpg":
             return import(`../assets/Services${index}.jpg`);
         case "webp":
-            return import(`../assets/Services${index}.jpg`);
+            return import(`../assets/Services${index}.webp`);
         default:
             return new Promise((resolve, reject) => {
                 if (false) {
@@ -59,7 +59,8 @@ export default function Services (){
     for (let index = 1; index < 4; index++) {
         const list = data[`set${index}`];
         Lists.push(
-            <section style={{backgroundImage:`url(${images[index-1]})`}} key={index}>
+            <section key={index}>
+                <img src={images[index-1]} alt="" />
                 <div className="backdrop">
                     <header><h2 className="gold-color">{list[0]}</h2></header>
                     <ul>

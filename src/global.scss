@@ -6,8 +6,7 @@
     Paragraph text: 1rem */
 $FZ-highlight:1.2rem;
 $FZ-h1: 4rem;
-$FZ-button: $FZ-highlight;
-$FZ-nav: $FZ-highlight;
+$FZ-h2:2rem;
 $fontPri: 'Poppins', "Roboto", Tahoma, Geneva, Verdana, sans-serif;
 $fontSec: 'Oswald', Tahoma, Geneva, Verdana, sans-serif;
 $fontTer: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,6 +15,7 @@ $colorSec: #c0a055;
 $colorTer: white;
 $colorQua: goldenrod;
 $btnRadius:100px;
+$circleRadius:50%;
 $borderRadius:0.5rem;
 $hallow:rgba(0,0,0,0);
 %C-pointer {

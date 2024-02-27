@@ -18,21 +18,19 @@ body {
     margin: 0%;
 }
 
-h1 {
-    font-weight: 700;
-    font-size: $FZ-h1;
-    font-family: $fontSec;
-    color: $colorTer;
-    line-height: 4.5rem;
-}
 
-h2 {
-    font-weight: 700;
-    font-size: 2rem;
-    font-family: $fontSec;
-    color: $colorTer;
-    line-height: 2.5rem;
-}
+ @for $i from 1 through 6 {
+    h#{$i} {
+        @if $i == 1 {
+            font-size: $FZ-h1;
+        } @else if $i == 2 {
+            font-size: $FZ-h2;
+        }
+        font-family: $fontSec;
+        color: $colorTer;
+        line-height: 1em;
+    }
+ }
 
 a {
     text-decoration: none;

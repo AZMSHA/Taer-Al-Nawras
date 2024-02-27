@@ -35,7 +35,6 @@ footer {
         figcaption {
             margin-top: 1rem;
             text-align: center;
-            font-size: 1.2rem;
         }
     }
 
@@ -79,7 +78,6 @@ footer {
             justify-content: start;
             align-items: start;
             grid-template-columns: 2rem 1fr;
-            font-size: $FZ-nav;
             list-style: none;
             padding: 0.5rem 0rem;
             transition: color 0.2s;
