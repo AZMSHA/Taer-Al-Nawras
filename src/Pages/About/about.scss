@@ -2,8 +2,9 @@
 
 
 #about {
-    backdrop-filter:  blur(0.5rem) brightness(30%);
+    backdrop-filter:brightness(25%);
     @include createFlex(column);
+    width: 100%;
     h1 {
         margin: 10rem 0rem;
     }
@@ -23,7 +24,9 @@
         position: relative;
         @include createFlex;
         img {
+            border-radius: $borderRadius;
             position: relative;
+            animation: imageSplit 0.5s ease 2s 1 backwards;
             transform: translate(15%,15%);
             width: 55%;
             min-width: 15rem;
@@ -47,5 +50,22 @@
     section:nth-child(2) {
         text-align: right;
         grid-template-columns: 0.6fr 0.4fr;
+    }
+}
+
+@keyframes imageSplit {
+    from {
+        transform: translate(145%,0%);
+    }
+
+    50% {
+        transform: translate(0%,0%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(100%,0%);
     }
 }

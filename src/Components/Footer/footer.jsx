@@ -5,7 +5,7 @@ import Button from "../Button/button"
 
 export default function Footer() {
 
-    return <>
+    return <div className="bg-wrapper bg-white">
         <footer>
             <Banner/>
             <Map/>
@@ -35,7 +35,7 @@ export default function Footer() {
                 <figcaption>Stand out from the rest</figcaption>
             </figure>
         </footer>
-    </>
+        </div>
 }
 
 function Map () {

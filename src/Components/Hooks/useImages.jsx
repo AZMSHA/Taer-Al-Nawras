@@ -7,7 +7,7 @@ export default function useImages(source,length,formats,...args) {
         setImages(fetchImages(source,length,formats,...args))
     },[source,length])
 
-    const fetchImages = useCallback((source,length,formats,...args) => {
+    const fetchImages = (source,length,formats,...args) => {
 
         const isLiteralObject = function(a) {
             return (!!a) && (a.constructor === Object);
@@ -30,7 +30,7 @@ export default function useImages(source,length,formats,...args) {
             })
         }
         return list
-    },[source,length])
+    }
 
     return images
 }

@@ -1,53 +1,29 @@
-import {useState, useEffect} from "react"
 import Button from "../../../Components/Button/button";
+import useImagePromise from "../../../Components/Hooks/useImage";
 import "./Styles/Services.scss"
 
-function importImages(url, length) {
-
-  const promises = [];
-
-  for (let index = 1; index <= length; index++) {
-    promises.push(
-      import(`../assets/${url + index}.png`)
-        .then((result) => result.default)
-        .catch((err) => undefined)
-    );
-
-    promises.push(
-      import(`../assets/${url + index}.jpg`)
-        .then((result) => result.default)
-        .catch((err) => undefined)
-    );
-
-    promises.push(
-      import(`../assets/${url + index}.svg`)
-        .then((result) => result.default)
-        .catch((err) => undefined)
-    );
-
-    promises.push(
-      import(`../assets/${url + index}.webp`)
-        .then((result) => result.default)
-        .catch((err) => undefined)
-    );
-  }
-
-  return Promise.all(promises);
-}
 
 export default function Services (){
 
-  const [images, setImages] = useState([]);
+  const switches = (format,index)=>{
+    switch (format) {
+        case "png":
+            return import(`../assets/Services${index}.png`);
+        case "jpg":
+            return import(`../assets/Services${index}.jpg`);
+        case "webp":
+            return import(`../assets/Services${index}.jpg`);
+        default:
+            return new Promise((resolve, reject) => {
+                if (false) {
+                    resolve (format)
+                }
+                reject(format) })
+    }
+  }
 
-  useEffect(() => {
+  const images = useImagePromise(switches,3,["jpg","webp","png"])
 
-    importImages("Services", 3)
-      .then((src) => {
-
-        setImages(src.filter((item) => item !== undefined)); // Filter out errors from the result array
-      })
-      .catch((err) => console.log(err));
-  }, []);
 
     const data = {
         set1:["Outdoor Signage"

@@ -10,10 +10,12 @@ const reviews = [
         {pfp:"src/Pages/Home/assets/pfp3.jpg",name:"Ada Kanacki",rating:5,text:"In the realm of UAE signage, Bhusrat Hussain Advertising shines bright, offering both affordability and top-notch service excellence.",},
     ]
 
-    return <section id="reviews">
-        <h1>{"YOUR TRUST IN US"}</h1>
-        {reviews.map((review)=><Review key={review.name} {...review}/>)}
-    </section>
+    return <div className="bg-wrapper bg-grayscales-fixed" >
+        <section id="reviews">
+            <h1>{"YOUR TRUST IN US"}</h1>
+            {reviews.map((review)=><Review key={review.name} {...review}/>)}
+        </section>
+    </div>
 }
 
 function Review({pfp,name,rating,text}) {
