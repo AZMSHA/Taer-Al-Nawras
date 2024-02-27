@@ -7,7 +7,10 @@ DEPENDENCIES:
 - "@vitejs/plugin-react": "^4.2.1"
 - "sass": "^1.70.0"
 - "vite-plugin-svgr": "^4.2.0"
-- "@rollup/plugin-dynamic-import-vars": "^2.1.2",
+- "@rollup/plugin-dynamic-import-vars": "^2.1.2"
+- "formik": "^2.4.5"
+- "@chakra-ui/react": "^2.8.2"
+- "yup": "^1.3.3"
 - React Router
 
 The inspiration for this webapp comes from [BH advertisers](https://bhadvertisers.ae/)
