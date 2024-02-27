@@ -21,7 +21,6 @@ export default function About () {
     }
 
     const images = useImagePromise(switches,5,["jpg","jpeg"])
-    console.log(images)
 
     return <div className="bg-wrapper" style={{backgroundImage:`url(${images[4]})`,backgroundAttachment:"fixed"}}>
     <section id="about">
