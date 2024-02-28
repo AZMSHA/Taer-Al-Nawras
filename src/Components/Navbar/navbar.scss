@@ -1,72 +1,72 @@
 @import "../../global.scss";
 
 nav {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    font-family: $fontSec;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  font-family: $fontSec;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  ul {
+    margin-right: 5rem;
+    padding: 0;
+    list-style-type: none;
     display: flex;
-    justify-content: center;
-    z-index: 3;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+      width: 9rem;
+      .fil0 {
+        transition: all 0.2s;
+      }
+    }
+
+    svg:hover .fil0 {
+      fill: $colorQua;
+    }
+
+    * {
+      font-size: $FZ-highlight;
+      margin-left: 2rem;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    *:hover {
+      @extend %C-pointer;
+      color: $colorQua;
+    }
+  }
+
+  @media screen and (max-width: 912px) {
     ul {
-        margin-right: 5rem;
-        padding: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content:flex-start;
-        align-items: center;
+      margin-right: 0px;
 
-        svg {
-            width: 9rem;
-            .fil0{
-                transition: all 0.2s;
-            }
-        }
-
-        svg:hover .fil0{
-            fill: $colorQua;
-        }
-
-        * {
-            font-size: $FZ-highlight;
-            margin-left: 2rem;
-            transition: color 0.2s;
-            white-space: nowrap;
-        }
-
-        *:hover {
-            @extend %C-pointer;
-            color: $colorQua;
-        }
+      svg {
+        margin-left: 0px;
+      }
     }
-
-    @media screen and (max-width: 912px) {
-        ul {
-            margin-right: 0px;
-
-            svg {
-                margin-left: 0px;
-            }
-        }
-    }
+  }
 }
 
 div.bg-wrapper.navbar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    transition: all 0.5s ease;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  transition: all 0.5s ease;
 }
 
-div.bg-wrapper.navbar[state="opened"] {
-    z-index: 10;
-    background-color: black;
-    padding: 5.6rem 0rem;
+div.bg-wrapper.navbar.opened {
+  z-index: 10;
+  background-color: black;
+  padding: 5.6rem 0rem;
 }
 
-div.bg-wrapper.navbar[state="closed"] {
-    z-index: 3;
-    padding: 0rem 0rem;
+div.bg-wrapper.navbar.closed {
+  z-index: 3;
+  padding: 0rem 0rem;
 }
