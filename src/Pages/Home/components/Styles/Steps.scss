@@ -1,101 +1,100 @@
 @import "../../../../global.scss";
 
 #steps {
-    h1 {
-        text-align: center;
-        margin: 10rem 0rem;
+  h1 {
+    text-align: center;
+    margin: 10rem 0rem;
+  }
+  dl {
+    display: grid;
+    width: calc(100% - 16rem);
+    max-width: 1920px;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+    padding: 0rem 8rem 10rem;
+
+    section.step {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      dt {
+        max-width: fit-content;
+        font-weight: 700;
+        font-size: $FZ-h2;
+        font-family: $fontSec;
+        line-height: 2.5rem;
+        border-bottom: 1px solid rgba(218, 165, 32, 0.56);
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        span {
+          position: absolute;
+          top: 0rem;
+          right: 0rem;
+        }
+      }
+      dd {
+        margin: 0px 0px 2rem 0px;
+      }
+
+      summary {
+        position: relative;
+        font-weight: 600;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+        transition: margin-bottom 0.3s ease;
+      }
+
+      summary::before {
+        position: absolute;
+        top: 0rem;
+        transform: translate(0, 50%);
+        left: -1rem;
+        content: "\25BA"; /* Unicode character for right-pointing triangle */
+        font-size: 0.8em; /* Adjust the size of the triangle */
+        transition: transform 0.3s ease;
+      }
+
+      summary:hover {
+        @extend %C-pointer;
+      }
+
+      details[open] {
+        padding-bottom: 0.5rem;
+      }
+
+      details[open] summary {
+        margin-bottom: 0.5rem;
+      }
+
+      details[open] summary::before {
+        transform: translate(0, 50%) rotate(90deg); /* Rotate the arrow when details is open */
+      }
+
+      details,
+      summary {
+        list-style: none;
+      }
+
+      details::-webkit-details-marker,
+      summary::-webkit-details-marker {
+        display: none;
+      }
     }
-    dl {
-        display: grid;
-        width: calc(100% - 16rem);
-        max-width: 1920px;
-        grid-auto-flow: column;
-        grid-template-columns: repeat(3,1fr);
-        column-gap: 4rem;
-        padding: 0rem 8rem 10rem;
 
-        section.step {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-
-            dt {
-                max-width: fit-content;
-                font-weight: 700;
-                font-size: $FZ-h2;
-                font-family: $fontSec;
-                line-height: 2.5rem;
-                border-bottom: 1px solid rgba(218, 165, 32, 0.56);
-                padding-bottom: 0.5rem;
-                margin-bottom: 0.5rem;
-
-                span {
-                    position: absolute;
-                    top: 0rem;
-                    right: 0rem
-                }
-            }
-            dd {
-                margin: 0px 0px 2rem 0px;
-            }
-
-            summary {
-                position: relative;
-                font-weight: 600;
-                margin: -0.5em -0.5em 0;
-                padding: 0.5em;
-                transition: margin-bottom 0.3s ease;
-            }
-
-            summary::before {
-                position: absolute;
-                top: 0rem;
-                transform: translate(0,50%);
-                left: -1rem;
-                content: '\25BA'; /* Unicode character for right-pointing triangle */
-                font-size: 0.8em; /* Adjust the size of the triangle */
-                transition: transform 0.3s ease;
-              }
-
-            summary:hover{
-                @extend %C-pointer
-            }
-
-
-            details[open] {
-                padding-bottom: 0.5rem;
-            }
-
-            details[open] summary {
-                margin-bottom: 0.5rem;
-            }
-
-            details[open] summary::before {
-                transform: translate(0,50%) rotate(90deg); /* Rotate the arrow when details is open */
-              }
-
-
-            details ,summary {
-                list-style: none;
-            }
-
-            details::-webkit-details-marker,summary::-webkit-details-marker {
-                display: none;
-            }
-        }
-
-        section.step>details{
-            margin-bottom: 1rem;
-        }
-
-        section.step:hover{
-            dt.gold-color {
-                color:$colorQua;
-                span{
-                    color: $colorSec;
-                }
-            }
-        }
-
+    section.step > details {
+      margin-bottom: 1rem;
     }
+
+    section.step:hover {
+      dt.gold-color {
+        color: $colorQua;
+        span {
+          color: $colorSec;
+        }
+      }
+    }
+  }
 }

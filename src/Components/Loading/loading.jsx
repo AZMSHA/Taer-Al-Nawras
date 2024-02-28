@@ -1,10 +1,10 @@
-import Logo from "../../assets/Logos/LogoNoOutline.svg?react"
-import "./loading.scss"
+import Logo from "../../assets/Logos/LogoNoOutline.svg?react";
+import "./loading.scss";
 
-export default function Loading () {
-    return (
-        <div className="loader">
-            <Logo/>
-        </div>
-    )
+export default function Loading() {
+  return (
+    <div className="loader">
+      <Logo />
+    </div>
+  );
 }

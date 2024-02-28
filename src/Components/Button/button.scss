@@ -1,89 +1,93 @@
 @import "../../global.scss";
 
-@mixin button($fontColor,$backgroundColor,$borderColor) {
-    white-space: nowrap;
-    font-family: $fontSec;
-    font-size: $FZ-highlight;
-    color: $fontColor;
-    background-color: $backgroundColor;
-    padding: 0.35em 1.2em;
-    border-radius: $btnRadius;
-    border: solid 0.2rem $borderColor;
-    transition: all 0.2s;
+@mixin button($fontColor, $backgroundColor, $borderColor) {
+  white-space: nowrap;
+  font-family: $fontSec;
+  font-size: $FZ-highlight;
+  color: $fontColor;
+  background-color: $backgroundColor;
+  padding: 0.35em 1.2em;
+  border-radius: $btnRadius;
+  border: solid 0.2rem $borderColor;
+  transition: all 0.2s;
 }
 
 [class^="btn"]:hover {
-    @extend %C-pointer
+  @extend %C-pointer;
 }
 
 [class^="btn-pri"] {
-    @include button($colorTer,$hallow,$colorSec);
+  @include button($colorTer, $hallow, $colorSec);
 }
 
 .btn-pri-w {
-    font-size: 1.5rem;
-    padding: 0.5rem 2.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 2.5rem;
 }
 
-[class^="btn-pri"]:hover , [class^="btn-pri"]:focus  {
-    @extend %shine;
+[class^="btn-pri"]:hover,
+[class^="btn-pri"]:focus {
+  @extend %shine;
 }
 
 %shine {
-    border: solid 0.2rem $colorQua;
-    color: inherit;
-    box-shadow: inset 0 0 0.5rem $colorQua, 0 0 0.5rem $colorQua;
+  border: solid 0.2rem $colorQua;
+  color: inherit;
+  box-shadow: inset 0 0 0.5rem $colorQua, 0 0 0.5rem $colorQua;
 }
 
 [class^="btn-pri"]:active {
-    background-color: $colorQua;
-    color: $colorPri;
-    box-shadow: 0 0 1rem $colorQua,
+  background-color: $colorQua;
+  color: $colorPri;
+  box-shadow: 0 0 1rem $colorQua;
 }
 
 [class^="btn-pri"].pressed {
-    background-color: $colorQua !important;
-    color: $colorPri !important;
-    box-shadow: 0 0 1rem $colorQua !important;
+  background-color: $colorQua !important;
+  color: $colorPri !important;
+  box-shadow: 0 0 1rem $colorQua !important;
 }
 
 [class^="btn-sec"] {
-    @include button($colorPri,$colorTer ,$colorTer );
-    position:relative;
-    z-index: 1;
+  @include button($colorPri, $colorTer, $colorTer);
+  position: relative;
+  z-index: 1;
 }
 
 [class^="btn-sec"]:active {
-    box-shadow: inset 0px 0px 0.5rem $colorPri;
+  box-shadow: inset 0px 0px 0.5rem $colorPri;
 }
 
 [class^="btn-sec"].pressed {
-    box-shadow: inset 0px 0px 0.5rem $colorPri;
+  box-shadow: inset 0px 0px 0.5rem $colorPri;
 }
 
-.btn-sec::before , .btn-sec::after {
-    z-index: -1;
-    position: absolute;
-    color: $colorTer;
-    content: "";
-    padding: 0rem;
-    border-radius: $btnRadius;
-    background-color: $colorTer;
-    @extend %center;
-    opacity: 1;
+.btn-sec::before,
+.btn-sec::after {
+  z-index: -1;
+  position: absolute;
+  color: $colorTer;
+  content: "";
+  padding: 0rem;
+  border-radius: $btnRadius;
+  background-color: $colorTer;
+  @extend %center;
+  opacity: 1;
 }
 
-[class^="btn-sec"]:hover::after , [class^="btn-sec"]:focus::after{
-    animation: blow 0.4s linear 0s 1 normal backwards;
+[class^="btn-sec"]:hover::after,
+[class^="btn-sec"]:focus::after {
+  animation: blow 0.4s linear 0s 1 normal backwards;
 }
 
-[class^="btn-sec"]:hover::before , [class^="btn-sec"]:focus::before{
-    animation: blow 0.43s linear 0s 1 normal backwards;
+[class^="btn-sec"]:hover::before,
+[class^="btn-sec"]:focus::before {
+  animation: blow 0.43s linear 0s 1 normal backwards;
 }
 
 @keyframes blow {
-    to {
-        padding: 2.5em 7em;
-        opacity: 0;
-    }
+  to {
+    padding: 2.5em 7em;
+    opacity: 0;
+  }
 }

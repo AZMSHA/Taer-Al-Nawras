@@ -1,134 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "./global.scss";
 
 :root {
-    font-family: $fontPri;
+  font-family: $fontPri;
+  color: $colorTer;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+  ::selection {
     color: $colorTer;
-    -webkit-font-smoothing: antialiased;
-    cursor: default;
-    ::selection {
-        color: $colorTer;
-        background-color:  rgba(218, 165, 32, 0.56);
-    }
+    background-color: rgba(218, 165, 32, 0.56);
+  }
 }
 
 body {
-    background-color: $colorPri;
-    padding: 0%;
-    margin: 0%;
+  background-color: $colorPri;
+  padding: 0%;
+  margin: 0%;
 }
 
-
- @for $i from 1 through 6 {
-    h#{$i} {
-        @if $i == 1 {
-            font-size: $FZ-h1;
-        } @else {
-            font-size: $FZ-h2;
-        }
-        font-family: $fontSec;
-        color: $colorTer;
-        line-height: 1em;
+@for $i from 1 through 6 {
+  h#{$i} {
+    @if $i == 1 {
+      font-size: $FZ-h1;
+    } @else {
+      font-size: $FZ-h2;
     }
- }
+    font-family: $fontSec;
+    color: $colorTer;
+    line-height: 1em;
+  }
+}
 
 a {
-    text-decoration: none;
-    color: inherit;
-    &:focus { color: $colorQua;}
-    &:hover { color: $colorQua;}
+  text-decoration: none;
+  color: inherit;
+  &:focus {
+    color: $colorQua;
+  }
+  &:hover {
+    color: $colorQua;
+  }
 }
 
-
 .bg-gold-gradient {
-    background-image: radial-gradient(circle farthest-side at right,rgb(255, 218, 95) 1%, rgb(255, 184, 30), #cf931d, rgb(81, 58, 0) 100%);
+  background-image: radial-gradient(
+    circle farthest-side at right,
+    rgb(255, 218, 95) 1%,
+    rgb(255, 184, 30),
+    #cf931d,
+    rgb(81, 58, 0) 100%
+  );
 }
 
 .bg-gold-gradient-fixed {
-    background-image: radial-gradient(circle farthest-side at right,rgb(255, 218, 95) 1%, rgb(255, 184, 30), #cf931d, rgb(81, 58, 0) 100%);
-    background-attachment: fixed;
+  background-image: radial-gradient(
+    circle farthest-side at right,
+    rgb(255, 218, 95) 1%,
+    rgb(255, 184, 30),
+    #cf931d,
+    rgb(81, 58, 0) 100%
+  );
+  background-attachment: fixed;
 }
 
 .bg-grayscales {
-    background: repeating-linear-gradient(-45deg,black, rgb(54, 54, 54) 70px,gray 90px, $colorQua 100px, #ebf8e1 102px);
+  background: repeating-linear-gradient(
+    -45deg,
+    black,
+    rgb(54, 54, 54) 70px,
+    gray 90px,
+    $colorQua 100px,
+    #ebf8e1 102px
+  );
 }
 
 .bg-grayscales-fixed {
-    background: repeating-linear-gradient(-45deg,black, rgb(54, 54, 54) 70px,gray 90px, $colorQua 100px, #ebf8e1 102px);
-    background-attachment: fixed;
+  background: repeating-linear-gradient(
+    -45deg,
+    black,
+    rgb(54, 54, 54) 70px,
+    gray 90px,
+    $colorQua 100px,
+    #ebf8e1 102px
+  );
+  background-attachment: fixed;
 }
 
 .bg-wrapper {
-    width: 100%;
-    @include createFlex;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  @include createFlex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .gold-color {
-    color: $colorSec;
+  color: $colorSec;
 }
 
 .bg-white {
-    background-color: $colorTer;
+  background-color: $colorTer;
 }
 
 .flex {
-    @include createFlex;
+  @include createFlex;
 }
 
 #initial-loader {
-    animation: fadeAway 0.5s 0.3s linear forwards;
-    animation-play-state: paused;
+  animation: fadeAway 0.5s 0.3s linear forwards;
+  animation-play-state: paused;
 
-    svg {
-        transition: all 0.4s;
-    }
+  svg {
+    transition: all 0.4s;
+  }
 
-    @keyframes fadeAway {
-        from {
-            opacity: 1;
-        }
-
-        to {
-            display: none;
-            opacity: 0;
-        }
-    }
-}
-
-.swim {
-    animation: Swim 0.6s ease-out forwards;
-
-    [class^="letter"] {
-    animation: Swim 0.6s ease-out forwards;
-    }
-
-    @for $i from 0 through 200 {
-        .letter#{$i}{
-        animation-delay: calc(0s + (15ms * $i))
-        }
-    }
-}
-
-@keyframes Swim {
+  @keyframes fadeAway {
     from {
-        opacity: 0;
-        transform: translate(0px,4rem) rotateX(90deg) skewX(-15deg);
-    }
-
-    60% {
-        opacity: 0.4;
-    }
-
-    85% {
-        transform: translate(0px,-0.2rem) rotateX(5deg) skewX(0deg)
+      opacity: 1;
     }
 
     to {
-        opacity: 1;
-        transform: translate(0px,0px) rotateX(0deg) skewX(0deg);
+      display: none;
+      opacity: 0;
     }
+  }
 }
 
+.swim {
+  animation: Swim 0.6s ease-out forwards;
+
+  [class^="letter"] {
+    animation: Swim 0.6s ease-out forwards;
+  }
+
+  @for $i from 0 through 200 {
+    .letter#{$i} {
+      animation-delay: calc(0s + (15ms * $i));
+    }
+  }
+}
+
+@keyframes Swim {
+  from {
+    opacity: 0;
+    transform: translate(0px, 4rem) rotateX(90deg) skewX(-15deg);
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  85% {
+    transform: translate(0px, -0.2rem) rotateX(5deg) skewX(0deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px) rotateX(0deg) skewX(0deg);
+  }
+}

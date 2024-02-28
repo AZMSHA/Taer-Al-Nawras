@@ -1,54 +1,52 @@
-import Home from './Pages/Home/home.jsx'
-import Navbar from './Components/Navbar/navbar.jsx'
-import Footer from './Components/Footer/footer.jsx';
-import Form from './Components/Form/Form.jsx';
-import {useDisclosure} from '@chakra-ui/react'
-import { useState , useEffect ,createContext } from 'react';
+import Home from "./Pages/Home/home.jsx";
+import Navbar from "./Components/Navbar/navbar.jsx";
+import Footer from "./Components/Footer/footer.jsx";
+import Form from "./Components/Form/Form.jsx";
+import { useDisclosure } from "@chakra-ui/react";
+import { useState, useEffect, createContext } from "react";
 
-export const GContext = createContext()
+export const GContext = createContext();
 
 function App() {
-  const [loaded,setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-
-    window.addEventListener('load', function () {
+    window.addEventListener("load", function () {
       setLoaded(true);
     });
 
     return () => {
-      window.removeEventListener('load', function () {
+      window.removeEventListener("load", function () {
         setLoaded(true);
       });
     };
   }, []);
 
-  if(loaded){
-    const loaderSvg = document.querySelector('#initial-loader svg');
-    loaderSvg.style.width = "9rem"
-    const loader = document.getElementById("initial-loader")
-    loader.style.animationPlayState = "running"
+  if (loaded) {
+    const loaderSvg = document.querySelector("#initial-loader svg");
+    loaderSvg.style.width = "9rem";
+    const loader = document.getElementById("initial-loader");
+    loader.style.animationPlayState = "running";
 
-    const targetElement = document.querySelector('nav ul svg');
+    const targetElement = document.querySelector("nav ul svg");
     const targetRect = targetElement.getBoundingClientRect();
 
     const translateX = targetRect.left - loaderSvg.getBoundingClientRect().left;
     const translateY = targetRect.top - loaderSvg.getBoundingClientRect().top;
 
-    Object.assign(loaderSvg.style,{
-      transform: `translate(${translateX-48}px, ${translateY-48}px)`,
-    })
-
-}
-  const controls = useDisclosure()
+    Object.assign(loaderSvg.style, {
+      transform: `translate(${translateX - 48}px, ${translateY - 48}px)`,
+    });
+  }
+  const controls = useDisclosure();
 
   return (
-      <GContext.Provider value={{loaded:loaded,openModal:controls.onOpen}}>
-        <Navbar links={["Home","About us","Services","Contact us"]}/>
-        <Home/>
-        <Footer/>
-        <Form {...controls}/>
-      </GContext.Provider>
+    <GContext.Provider value={{ loaded: loaded, openModal: controls.onOpen }}>
+      <Navbar links={["Home", "About us", "Services", "Contact us"]} />
+      <Home />
+      <Footer />
+      <Form {...controls} />
+    </GContext.Provider>
   );
 }
 
