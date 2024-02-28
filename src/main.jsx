@@ -1,10 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import Home from "./Pages/Home/home.jsx";
+import About from "./Pages/About/about.jsx";
+import Services from "./Pages/Home/components/Services.jsx";
+import ErrorPage from "./Pages/Error/Error.jsx";
 import "./index.scss";
 import { ChakraBaseProvider, theme } from "@chakra-ui/react";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 delete theme.styles.global;
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/services",
+        element: <Services />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -13,7 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       resetCSS={false}
       disableGlobalStyle={true}
     >
-      <App />
+      <RouterProvider router={router} />
     </ChakraBaseProvider>
   </React.StrictMode>
 );

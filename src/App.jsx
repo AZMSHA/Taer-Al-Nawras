@@ -1,4 +1,4 @@
-import Home from "./Pages/Home/home.jsx";
+import { Outlet, Link } from "react-router-dom";
 import Navbar from "./Components/Navbar/navbar.jsx";
 import Footer from "./Components/Footer/footer.jsx";
 import Form from "./Components/Form/Form.jsx";
@@ -44,15 +44,19 @@ function App() {
     <GContext.Provider value={{ loaded: loaded, openModal: controls.onOpen }}>
       <Navbar
         links={[
-          "Home",
-          <a href="#about" key={"about-us"}>
+          <Link key={"home"} to={"/"}>
+            {"Home"}
+          </Link>,
+          <Link key={"about-us"} to={"about"}>
             {"About us"}
-          </a>,
-          "Services",
+          </Link>,
+          <Link key={"services"} to={"services"}>
+            {"Services"}
+          </Link>,
           "Contact us",
         ]}
       />
-      <Home />
+      <Outlet />
       <Footer />
       <Form {...controls} />
     </GContext.Provider>

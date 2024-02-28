@@ -129,7 +129,7 @@ export default function modalForm({ isOpen, onClose }) {
                 </ModalHeader>
                 <ModalCloseButton onClick={formik.resetForm} />
                 <ModalBody pb={6}>
-                  <Form onSubmit={((e) => e.preventDefault, formik.resetForm)}>
+                  <Form>
                     <FieldWrapper
                       required={true}
                       label="Name"
