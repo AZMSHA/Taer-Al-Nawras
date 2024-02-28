@@ -16,6 +16,16 @@
   @extend %C-pointer;
 }
 
+[class^="btn"]:disabled,
+[class^="btn"]:disabled:hover,
+[class^="btn"]:disabled:focus,
+[class^="btn"]:disabled:active {
+  cursor: default;
+  background-color: inherit;
+  box-shadow: none;
+  border-color: gray;
+}
+
 [class^="btn-pri"] {
   @include button($colorTer, $hallow, $colorSec);
 }

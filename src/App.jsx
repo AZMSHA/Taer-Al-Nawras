@@ -42,7 +42,16 @@ function App() {
 
   return (
     <GContext.Provider value={{ loaded: loaded, openModal: controls.onOpen }}>
-      <Navbar links={["Home", "About us", "Services", "Contact us"]} />
+      <Navbar
+        links={[
+          "Home",
+          <a href="#about" key={"about-us"}>
+            {"About us"}
+          </a>,
+          "Services",
+          "Contact us",
+        ]}
+      />
       <Home />
       <Footer />
       <Form {...controls} />

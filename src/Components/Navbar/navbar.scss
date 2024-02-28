@@ -28,7 +28,10 @@ nav {
       fill: $colorQua;
     }
 
-    * {
+    .btn-pri {
+      margin-left: 2rem;
+    }
+    li {
       font-size: $FZ-highlight;
       margin-left: 2rem;
       transition: color 0.2s;

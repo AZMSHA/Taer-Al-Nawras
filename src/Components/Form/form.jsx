@@ -16,7 +16,7 @@ import {
 import { Field, Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import MyButton from "../Button/button";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import * as Yup from "yup";
 import "./form.scss";
 
@@ -47,8 +47,8 @@ const FieldWrapper = ({ label, name, required, helpText, ...rest }) => (
               {...field}
               {...rest}
               id={name}
-              resize="none"
-              maxWidth="100%"
+              maxHeight="10rem"
+              resize="vertical"
             />
           ) : (
             <Input {...field} {...rest} id={name} />
@@ -66,8 +66,8 @@ const FieldWrapper = ({ label, name, required, helpText, ...rest }) => (
               {...field}
               {...rest}
               id={name}
-              resize="none"
-              maxWidth="100%"
+              maxHeight="10rem"
+              resize="vertical"
             />
           ) : (
             <Input {...field} {...rest} id={name} />
@@ -104,10 +104,12 @@ export default function modalForm({ isOpen, onClose }) {
         }}
       >
         {(formik) => {
-          const [loading, toggleLoading] = useState(false);
           useEffect(() => {
-            console.log(loading);
-          });
+            const timeoutId = setTimeout(() => {
+              formik.setSubmitting(false);
+            }, 5000);
+            return () => clearTimeout(timeoutId);
+          }, [formik.isSubmitting]);
           return (
             <Modal
               id={"modalForm"}
@@ -127,7 +129,7 @@ export default function modalForm({ isOpen, onClose }) {
                 </ModalHeader>
                 <ModalCloseButton onClick={formik.resetForm} />
                 <ModalBody pb={6}>
-                  <Form>
+                  <Form onSubmit={((e) => e.preventDefault, formik.resetForm)}>
                     <FieldWrapper
                       required={true}
                       label="Name"
