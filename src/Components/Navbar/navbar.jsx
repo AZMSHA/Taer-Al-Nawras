@@ -27,10 +27,7 @@ function Navbar({ links }) {
   }, []);
 
   return (
-    <div
-      className="bg-wrapper navbar"
-      state={`${scroll > 10 ? "opened" : "closed"}`}
-    >
+    <div className={`bg-wrapper navbar ${scroll > 10 ? "opened" : "closed"}`}>
       <nav>
         <ul>
           <Logo />
