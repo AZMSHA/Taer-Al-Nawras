@@ -28,9 +28,6 @@ nav {
       fill: $colorQua;
     }
 
-    .btn-pri {
-      margin-left: 2rem;
-    }
     li {
       font-size: $FZ-highlight;
       margin-left: 2rem;
@@ -39,8 +36,10 @@ nav {
     }
 
     *:hover {
-      @extend %C-pointer;
-      color: $colorQua;
+      :not(.btn-pri) {
+        color: $colorQua;
+        @extend %C-pointer;
+      }
     }
   }
 

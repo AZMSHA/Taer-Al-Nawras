@@ -1,5 +1,4 @@
 import "./navbar.scss";
-import Button from "../Button/button";
 import Logo from "../../assets/Logos/LogoNoOutline.svg?react";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
@@ -32,13 +31,6 @@ function Navbar({ links }) {
         <ul>
           <Logo />
           {links.map((link, index) => {
-            if (index === links.length - 1) {
-              return (
-                <Button key={index} Class={"btn-pri"}>
-                  {link}
-                </Button>
-              );
-            }
             return <li key={index}>{link}</li>;
           })}
         </ul>

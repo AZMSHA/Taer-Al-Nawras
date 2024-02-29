@@ -1,105 +1,104 @@
 @import "../../global.scss";
 
-
 #about {
-    overflow-x: hidden;
-    backdrop-filter:brightness(25%);
-    @include createFlex(column);
-    width: 100%;
-    h1 {
-        margin: 10rem 0rem;
-    }
+  overflow-x: hidden;
+  backdrop-filter: brightness(25%);
+  @include createFlex(column);
+  width: 100%;
+  h1 {
+    margin: 10rem 0rem;
+  }
 }
 
 #about-grid {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  row-gap: 20rem;
+  max-width: 1920px;
+  padding: 0rem 10rem 20rem;
+
+  .aboutImages {
+    transform: translate(80%, 0%);
+    animation: slide 0.25s ease 2s 1 reverse forwards;
+
+    &:nth-child(2) {
+      transform: translate(-80%, 0%);
+    }
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include createFlex;
+
+    img {
+      border-radius: $borderRadius;
+      position: relative;
+      animation: imageSplit 0.5s ease 2s 1 backwards;
+      transform: translate(15%, 15%);
+      width: 55%;
+      min-width: 15rem;
+      &:hover {
+        z-index: 2;
+      }
+    }
+
+    img:nth-child(2) {
+      position: absolute;
+      transform: translate(-15%, -15%);
+    }
+  }
+
+  section {
     display: grid;
-    justify-items: center;
     align-items: center;
-    row-gap: 20rem;
-    max-width: 1920px;
-    padding: 0rem 10rem 20rem;
-
-    .aboutImages {
-        transform: translate(80%,0%);
-        animation: slide 0.25s ease 2s 1 reverse forwards;
-
-        &:nth-child(2){
-            transform: translate(-80%,0%);
-        }
-        width: 100%;
-        height: 100%;
-        position: relative;
-        @include createFlex;
-
-        img {
-            border-radius: $borderRadius;
-            position: relative;
-            animation: imageSplit 0.5s ease 2s 1 backwards;
-            transform: translate(15%,15%);
-            width: 55%;
-            min-width: 15rem;
-            &:hover {
-                z-index: 2;
-            }
-        }
-
-        img:nth-child(2) {
-            position: absolute;
-            transform: translate(-15%,-15%);
-        }
+    justify-items: center;
+    grid-auto-flow: column;
+    grid-template-columns: 0.4fr 0.6fr;
+    column-gap: 3rem;
+    h2,
+    p {
+      opacity: 0;
+      transform: translate(-25%, 0%);
+      animation: fadeIn 0.25s ease-out 2s 1 reverse forwards;
     }
 
-    section {
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        grid-auto-flow: column;
-        grid-template-columns: 0.4fr 0.6fr;
-        column-gap: 3rem;
-        h2 , p {
-            opacity: 0;
-            transform: translate(-25%,0%);
-            animation: fadeIn 0.25s ease-out 2s 1 reverse forwards;
-        }
-
-        p {
-            animation-delay: 2.15s;
-        }
-
-        &:nth-child(2) {
-            text-align: right;
-            grid-template-columns: 0.6fr 0.4fr;
-            h2 , p {
-                transform: translate(25%,0%);
-            }
-        }
-
+    p {
+      animation-delay: 2.15s;
     }
+
+    &:nth-child(2) {
+      text-align: right;
+      grid-template-columns: 0.6fr 0.4fr;
+      h2,
+      p {
+        transform: translate(25%, 0%);
+      }
+    }
+  }
 }
 
 @keyframes imageSplit {
-    from {
-        transform: translate(0%,0%);
-    }
-    50% {
-        transform: translate(0%,0%);
-    }
+  from {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(0%, 0%);
+  }
 }
 
 @keyframes slide {
-    from {
-        transform: translate(0%,0%);
-    }
+  from {
+    transform: translate(0%, 0%);
+  }
 }
 
-
 @keyframes fadeIn {
-    from {
-        opacity: 1;
-        transform: translate(0%,0%);
-    }
+  from {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
 
-    50% {
-        opacity: 0.025;
-    }
+  50% {
+    opacity: 0.025;
+  }
 }

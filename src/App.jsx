@@ -2,6 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import Navbar from "./Components/Navbar/navbar.jsx";
 import Footer from "./Components/Footer/footer.jsx";
 import Form from "./Components/Form/Form.jsx";
+import Button from "./Components/Button/button.jsx";
 import { useDisclosure } from "@chakra-ui/react";
 import { useState, useEffect, createContext } from "react";
 
@@ -38,6 +39,8 @@ function App() {
       transform: `translate(${translateX - 48}px, ${translateY - 48}px)`,
     });
   }
+
+  console.log(loaded);
   const controls = useDisclosure();
 
   return (
@@ -53,7 +56,9 @@ function App() {
           <Link key={"services"} to={"services"}>
             {"Services"}
           </Link>,
-          "Contact us",
+          <Button key={"contact-us"} Class={"btn-pri"}>
+            {"Contact us"}
+          </Button>,
         ]}
       />
       <Outlet />

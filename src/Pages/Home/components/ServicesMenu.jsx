@@ -1,8 +1,8 @@
 import Button from "../../../Components/Button/button";
 import useImagePromise from "../../../Components/Hooks/useImage";
-import "./Styles/Services.scss";
+import "./Styles/ServicesMenu.scss";
 
-export default function Services() {
+export default function ServicesMenu() {
   const switches = (format, index) => {
     switch (format) {
       case "png":
@@ -83,7 +83,7 @@ export default function Services() {
 
   return (
     <>
-      <section id="services">
+      <section id="servicesMenu">
         <h1>OUR SERVICES</h1>
         {Lists}
         <div className="btn-area">

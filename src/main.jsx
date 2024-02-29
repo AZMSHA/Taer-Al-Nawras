@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Home from "./Pages/Home/home.jsx";
 import About from "./Pages/About/about.jsx";
-import Services from "./Pages/Home/components/Services.jsx";
+import Services from "./Pages/Services/services.jsx";
+import Service from "./Pages/Services/components/service.jsx";
 import ErrorPage from "./Pages/Error/Error.jsx";
 import "./index.scss";
 import { ChakraBaseProvider, theme } from "@chakra-ui/react";
@@ -22,11 +23,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: <About style={{ paddingTop: "10rem" }} />,
       },
       {
         path: "/services",
-        element: <Services />,
+        element: <Services style={{ paddingTop: "10rem" }} />,
+        children: [
+          {
+            path: "/services/1",
+            element: <Service />,
+          },
+        ],
       },
     ],
   },

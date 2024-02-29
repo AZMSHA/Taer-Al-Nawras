@@ -102,7 +102,7 @@ export default function Steps() {
       <dl>
         {faqs.map((section, index1) => {
           return (
-            <section key={index1} className="step">
+            <div key={index1} className="step">
               {section.map((faq, index2) => {
                 if (!index2) {
                   return (
@@ -122,7 +122,7 @@ export default function Steps() {
                   </details>
                 );
               })}
-            </section>
+            </div>
           );
         })}
       </dl>

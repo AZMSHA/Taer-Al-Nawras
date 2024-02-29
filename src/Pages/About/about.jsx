@@ -1,7 +1,7 @@
 import "./about.scss";
 import useImagePromise from "../../Components/Hooks/useImage";
 
-export default function About() {
+export default function About(props) {
   const switches = (format, index) => {
     switch (format) {
       case "jpeg":
@@ -31,7 +31,7 @@ export default function About() {
         backgroundAttachment: "fixed",
       }}
     >
-      <section id="about">
+      <section {...props} id="about">
         <h1>ABOUT US</h1>
         <div id="about-grid">
           <section>
