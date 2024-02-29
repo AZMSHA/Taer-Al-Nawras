@@ -31,6 +31,36 @@ body {
   }
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    padding: 0.5rem 0rem;
+    transition: all 0.2s linear;
+  }
+
+  li:hover {
+    color: $colorQua;
+    @extend %C-pointer;
+  }
+}
+
+menu {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    padding: 0.5rem 0rem;
+    transition: all 0.2s linear;
+  }
+
+  li:hover {
+    color: $colorQua;
+    @extend %C-pointer;
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;

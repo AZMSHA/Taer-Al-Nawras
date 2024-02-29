@@ -1,8 +1,10 @@
 import Button from "../../../Components/Button/button";
 import useImagePromise from "../../../Components/Hooks/useImage";
+import { Link, useNavigate } from "react-router-dom";
 import "./Styles/ServicesMenu.scss";
 
 export default function ServicesMenu() {
+  const Navigation = useNavigate();
   const switches = (format, index) => {
     switch (format) {
       case "png":
@@ -21,73 +23,99 @@ export default function ServicesMenu() {
     }
   };
 
-  const images = useImagePromise(switches, 3, ["jpg", "webp", "png"]);
+  const images = useImagePromise(switches, 6, ["jpg", "webp", "png"]);
 
   const data = {
     set1: [
-      "Outdoor Signage",
-      "Building Signage",
-      "3D Sign Boards",
-      "Totem Signs",
-      "Neon Effect Signs",
-      "Shop Front Signboards",
-      "Rooftop",
-      "Acrylic Sign Board",
+      { linkName: "Outdoor Signage", serviceID: "outdoor+signage" },
+      "Vibrant LED Displays",
+      "Day-to-Night Brilliance",
+      "Dynamic Outdoor Signage",
+      "Standout Signage Solutions",
+      "Round-the-Clock Visibility",
     ],
 
     set2: [
-      "Digital Signage",
-      "Flexible Led Display",
-      "Indoor Display",
-      "Outdoor LED Display",
-      "Led Screen",
-      "3D Led Signage",
-      "Video Wall",
-      "Digital Kiosk",
+      { linkName: "Digtal Signage", serviceID: "digtal+signage" },
+      "Revolutionary Digital Experiences",
+      "Transformative Visual Brilliance",
+      "Digital Displays That Stand Out",
+      "Unmatched Digital Brilliance",
+      "Seamless Digital Brilliance",
     ],
 
     set3: [
-      "Indoor Signage",
-      "Wayfinding Signs",
-      "Informational Signs",
-      "Directional Signs",
-      "Safety Signs",
-      "Reception Area Signs",
-      "Room Identification Signs",
-      "Elevator and Escalator Signs",
+      { linkName: "Indoor Signage", serviceID: "indoor+signage" },
+      "Captivating Indoor Brilliance",
+      "Dynamic Indoor Signage",
+      "Standout Indoor Solutions",
+      "Illuminating Indoor Impressions",
+      "Indoor Signs That Shine",
+    ],
+    set4: [
+      { linkName: "Wayfinding", serviceID: "wayfinding" },
+      "Intuitive Wayfinding Designs",
+      "Dynamic Wayfinding Solutions",
+      "Seamless Directional Brilliance",
+      "Effortless Navigation Impressions",
+      "Wayfinding Signs That Stand Out",
+    ],
+    set5: [
+      { linkName: "Neon Signs", serviceID: "neon+signs" },
+      "Captivating Neon Nights",
+      "Radiant Neon Sign Solutions",
+      "Timeless Glow of Neon Brilliance",
+      "Seamless Neon Brilliance",
+      "Neon Signs That Stand Out",
+    ],
+    set6: [
+      { linkName: "AMC / Service", serviceID: "amc+service" },
+      "Worry-Free Maintenance Solutions",
+      "Seamless Care Brilliance",
+      "Comprehensive AMC/Service",
+      "Unmatched AMC/Service Brilliance",
+      "Innovative Maintenance Solutions",
     ],
   };
-
-  const Lists = [];
-
-  for (let index = 1; index < 4; index++) {
-    const list = data[`set${index}`];
-    Lists.push(
-      <section key={index}>
-        <img src={images[index - 1]} alt="" />
-        <div className="backdrop">
-          <header>
-            <h2 className="gold-color">{list[0]}</h2>
-          </header>
-          <ul>
-            {list.map((link, index) => {
-              if (index) {
-                return <li key={index}>{link}</li>;
-              }
-            })}
-          </ul>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <>
       <section id="servicesMenu">
         <h1>OUR SERVICES</h1>
-        {Lists}
+        {Object.keys(data).map((dataSet, index) => {
+          return (
+            <Link
+              key={dataSet + index}
+              to={`/services/${data[dataSet][0].serviceID}`}
+            >
+              <section>
+                <img
+                  src={images[index]}
+                  alt={data[dataSet][0] + "backdrop image"}
+                />
+                <div className="backdrop">
+                  <header>
+                    <h2 className="gold-color">{data[dataSet][0].linkName}</h2>
+                  </header>
+                  <ul>
+                    {data[dataSet].map((listItem, index1) => {
+                      if (index1) {
+                        return <li key={listItem + index1}>{listItem}</li>;
+                      }
+                    })}
+                  </ul>
+                </div>
+              </section>
+            </Link>
+          );
+        })}
         <div className="btn-area">
-          <Button Class={"btn-pri-w"}>Learn more</Button>
+          <Button
+            onClick={() => Navigation(`/services/"outdoor+signage"`)}
+            Class={"btn-pri-w"}
+          >
+            Learn more
+          </Button>
         </div>
       </section>
     </>

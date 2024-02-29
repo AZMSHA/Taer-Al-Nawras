@@ -40,7 +40,6 @@ function App() {
     });
   }
 
-  console.log(loaded);
   const controls = useDisclosure();
 
   return (
@@ -50,10 +49,10 @@ function App() {
           <Link key={"home"} to={"/"}>
             {"Home"}
           </Link>,
-          <Link key={"about-us"} to={"about"}>
+          <Link key={"about-us"} to={"/about"}>
             {"About us"}
           </Link>,
-          <Link key={"services"} to={"services"}>
+          <Link key={"services"} to={"/services"}>
             {"Services"}
           </Link>,
           <Button key={"contact-us"} Class={"btn-pri"}>

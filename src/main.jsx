@@ -27,10 +27,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <Services style={{ paddingTop: "10rem" }} />,
+        element: <Services />,
         children: [
           {
-            path: "/services/1",
+            path: "/services/:serviceID",
             element: <Service />,
           },
         ],

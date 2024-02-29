@@ -6,6 +6,7 @@
   max-width: 1920px;
   grid-template-columns: [grid-start] repeat(3, 1fr) [grid-end];
   column-gap: 2rem;
+  row-gap: 2rem;
   padding: 0rem 2rem;
 
   h1 {
@@ -39,14 +40,8 @@
       padding: 0;
       margin: 0;
       li {
-        list-style: none;
+        list-style: disc;
         padding: 0.5rem 0rem;
-        transition: transform 0.25s ease-out;
-      }
-
-      li:hover {
-        @extend %C-pointer;
-        transform: translate(1.5rem, 0rem);
       }
     }
   }
@@ -64,6 +59,9 @@
 
   section:hover {
     @extend %C-pointer;
+    li {
+      color: $colorTer;
+    }
     img {
       filter: blur(0rem) brightness(50%);
     }
