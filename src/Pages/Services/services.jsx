@@ -15,19 +15,18 @@ export default function Services(props) {
       <div className="bg-wrapper">
         <section id="services">
           <h1>OUR SERVICES</h1>
-          <menu>
-            {links.map((link) => {
-              return (
-                <li key={link.serviceID}>
-                  {
-                    <Link to={`/services/${link.serviceID}`}>
-                      {link.linkName}
-                    </Link>
-                  }
-                </li>
-              );
-            })}
-          </menu>
+          <nav>
+            <ul>
+              {links.map((link) => {
+                return (
+                  <Link key={link.serviceID} to={`/services/${link.serviceID}`}>
+                    <li>{link.linkName}</li>
+                    <i className="fa-solid fa-caret-right"></i>
+                  </Link>
+                );
+              })}
+            </ul>
+          </nav>
           <div className="detailsPage">
             <Outlet />
           </div>

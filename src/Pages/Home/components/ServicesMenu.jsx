@@ -91,7 +91,7 @@ export default function ServicesMenu() {
               <section>
                 <img
                   src={images[index]}
-                  alt={data[dataSet][0] + "backdrop image"}
+                  alt={data[dataSet][0].linkName + " backdrop image"}
                 />
                 <div className="backdrop">
                   <header>

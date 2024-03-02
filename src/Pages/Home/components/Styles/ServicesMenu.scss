@@ -21,8 +21,18 @@
     margin: 4rem 0rem;
   }
 
+  a:focus {
+    color: $colorTer;
+  }
+
   section {
+    max-height: 40rem;
     position: relative;
+    height: 100%;
+    overflow: hidden;
+    &:hover ul {
+      transform: translate(0%, 0%);
+    }
 
     img {
       filter: blur(2px) brightness(30%);
@@ -30,14 +40,16 @@
       z-index: -1;
       width: 100%;
       height: 100%;
-      transition: filter 0.25s;
+      transition: filter 0.25s, transform 0.25s;
       object-fit: cover;
       object-position: center;
       border-radius: $borderRadius;
     }
 
     ul {
-      padding: 0;
+      transition: transform 0.25s;
+      transform: translate(0%, 200%);
+      padding-top: 4.5rem;
       margin: 0;
       li {
         list-style: disc;
@@ -47,10 +59,12 @@
   }
 
   .backdrop {
-    @include createFlex(column, start, start);
+    @include createFlex(column);
     padding: 2rem 2rem 10vw 2rem;
 
     h2 {
+      transform: translate(0%, 50%);
+      font-size: $FZ-h2;
       border-bottom: 1px solid $colorSec;
       margin-bottom: 0.5rem;
       padding-bottom: 0.5rem;

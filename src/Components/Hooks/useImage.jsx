@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useImagePromise(switches, length, formats) {
+export default function useImage(switches, length, formats) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {

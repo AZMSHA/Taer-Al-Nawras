@@ -12,7 +12,7 @@ footer {
   align-items: start;
   width: calc(100% - 5rem);
   max-width: 1920px;
-  padding: 10rem 2.5rem;
+  padding: 5rem 2.5rem;
 
   figure {
     @include createFlex(column);

@@ -52,7 +52,7 @@ function App() {
           <Link key={"about-us"} to={"/about"}>
             {"About us"}
           </Link>,
-          <Link key={"services"} to={"/services"}>
+          <Link key={"services"} to={`/services/"outdoor+signage"`}>
             {"Services"}
           </Link>,
           <Button key={"contact-us"} Class={"btn-pri"}>

@@ -27,7 +27,7 @@ function Navbar({ links }) {
 
   return (
     <div className={`bg-wrapper navbar ${scroll > 10 ? "opened" : "closed"}`}>
-      <nav>
+      <nav id="navbar">
         <ul>
           <Logo />
           {links.map((link, index) => {

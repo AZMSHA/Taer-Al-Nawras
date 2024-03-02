@@ -42,8 +42,9 @@ function Hero() {
           className="neon-p swim"
           style={{ ...animate, animationDelay: "300ms" }}
         >
-          Start your journey to success with the Taer Al-Nawras signage company,
-          and together, we&apos;ll compose a narrative of achievement.
+          Expose your brand to larger audiences with Taer Al-Nawras Signage,{" "}
+          <br />
+          reach heights that have been reached never before
         </p>
       </div>
     </section>

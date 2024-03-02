@@ -6,28 +6,44 @@
   max-width: 1920px;
   grid-template-columns: [grid-start] 20rem 1fr [grid-end];
   column-gap: 3rem;
-  padding: 10rem 10rem 26.5vh;
+  padding: 10rem 1rem 26.5vh;
   h1 {
     grid-column: grid;
     margin: 10rem 0rem;
     text-align: center;
   }
-  menu {
-    padding: 0;
-    margin: 0;
-    li {
-      list-style: none;
-      border: solid 1px white;
-      padding: 1rem 5rem;
-      margin-bottom: 1rem;
-      a {
-        display: flex;
-        transition: all 0.25s linear;
+  nav {
+    ul {
+      display: grid;
+      border-radius: $borderRadius;
+    }
+    a {
+      @include createFlex(row, space-between, center);
+
+      width: 100%;
+      transition: all 0.2s linear;
+
+      i {
+        transform: translate(-7rem, 0rem);
+        font-size: 1.5rem;
+        transition: all 0.2s linear;
+      }
+
+      &:focus {
+        i {
+          transform: translate(-6rem, 0rem);
+        }
       }
       &:hover {
-        a {
-          transform: translate(1.5rem, 0rem);
+        i {
+          transform: translate(-6rem, 0rem);
         }
+      }
+      li {
+        font-weight: 600;
+        padding: 2rem 0rem;
+        text-align: center;
+        white-space: nowrap;
       }
     }
   }

@@ -1,132 +1,159 @@
 @import "../../../../global.scss";
 
 #hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 95vh;
 }
 
 .hero-grid {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    z-index: 2;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-areas:
+  position: absolute;
+  width: 100%;
+  height: 95vh;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
     "spc0  spc0  spc0  spc0 spc0 spc0  spc0  spc0"
-    "spc1  img1  spc2  spc2 spc2 spc2  img2  spc3"
+    "spc1  spc1  spc2  spc2 spc2 spc2  spc2  spc3"
     "spc4  spc4  titl  titl titl titl  spc5  spc5"
-    "img3  spc6  titl  titl titl titl  spc7  img4"
+    "spc6  spc6  titl  titl titl titl  spc7  spc7"
     "spc8  spc8  titl  titl titl titl  spc9  spc9"
-    "spc11 img5  stxt  stxt stxt stxt  img6  spc14"
-    "spc15 spc15 stxt  stxt stxt stxt  spc16 spc16";
-    grid-template-columns: repeat(8,1fr);
-    grid-template-rows: repeat(7,1fr);
+    "spc11 spc11  stxt  stxt stxt stxt  spc14  spc14"
+    "spc15 img1 img2 img3 img4 img5 img6 spc16";
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 
-    img {
-        filter: grayscale(1) brightness(0.5);
-        opacity: 0;
-        transform: translate(0rem,-20rem);
-        border-radius: $circleRadius;
-        height: 10vh;
-        width: 10vh;
-        object-fit: cover;
-        object-position: center;
-        transition: all 0.25s;
-        animation:  bounce 1s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
-        animation-fill-mode: forwards;
-        animation-play-state:paused;
+  img {
+    position: absolute;
+    opacity: 0;
+    transform: translate(0rem, -20rem);
+    border-radius: $circleRadius;
+    height: 10vh;
+    width: 10vh;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.25s;
+    animation: bounce 1s
+      linear(
+        0 0%,
+        0 2.27%,
+        0.02 4.53%,
+        0.04 6.8%,
+        0.06 9.07%,
+        0.1 11.33%,
+        0.14 13.6%,
+        0.25 18.15%,
+        0.39 22.7%,
+        0.56 27.25%,
+        0.77 31.8%,
+        1 36.35%,
+        0.89 40.9%,
+        0.85 43.18%,
+        0.81 45.45%,
+        0.79 47.72%,
+        0.77 50%,
+        0.75 52.27%,
+        0.75 54.55%,
+        0.75 56.82%,
+        0.77 59.1%,
+        0.79 61.38%,
+        0.81 63.65%,
+        0.85 65.93%,
+        0.89 68.2%,
+        1 72.7%,
+        0.97 74.98%,
+        0.95 77.25%,
+        0.94 79.53%,
+        0.94 81.8%,
+        0.94 84.08%,
+        0.95 86.35%,
+        0.97 88.63%,
+        1 90.9%,
+        0.99 93.18%,
+        0.98 95.45%,
+        0.99 97.73%,
+        1 100%
+      );
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+  }
+
+  @for $index from 1 through 6 {
+    img:nth-child(#{$index}) {
+      animation-delay: calc(300ms + 70ms * (3 * $index));
+      grid-area: img#{$index};
     }
 
-    @for $index from 1 through 6 {
-        img:nth-child(#{$index}) {
-            animation-delay: calc(300ms + 70ms * (3 * $index));
-            grid-area: img#{$index};
-        }
-
-        img:nth-child(#{$index}):hover {
-            box-shadow:
-            1px 1px 0.1rem adjust-hue(blue, $index * 36),
-            1px 1px 1rem adjust-hue(blue, $index * 36);
-        }
+    img:nth-child(#{$index}):hover {
+      box-shadow: 1px 1px 0.1rem adjust-hue(blue, $index * 36),
+        1px 1px 1rem adjust-hue(blue, $index * 36);
     }
+  }
 
-    @keyframes bounce {
-        to {
-            opacity: 1;
-            transform: translate(0rem,0rem);
-        }
+  @keyframes bounce {
+    to {
+      opacity: 1;
+      transform: translate(0rem, 0rem);
     }
+  }
 
-    img:hover {
-        filter: grayscale(0) saturate(2) ;
-        border-radius: $borderRadius;
-        width: 14.27vh;
-        height: 14.27vh;
-    }
+  img:hover {
+    border-radius: $borderRadius;
+    width: 16vh;
+    height: 16vh;
+  }
 }
 
 .neon-p {
-    text-align: center;
-    align-self: baseline;
-    margin: 5rem;
-    grid-area: stxt;
-    z-index: 1;
+  text-align: center;
+  align-self: baseline;
+  margin: 5rem;
+  grid-area: stxt;
+  z-index: 1;
 }
 
 .neon {
-    position: relative;
-    font-weight: 300;
-    margin: 0px;
-    text-align: center;
-    opacity: 1;
-    grid-area: titl;
-    color: white;
+  position: relative;
+  font-weight: 300;
+  margin: 0px;
+  text-align: center;
+  opacity: 1;
+  grid-area: titl;
+  color: white;
 
-    text-shadow:
-    0 0 0.1em $colorQua,
-    0 0 0.5em $colorQua,
-    0 0 1em $colorQua,
-    0 0 0.3em $colorQua;
+  text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+    0 0 0.1em $colorQua;
 
-    box-shadow:
-    inset 0 0 0.5em $colorQua,
-    inset 0 0 1em $colorQua,
-    0 0 0.1em $colorQua,
-    0 0 1em $colorQua,
-    0 0 8em $colorQua;
+  box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+    0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
 
-    animation: pulsate 1s linear infinite alternate forwards;
-    border: white solid 0.2em;
-    border-radius: $borderRadius;
-    padding: 5vw;
+  animation: pulsates 1s linear infinite alternate forwards;
+  border: white solid 0.2em;
+  border-radius: 2.5rem;
+  padding: 5vw;
 }
 
 .neon::before {
-    z-index: -1;
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    background: $colorQua;
-    top: 120%;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: $colorQua;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    transform: perspective(1em) rotateX(40deg) scale(1.2, 0.2);
-    filter: blur(1em);
-    opacity: 0.7;
-  }
-
-@keyframes pulsate {
-    to {
-        text-shadow:
-        0 0 0.1em $colorQua,
-        0 0 0.5em $colorQua,
-        0 0 1em $colorQua,
-        0 0 1em $colorQua;
-    }
+  transform: perspective(1em) rotateX(40deg) scale(1.2, 0.2);
+  filter: blur(1em);
+  opacity: 0.7;
 }
 
+@keyframes pulsate {
+  to {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 1em $colorQua;
+  }
+}
