@@ -3,13 +3,15 @@
 #hero {
   position: relative;
   width: 100%;
-  min-height: 95vh;
+  height: 95vh;
+  min-height: 55rem;
 }
 
 .hero-grid {
   position: absolute;
   width: 100%;
   height: 95vh;
+  min-height: 55rem;
   z-index: 2;
   display: grid;
   justify-items: center;
@@ -31,6 +33,7 @@
     transform: translate(0rem, -20rem);
     border-radius: $circleRadius;
     height: 10vh;
+
     width: 10vh;
     object-fit: cover;
     object-position: center;
@@ -82,11 +85,12 @@
 
   @for $index from 1 through 6 {
     img:nth-child(#{$index}) {
-      animation-delay: calc(300ms + 70ms * (3 * $index));
+      animation-delay: calc(280ms + 40ms * $index);
       grid-area: img#{$index};
     }
 
-    img:nth-child(#{$index}):hover {
+    img:nth-child(#{$index}):hover,
+    img:nth-child(#{$index}):active {
       box-shadow: 1px 1px 0.1rem adjust-hue(blue, $index * 36),
         1px 1px 1rem adjust-hue(blue, $index * 36);
     }
@@ -99,7 +103,8 @@
     }
   }
 
-  img:hover {
+  img:hover,
+  img:active {
     border-radius: $borderRadius;
     width: 16vh;
     height: 16vh;
@@ -107,6 +112,7 @@
 }
 
 .neon-p {
+  font-size: $FZ-highlight;
   text-align: center;
   align-self: baseline;
   margin: 5rem;
@@ -123,13 +129,20 @@
   grid-area: titl;
   color: white;
 
-  text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
-    0 0 0.1em $colorQua;
+  span[class^="letter"] {
+    animation: pulsateText 1.5s linear 1 forwards;
+  }
+
+  @for $i from 1 through 7 {
+    span.letter:nth-child(#{$i}) {
+      animation-delay: #{random(6)}00ms;
+    }
+  }
 
   box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
     0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
 
-  animation: pulsates 1s linear infinite alternate forwards;
+  animation: pulsate 1.5s linear 1 forwards;
   border: white solid 0.2em;
   border-radius: 2.5rem;
   padding: 5vw;
@@ -152,8 +165,125 @@
 }
 
 @keyframes pulsate {
+  from {
+    box-shadow: none;
+  }
+
+  10% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+  20% {
+    box-shadow: none;
+  }
+  15% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+  30% {
+    box-shadow: none;
+  }
+  35% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+  39% {
+    box-shadow: none;
+  }
+  40% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+  45% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+  60% {
+    box-shadow: none;
+  }
+  70% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+  80% {
+    box-shadow: none;
+  }
+  90% {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+
+  95% {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: inset 0 0 0.5em $colorQua, inset 0 0 1em $colorQua,
+      0 0 0.1em $colorQua, 0 0 1em $colorQua, 0 0 8em $colorQua;
+  }
+}
+
+@keyframes pulsateText {
+  from {
+    text-shadow: none;
+  }
+
+  10% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+  20% {
+    text-shadow: none;
+  }
+  15% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+  30% {
+    text-shadow: none;
+  }
+  35% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+  39% {
+    text-shadow: none;
+  }
+  40% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+  45% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+  60% {
+    text-shadow: none;
+  }
+  70% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+  80% {
+    text-shadow: none;
+  }
+  90% {
+    text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
+      0 0 0.1em $colorQua;
+  }
+
+  95% {
+    text-shadow: none;
+  }
+
   to {
     text-shadow: 0 0 0.1em $colorQua, 0 0 0.5em $colorQua, 0 0 1em $colorQua,
-      0 0 1em $colorQua;
+      0 0 0.1em $colorQua;
   }
 }

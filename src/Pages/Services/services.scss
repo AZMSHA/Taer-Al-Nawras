@@ -4,8 +4,9 @@
   display: grid;
   width: calc(100% - 8rem);
   max-width: 1920px;
-  grid-template-columns: [grid-start] 20rem 1fr [grid-end];
+  grid-template-columns: [grid-start] 15rem 1fr [grid-end];
   column-gap: 3rem;
+  row-gap: 3rem;
   padding: 10rem 1rem 26.5vh;
   h1 {
     grid-column: grid;
@@ -15,33 +16,31 @@
   nav {
     ul {
       display: grid;
+      row-gap: 1rem;
       border-radius: $borderRadius;
     }
     a {
       @include createFlex(row, space-between, center);
-
+      border-radius: $borderRadius;
       width: 100%;
       transition: all 0.2s linear;
 
       i {
-        transform: translate(-7rem, 0rem);
+        transform: translate(-3rem, 0rem);
         font-size: 1.5rem;
         transition: all 0.2s linear;
       }
 
-      &:focus {
-        i {
-          transform: translate(-6rem, 0rem);
-        }
-      }
+      &:focus,
+      &.active,
       &:hover {
         i {
-          transform: translate(-6rem, 0rem);
+          transform: translate(-2rem, 0rem);
         }
       }
       li {
         font-weight: 600;
-        padding: 2rem 0rem;
+        padding: 2rem 0rem 2rem 1rem;
         text-align: center;
         white-space: nowrap;
       }

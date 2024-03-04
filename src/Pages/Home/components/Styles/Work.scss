@@ -1,0 +1,23 @@
+@import "../../../../global.scss";
+
+#work {
+  display: grid;
+  width: 100%;
+  max-width: 1920px;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: [grid-start] 1fr [grid-end];
+  position: relative;
+
+  h1 {
+    grid-column: grid;
+    margin: 10rem 0rem;
+    text-align: center;
+  }
+
+  .carousel {
+    grid-column: grid;
+    height: 100%;
+    height: 30rem;
+  }
+}

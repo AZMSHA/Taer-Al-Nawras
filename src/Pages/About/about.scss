@@ -20,7 +20,7 @@
 
   .aboutImages {
     transform: translate(80%, 0%);
-    animation: slide 0.25s ease 2s 1 reverse forwards;
+    animation: slide 0.25s ease 1 reverse forwards;
 
     &:nth-child(2) {
       transform: translate(-80%, 0%);
@@ -33,7 +33,7 @@
     img {
       border-radius: $borderRadius;
       position: relative;
-      animation: imageSplit 0.5s ease 2s 1 backwards;
+      animation: imageSplit 0.5s ease 1 backwards;
       transform: translate(15%, 15%);
       width: 55%;
       min-width: 15rem;
@@ -59,11 +59,11 @@
     p {
       opacity: 0;
       transform: translate(-25%, 0%);
-      animation: fadeIn 0.25s ease-out 2s 1 reverse forwards;
+      animation: fadeIn 0.25s ease-out 1 reverse forwards;
     }
 
     p {
-      animation-delay: 2.15s;
+      animation-delay: 0.15s;
     }
 
     &:nth-child(2) {

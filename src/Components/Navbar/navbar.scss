@@ -10,7 +10,7 @@
   justify-content: center;
   z-index: 3;
   ul {
-    margin: 1rem 5rem 1rem 0rem;
+    margin: 0.5rem 5rem 0rem 0.5rem;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -18,7 +18,7 @@
     align-items: center;
 
     svg {
-      width: 9rem;
+      width: 7.5rem;
       .fil0 {
         transition: all 0.2s;
       }
@@ -65,7 +65,7 @@ div.bg-wrapper.navbar {
 div.bg-wrapper.navbar.opened {
   z-index: 10;
   background-color: black;
-  padding: 5.6rem 0rem;
+  padding: 4.3rem 0rem;
 }
 
 div.bg-wrapper.navbar.closed {

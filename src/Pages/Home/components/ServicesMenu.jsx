@@ -2,10 +2,11 @@ import Button from "../../../Components/Button/button";
 import useImagePromise from "../../../Components/Hooks/useImage";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/ServicesMenu.scss";
+import { useCallback } from "react";
 
 export default function ServicesMenu() {
   const Navigation = useNavigate();
-  const switches = (format, index) => {
+  const switches = useCallback((format, index) => {
     switch (format) {
       case "png":
         return import(`../assets/Services${index}.png`);
@@ -21,7 +22,7 @@ export default function ServicesMenu() {
           reject(format);
         });
     }
-  };
+  }, []);
 
   const images = useImagePromise(switches, 6, ["jpg", "webp", "png"]);
 
@@ -36,7 +37,7 @@ export default function ServicesMenu() {
     ],
 
     set2: [
-      { linkName: "Digtal Signage", serviceID: "digtal+signage" },
+      { linkName: "Digital Signage", serviceID: "digital+signage" },
       "Revolutionary Digital Experiences",
       "Transformative Visual Brilliance",
       "Digital Displays That Stand Out",
@@ -90,6 +91,7 @@ export default function ServicesMenu() {
             >
               <section>
                 <img
+                  loading="lazy"
                   src={images[index]}
                   alt={data[dataSet][0].linkName + " backdrop image"}
                 />
@@ -111,7 +113,7 @@ export default function ServicesMenu() {
         })}
         <div className="btn-area">
           <Button
-            onClick={() => Navigation(`/services/"outdoor+signage"`)}
+            onClick={() => Navigation(`/services/outdoor+signage`)}
             Class={"btn-pri-w"}
           >
             Learn more

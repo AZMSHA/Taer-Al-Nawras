@@ -6,10 +6,35 @@ import { useContext } from "react";
 
 export default function Footer() {
   return (
-    <div className="bg-wrapper bg-white">
+    <div className="footer bg-wrapper bg-white">
       <footer>
         <Banner />
-        <Map />
+        <figure>
+          <Logo />
+          <figcaption>Stand out from the rest</figcaption>
+        </figure>
+        <section className="social-links">
+          <h2 className="gold-color">Check us out</h2>
+          <ul>
+            <li>
+              <i className="fa-brands fa-instagram"></i>
+              <a href="https://www.instagram.com">{"INSTAGRAM"}</a>
+            </li>
+            <li>
+              <i className="fa-brands fa-facebook-f"></i>
+              <a href="https://www.facebook.com">{"FACEBOOK"}</a>
+            </li>
+            <li>
+              <i className="fa-brands fa-x-twitter"></i>
+              <a href="https://www.x.com">{"X (TWITTER)"}</a>
+            </li>
+            <li>
+              <i className="fa-brands fa-linkedin-in"></i>
+              <a href="https://www.linkedin.com">{"LINKEDIN"}</a>
+            </li>
+          </ul>
+        </section>
+
         <section className="contact-info">
           <h2 className="gold-color">Get in touch</h2>
           <address>
@@ -41,31 +66,7 @@ export default function Footer() {
             </ul>
           </address>
         </section>
-        <section className="social-links">
-          <h2 className="gold-color">Check us out</h2>
-          <ul>
-            <li>
-              <i className="fa-brands fa-instagram"></i>
-              <a href="https://www.instagram.com">{"INSTAGRAM"}</a>
-            </li>
-            <li>
-              <i className="fa-brands fa-facebook-f"></i>
-              <a href="https://www.facebook.com">{"FACEBOOK"}</a>
-            </li>
-            <li>
-              <i className="fa-brands fa-x-twitter"></i>
-              <a href="https://www.x.com">{"X (TWITTER)"}</a>
-            </li>
-            <li>
-              <i className="fa-brands fa-linkedin-in"></i>
-              <a href="https://www.linkedin.com">{"LINKEDIN"}</a>
-            </li>
-          </ul>
-        </section>
-        <figure>
-          <Logo />
-          <figcaption>Stand out from the rest</figcaption>
-        </figure>
+        <Map />
       </footer>
     </div>
   );
@@ -76,8 +77,8 @@ function Map() {
     <iframe
       loading="lazy"
       src="https://maps.google.com/maps?q=Bushrat%20Hussain%20advertising&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-      title="Bushrat Hussain advertising"
-      aria-label="Bushrat Hussain advertising"
+      title="Taer Al-Nawras address"
+      aria-label="Taer Al-Nawras address"
     ></iframe>
   );
 }

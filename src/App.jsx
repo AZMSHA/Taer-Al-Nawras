@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink, ScrollRestoration } from "react-router-dom";
 import Navbar from "./Components/Navbar/navbar.jsx";
 import Footer from "./Components/Footer/footer.jsx";
 import Form from "./Components/Form/Form.jsx";
@@ -23,22 +23,23 @@ function App() {
     };
   }, []);
 
-  if (loaded) {
-    const loaderSvg = document.querySelector("#initial-loader svg");
-    loaderSvg.style.width = "9rem";
-    const loader = document.getElementById("initial-loader");
-    loader.style.animationPlayState = "running";
+  useEffect(() => {
+    if (loaded) {
+      const loaderSvg = document.querySelector("#initial-loader svg");
+      loaderSvg.style.width = "7.5rem";
+      const loader = document.getElementById("initial-loader");
+      loader.style.animationPlayState = "running";
 
-    const targetElement = document.querySelector("nav ul svg");
-    const targetRect = targetElement.getBoundingClientRect();
+      const targetElement = document.querySelector("nav ul svg");
+      const targetRect = targetElement.getBoundingClientRect();
 
-    const translateX = targetRect.left - loaderSvg.getBoundingClientRect().left;
-    const translateY = targetRect.top - loaderSvg.getBoundingClientRect().top;
+      const translateX =
+        targetRect.left - loaderSvg.getBoundingClientRect().left;
+      const translateY = targetRect.top - loaderSvg.getBoundingClientRect().top;
 
-    Object.assign(loaderSvg.style, {
-      transform: `translate(${translateX - 48}px, ${translateY - 48}px)`,
-    });
-  }
+      loaderSvg.style.transform = `translate(calc(${translateX}px - 3.75rem), calc(${translateY}px - 3.75rem))`;
+    }
+  }, [loaded]);
 
   const controls = useDisclosure();
 
@@ -46,19 +47,29 @@ function App() {
     <GContext.Provider value={{ loaded: loaded, openModal: controls.onOpen }}>
       <Navbar
         links={[
-          <Link key={"home"} to={"/"}>
+          <NavLink key={"home"} to={"/"}>
             {"Home"}
-          </Link>,
-          <Link key={"about-us"} to={"/about"}>
+          </NavLink>,
+          <NavLink key={"about-us"} to={"/about"}>
             {"About us"}
-          </Link>,
-          <Link key={"services"} to={`/services/"outdoor+signage"`}>
+          </NavLink>,
+          <NavLink key={"services"} to={`/services/outdoor+signage`}>
             {"Services"}
-          </Link>,
+          </NavLink>,
           <Button key={"contact-us"} Class={"btn-pri"}>
             {"Contact us"}
           </Button>,
         ]}
+      />
+      <ScrollRestoration
+        getKey={(location) => {
+          const paths = ["/", "/about", "services"];
+          return paths.includes(location.pathname)
+            ? // home and notifications restore by pathname
+              location.pathname
+            : // everything else by location like the browser
+              location.key;
+        }}
       />
       <Outlet />
       <Footer />

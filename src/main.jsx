@@ -7,6 +7,7 @@ import Services from "./Pages/Services/services.jsx";
 import Service from "./Pages/Services/components/service.jsx";
 import ErrorPage from "./Pages/Error/Error.jsx";
 import "./index.scss";
+import "./mediaQueries.scss";
 import { ChakraBaseProvider, theme } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 delete theme.styles.global;

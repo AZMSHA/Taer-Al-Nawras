@@ -63,9 +63,8 @@ menu {
 a {
   text-decoration: none;
   color: inherit;
-  &:focus {
-    color: $colorQua;
-  }
+  &:focus,
+  &.active,
   &:hover {
     color: $colorQua;
   }
@@ -110,6 +109,16 @@ a {
     gray 90px,
     $colorQua 100px,
     #ebf8e1 102px
+  );
+}
+
+.bg-BW {
+  background-image: linear-gradient(
+    135deg,
+    black,
+    rgb(54, 54, 54) 178px,
+    gray 0px,
+    #ebf8e1 261px
   );
 }
 

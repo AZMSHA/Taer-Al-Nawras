@@ -9,7 +9,7 @@ export default function useImage(switches, length, formats) {
         setImages(src.filter((item) => item !== undefined)); // Filter out errors from the result array
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [switches]);
 
   function importImages(switches, length, formats) {
     const promises = [];

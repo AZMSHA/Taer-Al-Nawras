@@ -1,0 +1,74 @@
+@import "../../global.scss";
+
+.carousel {
+  @include createFlex;
+  [class*="carousel-btn"] {
+    position: absolute;
+    z-index: 1;
+    bottom: 25%;
+    border-width: 0.4em;
+    border-radius: 50%;
+    padding: 0.55em 1em;
+    font-size: 1.5rem;
+  }
+  .carousel-btn-left {
+    left: 1rem;
+    i {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  .carousel-btn-right {
+    right: 1rem;
+  }
+  .carousel-images {
+    @include createFlex;
+    img {
+      border-radius: $borderRadius;
+      transition: all 0.3s ease-out, opacity 0.2s;
+      position: absolute;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    [class^="current-image"] {
+      opacity: 1;
+    }
+
+    .current-image1 {
+      width: 15rem;
+      height: 15rem;
+      transform: translate(140%, 0px);
+    }
+    .current-image2 {
+      width: 20rem;
+      height: 20rem;
+      transform: translate(0%, 0px);
+    }
+    .current-image3 {
+      width: 15rem;
+      height: 15rem;
+      transform: translate(-140%, 0px);
+    }
+
+    .hidden-image {
+      display: none;
+    }
+
+    .previous-image,
+    .next-image {
+      opacity: 0;
+      width: 2.5rem;
+      height: 2.55rem;
+    }
+
+    .previous-image {
+      transform: translate(300%, 0px);
+    }
+
+    .next-image {
+      transform: translate(-300%, 0px);
+    }
+  }
+}

@@ -7,12 +7,12 @@
   }
   dl {
     display: grid;
-    width: calc(100% - 16rem);
+    width: calc(100% - 6rem);
     max-width: 1920px;
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 4rem;
-    padding: 0rem 8rem 10rem;
+    column-gap: 3rem;
+    padding: 0rem 3rem 10rem;
 
     div.step {
       display: flex;
