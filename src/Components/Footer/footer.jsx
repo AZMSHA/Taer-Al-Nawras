@@ -13,35 +13,6 @@ export default function Footer() {
           <Logo />
           <figcaption>Stand out from the rest</figcaption>
         </figure>
-        <section className="social-links">
-          <h2 className="gold-color">Check us out</h2>
-          <ul>
-            <li>
-              <i className="fa-brands fa-instagram"></i>
-              <a title="Look at our projects" href="https://www.instagram.com">
-                {"INSTAGRAM"}
-              </a>
-            </li>
-            <li>
-              <i className="fa-brands fa-facebook-f"></i>
-              <a title="not available" href="https://www.facebook.com">
-                {"FACEBOOK"}
-              </a>
-            </li>
-            <li>
-              <i className="fa-brands fa-x-twitter"></i>
-              <a title="not available" href="https://www.x.com">
-                {"X (TWITTER)"}
-              </a>
-            </li>
-            <li>
-              <i className="fa-brands fa-linkedin-in"></i>
-              <a title="not available" href="https://www.linkedin.com">
-                {"LINKEDIN"}
-              </a>
-            </li>
-          </ul>
-        </section>
 
         <section className="contact-info">
           <h2 className="gold-color">Get in touch</h2>
@@ -97,6 +68,38 @@ export default function Footer() {
               </li>
             </ul>
           </address>
+        </section>
+        <section className="social-links">
+          <h2 className="gold-color">Check us out</h2>
+          <ul>
+            <li>
+              <i className="fa-brands fa-instagram"></i>
+              <a
+                title="Look at our projects"
+                href="https://www.instagram.com/taer_al_nawras_sign?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              >
+                {"@taer_al_nawras_sign"}
+              </a>
+            </li>
+            <li>
+              <i className="fa-brands fa-facebook-f"></i>
+              <a title="not available" href="https://www.facebook.com">
+                {"FACEBOOK"}
+              </a>
+            </li>
+            <li>
+              <i className="fa-brands fa-x-twitter"></i>
+              <a title="not available" href="https://www.x.com">
+                {"X (TWITTER)"}
+              </a>
+            </li>
+            <li>
+              <i className="fa-brands fa-linkedin-in"></i>
+              <a title="not available" href="https://www.linkedin.com">
+                {"LINKEDIN"}
+              </a>
+            </li>
+          </ul>
         </section>
         <Map />
       </footer>

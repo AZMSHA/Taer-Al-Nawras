@@ -74,8 +74,10 @@
   }
 
   section:hover,
-  section:active,
-  .serviceMenu-section.animate {
+  section:active {
+    img {
+      filter: blur(0px) brightness(40%);
+    }
     @extend %C-pointer;
     li {
       color: $colorTer;

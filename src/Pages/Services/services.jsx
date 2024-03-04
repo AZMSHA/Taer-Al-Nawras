@@ -66,7 +66,7 @@ export default function Services(props) {
 
   const articleData = data.filter((set) => set.serviceID == ID)[0];
   return (
-    <main {...props}>
+    <main className="bg-gold-gradient-fixed" {...props}>
       <div className="bg-wrapper">
         <section id="services">
           <h1>{"HOW WE HELP"}</h1>
