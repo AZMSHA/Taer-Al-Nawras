@@ -16,6 +16,14 @@
   }
 }
 
+@media (max-width: 1600px) {
+  #about {
+    header {
+      padding: 0rem 10rem;
+    }
+  }
+}
+
 @media (max-width: 1280px) {
   #serviceDetails .carousel {
     [class*="carousel-btn"] {
@@ -285,6 +293,11 @@
 }
 
 @media (max-width: 550px) {
+  #about {
+    header {
+      padding: 0rem 2rem;
+    }
+  }
   #services {
     grid-template-columns: [grid-start] 1fr [grid-end];
     nav {

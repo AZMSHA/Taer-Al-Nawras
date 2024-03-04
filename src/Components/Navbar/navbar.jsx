@@ -1,5 +1,6 @@
 import "./navbar.scss";
 import Logo from "../../assets/Logos/LogoNoOutline.svg?react";
+import BackToTop from "./BackToTop";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 Navbar.propTypes = {
@@ -26,16 +27,29 @@ function Navbar({ links }) {
   }, []);
 
   return (
-    <div className={`bg-wrapper navbar ${scroll > 10 ? "opened" : "closed"}`}>
-      <nav id="navbar">
-        <ul>
-          <Logo />
-          {links.map((link, index) => {
-            return <li key={index}>{link}</li>;
-          })}
-        </ul>
-      </nav>
-    </div>
+    <>
+      <BackToTop
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
+        Class={`${scroll > 100 ? "visible" : "hidden"}`}
+      >
+        <i className="fa-solid fa-arrow-up"></i>
+      </BackToTop>
+      <div className={`bg-wrapper navbar ${scroll > 10 ? "opened" : "closed"}`}>
+        <nav id="navbar">
+          <ul>
+            <Logo />
+            {links.map((link, index) => {
+              return <li key={index}>{link}</li>;
+            })}
+          </ul>
+        </nav>
+      </div>
+    </>
   );
 }
 

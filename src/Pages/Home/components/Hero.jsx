@@ -9,14 +9,11 @@ function Hero() {
   const animate = { animationPlayState: loaded ? "running" : "paused" };
   const switches = useCallback((format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/imageGrid${index}.png`);
+      case "jpeg":
+        return import(`./assets/heroImages (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/imageGrid${index}.jpg`);
-      case "webp":
-        return import(`../assets/imageGrid${index}.webp`);
-      case "svg":
-        return import(`../assets/imageGrid${index}.svg`);
+        return import(`./assets/heroImages (${index}).jpg`);
+
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -35,7 +32,7 @@ function Hero() {
           imageData={{
             switches: switches,
             count: 6,
-            formats: ["jpg", "png", "webp", "svg"],
+            formats: ["jpg", "jpeg"],
           }}
           set={0}
           style={animate}

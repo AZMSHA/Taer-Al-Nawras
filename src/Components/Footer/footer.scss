@@ -74,6 +74,10 @@ footer {
         color: inherit;
         @extend %C-text;
       }
+
+      #footerAddress {
+        white-space: initial;
+      }
     }
 
     li {

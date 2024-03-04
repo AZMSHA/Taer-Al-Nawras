@@ -5,8 +5,9 @@
   backdrop-filter: brightness(25%);
   @include createFlex(column);
   width: 100%;
-  h1 {
+  header {
     margin: 10rem 0rem;
+    padding: 0rem 20rem;
   }
 }
 
@@ -36,7 +37,10 @@
       animation: imageSplit 0.5s ease 1 backwards;
       transform: translate(15%, 15%);
       width: 55%;
+      height: 100%;
       min-width: 15rem;
+      object-fit: cover;
+      object-position: center;
       &:hover {
         z-index: 2;
       }

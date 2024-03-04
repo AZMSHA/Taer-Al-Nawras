@@ -5,17 +5,14 @@ import { useOutletContext } from "react-router-dom";
 import Carousel from "../../../Components/Carousel/carousel.jsx";
 
 export default function Service() {
-  const { heading, p, ID } = useOutletContext();
+  const Context = useOutletContext();
   const outdoorSignangeImages = (format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/imageGrid${index}.png`);
+      case "jpeg":
+        return import(`./assets/outdoor+signage (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/imageGrid${index}.jpg`);
-      case "webp":
-        return import(`../assets/imageGrid${index}.webp`);
-      case "svg":
-        return import(`../assets/imageGrid${index}.svg`);
+        return import(`./assets/outdoor+signage (${index}).jpg`);
+
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -28,14 +25,11 @@ export default function Service() {
 
   const indoorSignageImages = (format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/Services${index}.png`);
+      case "jpeg":
+        return import(`./assets/indoor+signage (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/Services${index}.jpg`);
-      case "webp":
-        return import(`../assets/Services${index}.webp`);
-      case "svg":
-        return import(`../assets/Services${index}.svg`);
+        return import(`./assets/indoor+signage (${index}).jpg`);
+
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -48,14 +42,11 @@ export default function Service() {
 
   const digitalSignageImages = (format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/pfp${index}.png`);
+      case "jpeg":
+        return import(`./assets/digital-signage (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/pfp${index}.jpg`);
-      case "webp":
-        return import(`../assets/pfp${index}.webp`);
-      case "svg":
-        return import(`../assets/pfp${index}.svg`);
+        return import(`./assets/digital-signage (${index}).jpg`);
+
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -68,14 +59,11 @@ export default function Service() {
 
   const neonSignsImages = (format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/imageGrid${index}.png`);
+      case "jpeg":
+        return import(`./assets/neon+signs (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/imageGrid${index}.jpg`);
-      case "webp":
-        return import(`../assets/imageGrid${index}.webp`);
-      case "svg":
-        return import(`../assets/imageGrid${index}.svg`);
+        return import(`./assets/neon+signs (${index}).jpg`);
+
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -88,14 +76,11 @@ export default function Service() {
 
   const amcServicesImages = (format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/Services${index}.png`);
+      case "jpeg":
+        return import(`./assets/amc+service (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/Services${index}.jpg`);
-      case "webp":
-        return import(`../assets/Services${index}.webp`);
-      case "svg":
-        return import(`../assets/Services${index}.svg`);
+        return import(`./assets/amc+service (${index}).jpg`);
+
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -108,14 +93,10 @@ export default function Service() {
 
   const wayfindingImages = (format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/pfp${index}.png`);
+      case "jpeg":
+        return import(`./assets/wayfinding (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/pfp${index}.jpg`);
-      case "webp":
-        return import(`../assets/pfp${index}.webp`);
-      case "svg":
-        return import(`../assets/pfp${index}.svg`);
+        return import(`./assets/wayfinding (${index}).jpg`);
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -127,28 +108,46 @@ export default function Service() {
   };
 
   const switches = useMemo(() => {
-    return ID === "outdoor+signage"
+    return Context.ID === "outdoor+signage"
       ? outdoorSignangeImages
-      : ID === "indoor+signage"
+      : Context.ID === "indoor+signage"
       ? indoorSignageImages
-      : ID === "digital+signage"
+      : Context.ID === "digital+signage"
       ? digitalSignageImages
-      : ID === "neon+signs"
+      : Context.ID === "neon+signs"
       ? neonSignsImages
-      : ID === "amc+service"
+      : Context.ID === "amc+service"
       ? amcServicesImages
-      : ID === "wayfinding"
+      : Context.ID === "wayfinding"
       ? wayfindingImages
       : outdoorSignangeImages;
-  }, [ID]);
-  const images = useImage(switches, 6, ["jpg", "png", "webp"]);
+  }, [Context.ID]);
+  const images = useImage(switches, 41, ["jpg", "jpeg"]);
+  console.log(Context.heading);
 
   return (
     <section id="serviceDetails">
       <article id="service">
-        <img loading="lazy" src={images[0]} alt={heading + "header image"} />
-        <h2>{heading}</h2>
-        <p>{p}</p>
+        <img
+          loading="lazy"
+          src={images[0]}
+          alt={Context.altText + "header image"}
+        />
+        {Context.heading ? (
+          <>
+            <h2>{Context.heading}</h2>
+            <p>{Context.p}</p>
+          </>
+        ) : (
+          <>
+            {Context.articles.map(({ heading, p }) => (
+              <div key={heading}>
+                <h2>{heading}</h2>
+                <p>{p}</p>
+              </div>
+            ))}
+          </>
+        )}
       </article>
       <Carousel interval={10000} images={images} />
     </section>

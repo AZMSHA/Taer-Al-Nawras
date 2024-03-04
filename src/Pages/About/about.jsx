@@ -6,9 +6,6 @@ export default function About(props) {
   const switches = useCallback((format, index) => {
     switch (format) {
       case "jpeg":
-        if (index === 5) {
-          return import(`./assets/hashtagCropped.jpeg`);
-        }
         return import(`./assets/about${index}.jpeg`);
       case "jpg":
         return import(`./assets/about${index}.jpg`);
@@ -63,7 +60,17 @@ export default function About(props) {
       }}
     >
       <section {...props} id="about">
-        <h1>ABOUT US</h1>
+        <header>
+          <h1>About Taer Al-Nawras Advertising</h1>
+          <p>
+            Crafting Memorable Impressions Through Innovative Signage Solutions.
+            At Taer Al-Nawras Advertising, we are dedicated to revolutionizing
+            the professional signage industry with our wealth of experience and
+            commitment to excellence. As a leading signage company serving
+            Dubai, Sharjah, and the UAE, we have garnered acclaim for our
+            exceptional work and unwavering dedication to our clients.
+          </p>
+        </header>
         <div id="about-grid">
           <section id="about-section1" ref={element1Ref}>
             <div
@@ -87,24 +94,19 @@ export default function About(props) {
               <h2
                 style={{ animationPlayState: visible1 ? "running" : "paused" }}
               >
-                Heading 1 depicting motivations of the company
+                Our Expertise: Leading the Way in Signage Solutions
               </h2>
               <p
                 style={{ animationPlayState: visible1 ? "running" : "paused" }}
               >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Officiis ratione ducimus fugit dolor, nemo excepturi nobis unde
-                debitis nihil nesciunt minus doloremque! Repellendus, ab. Magni
-                necessitatibus animi est dolorem assumenda delectus facilis
-                pariatur, corrupti expedita ex minima, blanditiis, aspernatur
-                sunt neque! Blanditiis facilis rerum veniam? Nemo corrupti sit
-                possimus, deserunt, quidem veniam corporis enim totam obcaecati,
-                fuga modi et quaerat exercitationem nihil maiores debitis quae.
-                Similique doloremque, nobis, odit laboriosam sit, nam nostrum
-                exercitationem eaque laudantium libero recusandae alias at
-                facilis veniam sint assumenda. Quae quia consectetur labore
-                pariatur ratione, doloremque, recusandae iure voluptas possimus
-                nemo accusantium modi dolorem repellat? corrupti!
+                With a team of highly skilled professionals and state-of-the-art
+                equipment, we lead the industry in designing, fabricating, and
+                installing cutting-edge signage solutions. From eye-catching
+                displays to intricate multimedia screen installations, we offer
+                comprehensive services tailored to organizations of all sizes.
+                Whether you&apos;re a startup or a multinational corporation,
+                our top-tier hoarding solutions are designed to elevate your
+                brand and drive increased foot traffic.
               </p>
             </article>
           </section>
@@ -113,25 +115,19 @@ export default function About(props) {
               <h2
                 style={{ animationPlayState: visible2 ? "running" : "paused" }}
               >
-                Header 2 to show your professionalism and sell yours
-                skills/product
+                Our Promise: Elevating Your Brand Through Creativity and
+                Precision
               </h2>
               <p
                 style={{ animationPlayState: visible2 ? "running" : "paused" }}
               >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Architecto sit excepturi quaerat rem aut, expedita obcaecati
-                iste deleniti quas sequi doloremque asperiores ipsa quibusdam
-                minus odio ullam corrupti consectetur nostrum? Veritatis facere
-                at officiis dolores, enim cupiditate voluptatibus ipsum iusto
-                nobis quidem optio atque repellendus odit, tempora, expedita
-                laudantium fuga modi maiores. Incidunt officiis voluptatum nobis
-                voluptatibus assumenda rerum explicabo officia animi aliquam,
-                quis, minima labore sequi quo. Ipsa porro omnis earum
-                reiciendis, corrupti maiores inventore, quam deserunt cumque
-                sequi ipsum. Dolorem numquam autem at dignissimos ad minus
-                inventore unde vitae rerum quam, animi nihil placeat iure sit
-                debitis! Suscipit!
+                At Taer Al-Nawras Advertising, we understand the importance of
+                creating a lasting impression. Our creative team is committed to
+                helping you showcase your business in the most innovative and
+                cost-effective manner possible. Whether it&apos;s crafting
+                captivating signage or transforming your office space, we
+                combine meticulous attention to detail with a touch of
+                creativity to captivate your audience and drive results.
               </p>
             </article>
             <div

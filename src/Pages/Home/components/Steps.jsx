@@ -5,93 +5,89 @@ export default function Steps() {
   const faqs = [
     [
       {
-        title: "Request a design",
+        title: "Inquire about custom designs",
         description:
-          "contact us via our website or at 050 719 3694. Share your project details and design requirements, and let's craft something exceptional together!",
+          "Connect with us via our website or call us at 050 719 3694. Share your project details and design preferences, and let's create something exceptional together!",
+      },
+      {
+        question: "What file formats are acceptable for design submissions?",
+        answer:
+          "We accept a variety of file formats, including .AI, .EPS, .PDF, .JPEG, and .PNG, ensuring flexibility and ease in submitting your design concepts.",
+      },
+      {
+        question: "Can I request a personalized design for my signage?",
+        answer:
+          "Absolutely! We specialize in crafting bespoke designs tailored to your brand identity, ensuring a distinctive and memorable touch to your signage.",
+      },
+      {
+        question: "How much involvement can I have in the design process?",
+        answer:
+          "We highly encourage client collaboration. Work closely with our design team, sharing your ideas and feedback throughout the process to ensure your satisfaction.",
       },
       {
         question:
-          "What design options does Bushrat Hussain Advertising Signage offer?",
+          "What design choices does Taer Al-Nawras provide for signage?",
         answer:
-          "We provide a wide array of design options, ranging from modern and minimalist to bold and vibrant, catering to diverse client preferences.",
-      },
-      {
-        question: "Can I request a custom design for my signage needs?",
-        answer:
-          "Absolutely! We specialize in creating tailor-made designs that align with your brand identity, ensuring a unique and personalized touch to your signage.",
-      },
-      {
-        question:
-          "What file types are accepted for submitting design ideas or materials?",
-        answer:
-          "We accept various file formats, including but not limited to .AI, .EPS, .PDF, .JPEG, and .PNG, ensuring flexibility and ease in design submissions.",
-      },
-      {
-        question: "How involved can I be in the design process for my signage?",
-        answer:
-          "We highly encourage client involvement. You can collaborate closely with our design team, sharing ideas, feedback, and revisions throughout the design process to ensure satisfaction.",
+          "Our design options range from contemporary and sleek to bold and vibrant, catering to diverse client tastes and preferences.",
       },
     ],
     [
       {
-        title: " Project timeline",
+        title: "Understanding project timelines",
         description:
-          "We prioritize working within set timeframes to ensure efficiency and meet deadlines consistently.",
+          "We prioritize efficiency and timely delivery to meet project deadlines consistently.",
+      },
+      {
+        question: "Can revisions be made after the initial design phase?",
+        answer:
+          "Certainly! We provide a revision process, allowing modifications post the initial design phase to ensure your complete satisfaction with the final product.",
       },
       {
         question:
           "What is the typical turnaround time for a signage design project?",
         answer:
-          "Turnaround times may vary depending on the complexity of the project. However, we strive to provide an estimated timeline during the initial consultation and adhere to agreed-upon deadlines.",
+          "Turnaround times may vary depending on project complexity. However, we strive to provide an estimated timeline during the initial consultation and adhere to agreed-upon deadlines.",
+      },
+      {
+        question: "What quality assurance measures are implemented?",
+        answer:
+          "We implement rigorous quality checks at various stages of production to ensure the highest standards are met, ensuring the final work exceeds expectations.",
       },
       {
         question:
-          "Does Bushrat Hussain Advertising Signage offer rush or expedited services for urgent projects?",
+          "Does Taer Al-Nawras offer expedited services for urgent projects?",
         answer:
-          "Yes, we do offer rush services based on project requirements. Please discuss your urgent needs with our team, and we'll do our best to accommodate your timeline.",
-      },
-      {
-        question:
-          "What quality assurance measures are in place for the final work produced?",
-        answer:
-          "We have stringent quality checks at various stages of production to ensure the highest standards are met. Our team is committed to delivering top-notch work that exceeds expectations.",
-      },
-      {
-        question:
-          "Can I make revisions or alterations to the work after the initial design phase?",
-        answer:
-          "Yes, we provide a revision process, allowing modifications or adjustments post the initial design phase to ensure your complete satisfaction with the final product.",
+          "Yes, we offer rush services based on project requirements. Reach out to our team to discuss your urgent needs, and we'll do our best to accommodate your timeline.",
       },
     ],
     [
       {
-        title: "Installation",
+        title: "Streamlining the installation process",
         description:
-          "We offer comprehensive services for both completion and installation, ensuring a seamless process from design to the final placement of your signage.",
+          "We offer end-to-end services for completion and installation, ensuring a seamless transition from design to final placement.",
       },
       {
         question:
-          "Does Bushrat Hussain Advertising Signage handle the installation process?",
+          "What factors influence completion and installation timelines?",
         answer:
-          "Yes, we offer comprehensive services that include the design, production, and professional installation of the signage at your desired location.",
+          "Several factors, such as weather conditions and site accessibility, may impact the timeline. However, our team ensures efficient completion despite these variables.",
       },
       {
         question:
-          "What factors affect the completion and installation timeline?",
+          "What post-installation maintenance and support are available?",
         answer:
-          "Several factors, such as weather conditions, site accessibility, and the size and complexity of the signage, can influence the completion and installation timeline.",
+          "We offer comprehensive maintenance guidance and support post-installation, ensuring the longevity and optimal performance of your signage, along with assistance for any unforeseen issues.",
       },
       {
         question:
-          "Are there specific site requirements necessary for the installation of the signage?",
+          "Are there specific site requirements necessary for installation?",
         answer:
-          "Our team will conduct a site survey to assess and discuss any specific requirements or preparations needed to ensure a smooth and successful installation process.",
+          "Our team conducts a thorough site survey to assess and address any specific requirements or preparations needed for a smooth and successful installation process.",
       },
       {
-        question:
-          "What kind of maintenance or support is available after the signage installation?",
+        question: "Does Taer Al-Nawras oversee the installation process?",
         answer:
-          "We offer maintenance guidance and support post-installation, ensuring the longevity and optimal performance of your signage. Additionally, we provide support for any unexpected issues that may arise.",
+          "Yes, we provide comprehensive services, including design, production, and professional installation of signage at your chosen location.",
       },
     ],
   ];

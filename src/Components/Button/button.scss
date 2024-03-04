@@ -72,8 +72,8 @@
   box-shadow: inset 0px 0px 0.5rem $colorPri;
 }
 
-.btn-sec::before,
-.btn-sec::after {
+[class^="btn-sec"]::before,
+[class^="btn-sec"]::after {
   z-index: -1;
   position: absolute;
   color: $colorTer;
@@ -85,6 +85,11 @@
   opacity: 1;
 }
 
+[class^="btn-sec-circle"]::before,
+[class^="btn-sec-circle"]::after {
+  border-radius: 1000px;
+}
+
 [class^="btn-sec"]:hover::after,
 [class^="btn-sec"]:focus::after {
   animation: blow 0.4s linear 0s 1 normal backwards;
@@ -93,6 +98,27 @@
 [class^="btn-sec"]:hover::before,
 [class^="btn-sec"]:focus::before {
   animation: blow 0.43s linear 0s 1 normal backwards;
+}
+
+[class^="btn-sec-circle"]:hover::after,
+[class^="btn-sec-circle"]:focus::after {
+  animation: blowTop 0.4s linear 0s 1 normal backwards;
+}
+
+[class^="btn-sec-circle"]:hover::before,
+[class^="btn-sec-circle"]:focus::before {
+  animation: blowTop 0.43s linear 0s 1 normal backwards;
+}
+
+[class^="btn-sec-circle"] {
+  border-radius: 1000px;
+  padding: 0.3em 0.7em;
+}
+@keyframes blowTop {
+  to {
+    padding: 2.2em 2.4em;
+    opacity: 0;
+  }
 }
 
 @keyframes blow {

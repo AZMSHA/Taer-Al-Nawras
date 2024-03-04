@@ -94,7 +94,9 @@ const Carousel = ({ images, interval }) => {
   return (
     <div className="carousel">
       <Button
+        aria-label={"previous image"}
         Class={"btn-pri carousel-btn-left"}
+        title={"previous image"}
         onClick={() => setPositions({ type: "-", lastIndex: lastIndex })}
       >
         <i className="fa-solid fa-play"></i>
@@ -113,7 +115,9 @@ const Carousel = ({ images, interval }) => {
         })}
       </div>
       <Button
+        aria-label={"next image"}
         Class={"btn-pri carousel-btn-right"}
+        title={"next image"}
         onClick={() => setPositions({ type: "+", lastIndex: lastIndex })}
       >
         <i className="fa-solid fa-play"></i>

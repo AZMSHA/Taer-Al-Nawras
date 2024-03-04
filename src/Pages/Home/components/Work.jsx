@@ -6,12 +6,10 @@ import { useCallback } from "react";
 export default function Work() {
   const switches = useCallback((format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/Services${index}.png`);
+      case "jpeg":
+        return import(`./assets/work (${index}).jpeg`);
       case "jpg":
-        return import(`../assets/Services${index}.jpg`);
-      case "webp":
-        return import(`../assets/Services${index}.webp`);
+        return import(`./assets/work (${index}).jpg`);
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -22,7 +20,7 @@ export default function Work() {
     }
   }, []);
 
-  const images = useImage(switches, 6, ["jpg", "webp", "png"]);
+  const images = useImage(switches, 100, ["jpg", "jpeg"]);
   return (
     <div className="bg-wrapper bg-grayscales-fixed">
       <section id="work">

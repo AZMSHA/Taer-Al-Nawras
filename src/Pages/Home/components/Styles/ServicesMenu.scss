@@ -31,7 +31,8 @@
     height: 100%;
     overflow: hidden;
     &:hover ul,
-    &:active ul {
+    &:active ul,
+    &.serviceMenu-section.animate ul {
       transform: translate(0%, 0%);
     }
 
@@ -73,15 +74,12 @@
   }
 
   section:hover,
-  section:active {
+  section:active,
+  .serviceMenu-section.animate {
     @extend %C-pointer;
     li {
       color: $colorTer;
     }
-    img {
-      filter: blur(0rem) brightness(50%);
-    }
-
     h2 {
       color: $colorQua;
     }

@@ -18,19 +18,27 @@ export default function Footer() {
           <ul>
             <li>
               <i className="fa-brands fa-instagram"></i>
-              <a href="https://www.instagram.com">{"INSTAGRAM"}</a>
+              <a title="Look at our projects" href="https://www.instagram.com">
+                {"INSTAGRAM"}
+              </a>
             </li>
             <li>
               <i className="fa-brands fa-facebook-f"></i>
-              <a href="https://www.facebook.com">{"FACEBOOK"}</a>
+              <a title="not available" href="https://www.facebook.com">
+                {"FACEBOOK"}
+              </a>
             </li>
             <li>
               <i className="fa-brands fa-x-twitter"></i>
-              <a href="https://www.x.com">{"X (TWITTER)"}</a>
+              <a title="not available" href="https://www.x.com">
+                {"X (TWITTER)"}
+              </a>
             </li>
             <li>
               <i className="fa-brands fa-linkedin-in"></i>
-              <a href="https://www.linkedin.com">{"LINKEDIN"}</a>
+              <a title="not available" href="https://www.linkedin.com">
+                {"LINKEDIN"}
+              </a>
             </li>
           </ul>
         </section>
@@ -41,26 +49,50 @@ export default function Footer() {
             <ul>
               <li>
                 <i className="fa-solid fa-phone"></i>
-                <a href="tel:+923026492834">Phone Number</a>
+                <a title="give us a call" href="tel:+971558729424">
+                  +971558729424
+                </a>
               </li>
               <li>
                 <i className="fa-solid fa-phone"></i>
-                <a href="tel:+923026492834">Phone Number 2</a>
+                <a title="give us a call" href="tel:+971509055365">
+                  +971509055365
+                </a>
               </li>
               <li>
                 <i className="fa-solid fa-envelope"></i>
-                <a href="mailto:azmsha2003@gmail.com">Email</a>
+                <a
+                  title="Send us an Email?"
+                  href="mailto:nawrassign2@gmail.com"
+                >
+                  nawrassign2@gmail.com
+                </a>
+              </li>
+              <li>
+                <i className="fa-solid fa-envelope"></i>
+                <a title="Send us an Email?" href="mailto:usmanzh68@gmail.com">
+                  usmanzh68@gmail.com
+                </a>
               </li>
               <li>
                 <i className="fa-solid fa-map-location-dot"></i>
-                <a href="">Address</a>
+                <a
+                  id="footerAddress"
+                  title="Where we're located"
+                  href="https://www.google.com/maps/dir//25.338176,55.4133545/@25.3380298,55.4126638,18z?entry=ttu"
+                >
+                  United Arab Emirates,
+                  <br />
+                  Industrial Area - Al Ghubaiba - Emirate of Sharjah,
+                  <br />
+                  Near Royal Furniture Showroom
+                </a>
               </li>
               <li id="businessTiming">
                 <i className="fa-solid fa-clock"></i>
                 <p>
-                  Monday - Saturday : 9am - 6pm <br />
-                  Friday : 9 am - 11 :30 am <br />
-                  Sunday - Closed
+                  Monday - Sunday : 9am - 9pm <br />
+                  Friday : Closed <br />
                 </p>
               </li>
             </ul>
@@ -75,10 +107,12 @@ export default function Footer() {
 function Map() {
   return (
     <iframe
-      loading="lazy"
-      src="https://maps.google.com/maps?q=Bushrat%20Hussain%20advertising&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
       title="Taer Al-Nawras address"
       aria-label="Taer Al-Nawras address"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7211.726709837099!2d55.40776094476485!3d25.342365928002973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5967e6680643%3A0x8fdbea75fd8b77e9!2sHalab%20Auto%20Exhaust%20%26%20Radiator%20Repair%20Workshop!5e0!3m2!1sen!2s!4v1709523258371!5m2!1sen!2s"
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
     ></iframe>
   );
 }

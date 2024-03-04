@@ -2,18 +2,14 @@ import Button from "../../../Components/Button/button";
 import useImagePromise from "../../../Components/Hooks/useImage";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/ServicesMenu.scss";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 export default function ServicesMenu() {
   const Navigation = useNavigate();
   const switches = useCallback((format, index) => {
     switch (format) {
-      case "png":
-        return import(`../assets/Services${index}.png`);
       case "jpg":
-        return import(`../assets/Services${index}.jpg`);
-      case "webp":
-        return import(`../assets/Services${index}.webp`);
+        return import(`./assets/serviceMenuImages (${index}).jpg`);
       default:
         return new Promise((resolve, reject) => {
           if (index < -1) {
@@ -24,60 +20,91 @@ export default function ServicesMenu() {
     }
   }, []);
 
-  const images = useImagePromise(switches, 6, ["jpg", "webp", "png"]);
+  const images = useImagePromise(switches, 6, ["jpg"]);
 
   const data = {
     set1: [
       { linkName: "Outdoor Signage", serviceID: "outdoor+signage" },
-      "Vibrant LED Displays",
-      "Day-to-Night Brilliance",
-      "Dynamic Outdoor Signage",
-      "Standout Signage Solutions",
-      "Round-the-Clock Visibility",
+      "Make a bold statement with vibrant outdoor displays",
+      "Experience stunning LED signs that shine day and night",
+      "Engage your audience with dynamic outdoor signage",
+      "Discover standout solutions for your outdoor branding",
+      "Ensure your message is seen around the clock",
     ],
 
     set2: [
       { linkName: "Digital Signage", serviceID: "digital+signage" },
-      "Revolutionary Digital Experiences",
-      "Transformative Visual Brilliance",
-      "Digital Displays That Stand Out",
-      "Unmatched Digital Brilliance",
-      "Seamless Digital Brilliance",
+      "Create cutting-edge digital experiences for your audience",
+      "Transform spaces with visually striking digital displays",
+      "Stand out with unmatched digital signage solutions",
+      "Explore a world of seamless digital experiences",
+      "Deliver captivating content effortlessly",
     ],
 
     set3: [
       { linkName: "Indoor Signage", serviceID: "indoor+signage" },
-      "Captivating Indoor Brilliance",
-      "Dynamic Indoor Signage",
-      "Standout Indoor Solutions",
-      "Illuminating Indoor Impressions",
-      "Indoor Signs That Shine",
+      "Illuminate indoor spaces with captivating signage",
+      "Guide visitors with dynamic indoor sign solutions",
+      "Discover standout solutions for indoor branding",
+      "Create lasting impressions with indoor signs",
+      "Make your indoor spaces shine with brilliance",
     ],
+
     set4: [
       { linkName: "Wayfinding", serviceID: "wayfinding" },
-      "Intuitive Wayfinding Designs",
-      "Dynamic Wayfinding Solutions",
-      "Seamless Directional Brilliance",
-      "Effortless Navigation Impressions",
-      "Wayfinding Signs That Stand Out",
+      "Create intuitive designs for effortless navigation",
+      "Guide visitors seamlessly with dynamic solutions",
+      "Enhance navigation with directional clarity",
+      "Make getting around easy and intuitive",
+      "Stand out with distinctive wayfinding signs",
     ],
+
     set5: [
       { linkName: "Neon Signs", serviceID: "neon+signs" },
-      "Captivating Neon Nights",
-      "Radiant Neon Sign Solutions",
-      "Timeless Glow of Neon Brilliance",
-      "Seamless Neon Brilliance",
-      "Neon Signs That Stand Out",
+      "Experience captivating nights with neon signs",
+      "Illuminate your space with radiant neon solutions",
+      "Embrace the timeless glow of neon lighting",
+      "Discover seamless brilliance with neon signs",
+      "Make a statement with standout neon signage",
     ],
+
     set6: [
       { linkName: "AMC / Service", serviceID: "amc+service" },
-      "Worry-Free Maintenance Solutions",
-      "Seamless Care Brilliance",
-      "Comprehensive AMC/Service",
-      "Unmatched AMC/Service Brilliance",
-      "Innovative Maintenance Solutions",
+      "Enjoy worry-free maintenance with comprehensive solutions",
+      "Experience seamless care with innovative services",
+      "Ensure your business runs smoothly with AMC",
+      "Explore unmatched maintenance services",
+      "Innovate with comprehensive maintenance solutions",
     ],
   };
+
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the class when the element is in the viewport
+          entry.target.classList.add("animate");
+        } else {
+          // Remove the class when the element is not in the viewport
+          entry.target.classList.remove("animate");
+        }
+      });
+    }, options);
+
+    const elements = document.querySelectorAll(".serviceMenu-section");
+    elements.forEach((element) => observer.observe(element));
+
+    // Cleanup function
+    return () => {
+      elements.forEach((element) => observer.unobserve(element));
+    };
+  }, []);
 
   return (
     <>
@@ -89,7 +116,7 @@ export default function ServicesMenu() {
               key={dataSet + index}
               to={`/services/${data[dataSet][0].serviceID}`}
             >
-              <section>
+              <section className="serviceMenu-section">
                 <img
                   loading="lazy"
                   src={images[index]}

@@ -56,7 +56,15 @@ function App() {
           <NavLink key={"services"} to={`/services/outdoor+signage`}>
             {"Services"}
           </NavLink>,
-          <Button key={"contact-us"} Class={"btn-pri"}>
+          <Button
+            aria-label={"Contact us"}
+            key={"contact-us"}
+            Class={"btn-pri"}
+            title={"Dial +971509055365"}
+            onClick={() => {
+              window.location.href = "tel:+971509055365";
+            }}
+          >
             {"Contact us"}
           </Button>,
         ]}
@@ -73,6 +81,7 @@ function App() {
       />
       <Outlet />
       <Footer />
+
       <Form {...controls} />
     </GContext.Provider>
   );
