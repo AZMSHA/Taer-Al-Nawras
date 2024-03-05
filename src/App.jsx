@@ -19,6 +19,10 @@ function App() {
     };
   }, []);
 
+  function setDisplay() {
+    document.getElementById("initial-loader").style.display = "none";
+  }
+
   useEffect(() => {
     if (loaded) {
       const loaderSvg = document.querySelector("#initial-loader-svg");
@@ -34,6 +38,13 @@ function App() {
       const translateY = targetRect.top - loaderSvg.getBoundingClientRect().top;
 
       loaderSvg.style.transform = `translate(calc(${translateX}px - 3.75rem), calc(${translateY}px - 3.75rem))`;
+      const timeoutId = setTimeout(() => {
+        setDisplay();
+      }, 790);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
     }
   }, [loaded]);
 

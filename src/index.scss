@@ -170,8 +170,13 @@ a {
     to {
       display: none;
       opacity: 0;
+      z-index: -999;
     }
   }
+}
+
+.display-none {
+  display: none;
 }
 
 .swim {

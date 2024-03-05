@@ -7,7 +7,7 @@ export default function Steps() {
       {
         title: "Inquire about custom designs",
         description:
-          "Connect with us via our website or call us at 050 719 3694. Share your project details and design preferences, and let's create something exceptional together!",
+          "Connect with us via our website or call us at 050 905 5365. Share your project details and design preferences, and let's create something exceptional together!",
       },
       {
         question: "What file formats are acceptable for design submissions?",

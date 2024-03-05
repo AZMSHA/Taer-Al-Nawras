@@ -17,6 +17,9 @@
 }
 
 @media (max-width: 1280px) {
+  #about header {
+    padding: 0rem 10rem;
+  }
   #serviceDetails .carousel {
     [class*="carousel-btn"] {
       bottom: inherit;
@@ -68,6 +71,15 @@
 @media (max-width: 1180px) {
 }
 @media (max-width: 1100px) {
+  :root {
+    font-size: 8px;
+    p {
+      font-size: 1.2rem;
+    }
+    li {
+      font-size: 1.2rem;
+    }
+  }
   #hero {
     .hero-grid {
       grid-template-areas:
@@ -123,14 +135,9 @@
       justify-self: center;
     }
   }
-  :root {
-    font-size: 8px;
-    p {
-      font-size: 1.2rem;
-    }
-    li {
-      font-size: 1.2rem;
-    }
+
+  #about header {
+    padding: 0rem 20rem;
   }
   #servicesMenu {
     grid-template-columns: [ grid-start] repeat(3, 1fr) [ grid-end];
@@ -189,6 +196,9 @@
   }
 }
 @media (max-width: 760px) {
+  #about header {
+    padding: 0rem 10rem;
+  }
   #serviceDetails .carousel {
     [class*="carousel-btn"] {
       bottom: -20rem;
@@ -369,6 +379,9 @@
   }
 }
 @media (max-width: 500px) {
+  #about header {
+    padding: 0rem 2rem;
+  }
 }
 @media (max-width: 440px) {
   #serviceDetails .carousel {
@@ -424,7 +437,13 @@
     }
   }
 }
-@media (max-width: 330px) {
+@media (max-width: 350px) {
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "sec1" "sec2" "logo";
+  }
+
   #services {
     nav {
       ul {
@@ -442,12 +461,6 @@
 }
 
 @media (max-width: 300px) {
-  footer {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: "sec1" "sec2" "logo";
-  }
-
   #work .carousel-images {
     .current-image1 {
       opacity: 0;

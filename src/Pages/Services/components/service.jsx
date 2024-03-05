@@ -123,7 +123,6 @@ export default function Service() {
       : outdoorSignangeImages;
   }, [Context.ID]);
   const images = useImage(switches, 41, ["jpg", "jpeg"]);
-  console.log(Context.heading);
 
   return (
     <section id="serviceDetails">
