@@ -105,6 +105,7 @@ const Carousel = ({ images, interval }) => {
         {images.map((image, ind) => {
           return (
             <img
+              onError={(e) => (e.target.src = "./placeholder.webp")}
               key={image}
               loading="lazy"
               className={getPositionClass(ind)}

@@ -1,7 +1,7 @@
 import useImage from "../Hooks/useImage";
 import PropTypes from "prop-types";
 
-const Images = ({ imageData, style, set, alt }) => {
+const Images = ({ imageData, style, set, alt, ...rest }) => {
   const images = useImage(...Object.values(imageData));
 
   return (
@@ -14,6 +14,7 @@ const Images = ({ imageData, style, set, alt }) => {
           style={style}
           src={image}
           alt={`${alt + " " + index}`}
+          {...rest}
         />
       ))}
     </>

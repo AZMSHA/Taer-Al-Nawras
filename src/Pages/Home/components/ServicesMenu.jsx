@@ -118,6 +118,7 @@ export default function ServicesMenu() {
             >
               <section className="serviceMenu-section">
                 <img
+                  onError={(e) => (e.target.src = "./placeholder.webp")}
                   loading="lazy"
                   src={images[index]}
                   alt={data[dataSet][0].linkName + " backdrop image"}

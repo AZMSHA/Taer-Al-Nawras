@@ -36,6 +36,7 @@ function Hero() {
           }}
           set={0}
           style={animate}
+          onError={(e) => (e.target.src = "./placeholder.webp")}
         />
         <h1 style={animate} className="neon">
           <span className="letter" style={animate}>

@@ -10,21 +10,18 @@ export const GContext = createContext();
 
 function App() {
   const [loaded, setLoaded] = useState(false);
-  function handleLoad() {
-    setLoaded(true);
-  }
 
   useEffect(() => {
-    window.addEventListener("load", handleLoad);
+    const id = setTimeout(() => setLoaded(true), 750);
 
     return () => {
-      window.removeEventListener("load", handleLoad);
+      clearTimeout(id);
     };
   }, []);
 
   useEffect(() => {
     if (loaded) {
-      const loaderSvg = document.querySelector("#initial-loader svg");
+      const loaderSvg = document.querySelector("#initial-loader-svg");
       loaderSvg.style.width = "7.5rem";
       const loader = document.getElementById("initial-loader");
       loader.style.animationPlayState = "running";
@@ -43,7 +40,13 @@ function App() {
   const controls = useDisclosure();
 
   return (
-    <GContext.Provider value={{ loaded: loaded, openModal: controls.onOpen }}>
+    <GContext.Provider
+      value={{
+        loaded: loaded,
+        openModal: controls.onOpen,
+        setLoaded: setLoaded,
+      }}
+    >
       <Navbar
         links={[
           <NavLink key={"home"} to={"/"}>

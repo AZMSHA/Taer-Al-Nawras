@@ -129,6 +129,7 @@ export default function Service() {
     <section id="serviceDetails">
       <article id="service">
         <img
+          onError={(e) => (e.target.src = "./placeholder.webp")}
           loading="lazy"
           src={images[0]}
           alt={Context.altText + "header image"}
