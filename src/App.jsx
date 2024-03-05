@@ -10,16 +10,15 @@ export const GContext = createContext();
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  function handleLoad() {
+    setLoaded(true);
+  }
 
   useEffect(() => {
-    window.addEventListener("load", function () {
-      setLoaded(true);
-    });
+    window.addEventListener("load", handleLoad);
 
     return () => {
-      window.removeEventListener("load", function () {
-        setLoaded(true);
-      });
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
