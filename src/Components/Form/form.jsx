@@ -87,7 +87,7 @@ FieldWrapper.propTypes = {
   helpText: PropTypes.string,
 };
 
-export default function modalForm({ isOpen, onClose }) {
+export default function ModalForm({ isOpen, onClose }) {
   return (
     <>
       <Formik
@@ -106,10 +106,15 @@ export default function modalForm({ isOpen, onClose }) {
         {(formik) => {
           useEffect(() => {
             const timeoutId = setTimeout(() => {
+              if (formik.isSubmitting) {
+                toast();
+              }
               formik.setSubmitting(false);
+              formik.resetForm();
             }, 5000);
             return () => clearTimeout(timeoutId);
           }, [formik.isSubmitting]);
+
           return (
             <Modal
               id={"modalForm"}
@@ -142,6 +147,9 @@ export default function modalForm({ isOpen, onClose }) {
                       name="email"
                       type="email"
                       placeholder="Enter email"
+                      helpText={
+                        "We will use this email to get in touch with you."
+                      }
                     />
                     <FieldWrapper
                       helpText={"Don't use spaces or hyphens ' - ' "}

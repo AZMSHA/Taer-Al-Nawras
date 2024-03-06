@@ -212,3 +212,26 @@ a {
     transform: translate(0px, 0px) rotateX(0deg) skewX(0deg);
   }
 }
+
+.bg-red-gradient {
+  @include shinyBackgroundGenerator(#ff0033, 100%, left);
+}
+.bg-green-gradient {
+  @include shinyBackgroundGenerator(#66ff00, 100%, left);
+}
+.bg-pink-gradient {
+  @include shinyBackgroundGenerator(#ff00cc, 100%, left);
+}
+.bg-yellow-gradient {
+  @include shinyBackgroundGenerator(yellow, 100%, left);
+}
+.bg-purple-gradient {
+  @include shinyBackgroundGenerator(#9900ff, 100%, left);
+}
+.bg-orange-gradient {
+  @include shinyBackgroundGenerator(#ff6600, 100%, left);
+}
+
+.bg-black-gradient {
+  @include shinyBackgroundGenerator;
+}

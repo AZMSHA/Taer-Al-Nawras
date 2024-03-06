@@ -1,21 +1,57 @@
 @import "./global.scss";
 
 @media (max-width: 1700px) {
-  #serviceDetails .carousel {
-    [class*="carousel-btn"] {
-      bottom: -20rem;
-      left: inherit;
-      right: inherit;
+  #serviceDetails {
+    #service {
+      img {
+        height: 30rem;
+      }
     }
-    .carousel-btn-left {
-      transform: translate(-5rem, 0rem);
-    }
-    .carousel-btn-right {
-      transform: translate(5rem, 0rem);
+    .carousel {
+      [class*="carousel-btn"] {
+        bottom: -20rem;
+        left: inherit;
+        right: inherit;
+      }
+      .carousel-btn-left {
+        transform: translate(-5rem, 0rem);
+      }
+      .carousel-btn-right {
+        transform: translate(5rem, 0rem);
+      }
     }
   }
 }
 
+@media (max-width: 1500px) {
+  #services {
+    grid-template-columns: [grid-start] 1fr [grid-end];
+    width: 100%;
+    nav {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+      }
+      a {
+        @include createFlex;
+        i {
+          display: none;
+        }
+        li {
+          padding: 2rem 0rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  #services .detailsPage {
+    padding: 2rem 2rem 15rem;
+  }
+}
 @media (max-width: 1280px) {
   #about header {
     padding: 0rem 10rem;
@@ -27,12 +63,12 @@
     .carousel-btn-left {
       left: 2rem;
 
-      transform: translate(-5rem, 0rem);
+      transform: translate(0rem, 0rem);
     }
     .carousel-btn-right {
       right: 2rem;
 
-      transform: translate(5rem, 0rem);
+      transform: translate(0rem, 0rem);
     }
     .carousel-images {
       .current-image1 {
@@ -80,6 +116,7 @@
       font-size: 1.2rem;
     }
   }
+
   #hero {
     .hero-grid {
       grid-template-areas:
@@ -166,20 +203,52 @@
     }
   }
 
-  #serviceDetails .carousel {
-    .carousel-images {
-      .current-image1 {
-        opacity: 1;
-        width: 15rem;
-        height: 15rem;
-        transform: translate(140%, 0px);
-      }
+  #services {
+    width: calc(100% - 8rem);
+    max-width: 1920px;
+    grid-template-columns: [grid-start] 15rem 1fr [grid-end];
 
-      .current-image3 {
-        opacity: 1;
-        width: 15rem;
-        height: 15rem;
-        transform: translate(-140%, 0px);
+    nav {
+      ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0rem;
+        row-gap: 1rem;
+      }
+      a {
+        @include createFlex(row, space-between, center);
+        i {
+          transform: translate(-2rem, 0rem);
+          display: inline-block;
+        }
+        li {
+          padding: 2rem 0rem 2rem 1rem;
+        }
+      }
+    }
+  }
+
+  #serviceDetails {
+    #service {
+      img {
+        height: 40rem;
+      }
+    }
+    .carousel {
+      .carousel-images {
+        .current-image1 {
+          opacity: 1;
+          width: 15rem;
+          height: 15rem;
+          transform: translate(140%, 0px);
+        }
+
+        .current-image3 {
+          opacity: 1;
+          width: 15rem;
+          height: 15rem;
+          transform: translate(-140%, 0px);
+        }
       }
     }
   }
@@ -194,11 +263,7 @@
     row-gap: 2rem;
     padding: 0rem 2rem;
   }
-}
-@media (max-width: 760px) {
-  #about header {
-    padding: 0rem 10rem;
-  }
+
   #serviceDetails .carousel {
     [class*="carousel-btn"] {
       bottom: -20rem;
@@ -212,9 +277,60 @@
       transform: translate(5rem, 0rem);
     }
   }
+}
+
+@media (max-width: 760px) {
+  #about header {
+    padding: 0rem 10rem;
+  }
+  #serviceDetails {
+    #service {
+      img {
+        height: 30rem;
+      }
+    }
+
+    .carousel {
+      [class*="carousel-btn"] {
+        bottom: -20rem;
+        left: inherit;
+        right: inherit;
+      }
+      .carousel-btn-left {
+        transform: translate(-5rem, 0rem);
+      }
+      .carousel-btn-right {
+        transform: translate(5rem, 0rem);
+      }
+    }
+  }
   #servicesMenu {
     .backdrop {
       padding: 2rem 2rem 4rem 2rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #services {
+    grid-template-columns: [grid-start] 1fr [grid-end];
+    width: 100%;
+    nav {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+      }
+      a {
+        @include createFlex;
+        i {
+          display: none;
+        }
+        li {
+          padding: 2rem 0rem;
+        }
+      }
     }
   }
 }
@@ -236,34 +352,7 @@
       }
     }
   }
-  #serviceDetails .carousel {
-    [class*="carousel-btn"] {
-      bottom: inherit;
-    }
-    .carousel-btn-left {
-      left: 2rem;
 
-      transform: translate(-5rem, 0rem);
-    }
-    .carousel-btn-right {
-      right: 2rem;
-
-      transform: translate(5rem, 0rem);
-    }
-    .carousel-images {
-      .current-image1 {
-        opacity: 0;
-        width: 2.5rem;
-        height: 2.55rem;
-      }
-
-      .current-image3 {
-        opacity: 0;
-        width: 2.5rem;
-        height: 2.55rem;
-      }
-    }
-  }
   footer {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3rem;
@@ -306,18 +395,11 @@
       }
       a {
         @include createFlex;
-        width: 100%;
-        transition: all 0.2s linear;
-        border-radius: $borderRadius;
         i {
           display: none;
         }
         li {
-          overflow: hidden;
-          font-weight: 600;
           padding: 2rem 0rem;
-          text-align: center;
-          white-space: nowrap;
         }
       }
     }
@@ -382,6 +464,50 @@
   #about header {
     padding: 0rem 2rem;
   }
+
+  #services {
+    width: 100%;
+    padding: 10rem 0rem 0rem;
+    .detailsPage {
+      padding: 0rem 0rem 26.5vh;
+    }
+  }
+
+  #service {
+    h2,
+    p {
+      padding: 0rem 3rem;
+    }
+  }
+
+  #serviceDetails .carousel {
+    [class*="carousel-btn"] {
+      bottom: inherit;
+    }
+    .carousel-btn-left {
+      left: 2rem;
+
+      transform: translate(0rem, 0rem);
+    }
+    .carousel-btn-right {
+      right: 2rem;
+
+      transform: translate(0rem, 0rem);
+    }
+    .carousel-images {
+      .current-image1 {
+        opacity: 0;
+        width: 2.5rem;
+        height: 2.55rem;
+      }
+
+      .current-image3 {
+        opacity: 0;
+        width: 2.5rem;
+        height: 2.55rem;
+      }
+    }
+  }
 }
 @media (max-width: 440px) {
   #serviceDetails .carousel {
@@ -425,6 +551,13 @@
     grid-auto-flow: row;
     grid-template-columns: 1fr;
   }
+  #serviceDetails {
+    #service {
+      img {
+        height: 25rem;
+      }
+    }
+  }
   #servicesMenu {
     grid-template-columns: [ grid-start] repeat(1, 1fr) [ grid-end];
     width: calc(100% - 16rem);
@@ -461,6 +594,21 @@
 }
 
 @media (max-width: 300px) {
+  #services {
+    width: 100%;
+    padding: 10rem 0rem 0rem;
+    .detailsPage {
+      padding: 0rem 0rem calc(26.5vh + 20rem);
+    }
+  }
+
+  #serviceDetails {
+    #service {
+      img {
+        height: 17.5rem;
+      }
+    }
+  }
   #work .carousel-images {
     .current-image1 {
       opacity: 0;
@@ -484,6 +632,12 @@
 }
 
 @media (max-width: 250px) {
+  #service {
+    h2,
+    p {
+      padding: 0.5rem;
+    }
+  }
   div.bg-wrapper.navbar.opened {
     padding: 2.5rem 0rem;
   }

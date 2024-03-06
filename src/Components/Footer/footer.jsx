@@ -3,6 +3,7 @@ import Logo from "../../assets/Logos/LogoNoOutline.svg?react";
 import Button from "../Button/button";
 import { GContext } from "../../App";
 import { useContext } from "react";
+import { useToast } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
@@ -122,10 +123,23 @@ function Map() {
 
 function Banner() {
   const open = useContext(GContext).openModal;
+  const toast = useToast({
+    title: "Server undergoing maintenance",
+    description:
+      "Sorry for the inconvenience, contact us through our number instead.",
+    status: "warning",
+    duration: 5000,
+    containerStyle: {
+      minWidth: "27rem",
+      width: "30vw",
+      maxWidth: "40vw",
+    },
+    isClosable: true,
+  });
   return (
     <aside className="footer flex bg-gold-gradient-fixed">
       <h2>It&apos;s very easy to get a quote</h2>
-      <Button onClick={open} Class={"btn-sec"}>
+      <Button onClick={toast} Class={"btn-sec"}>
         Get a quote now!
       </Button>
     </aside>

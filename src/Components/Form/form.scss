@@ -1,12 +1,33 @@
 @import "../../global.scss";
 
 #chakra-modal-modalForm {
-    .chakra-modal__body.css-1x51k4p {
-        padding-inline-end: 4rem;
+  .chakra-modal__body.css-1x51k4p {
+    padding-inline-end: 4rem;
+  }
+  .chakra-modal__close-btn.css-1ik4h6n {
+    background-color: aliceblue;
+    padding: 0.6rem;
+    border: 0px solid transparent;
+    &:hover {
+      border: 1px solid black;
+      cursor: pointer;
     }
+  }
 
-    .css-nkpswe {
-        position: absolute;
-        translate: -139% 4%;
+  .css-nkpswe {
+    position: absolute;
+    translate: -139% 4%;
+  }
+}
+#chakra-toast-manager-bottom {
+  .css-1pq15d {
+    background-color: $colorTer;
+    padding: 0.6rem;
+    border: 0px solid transparent;
+    &:hover {
+      border: 1px solid black;
+      cursor: pointer;
     }
+  }
+  bottom: 1.5rem !important;
 }

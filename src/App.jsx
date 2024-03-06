@@ -84,7 +84,7 @@ function App() {
       />
       <ScrollRestoration
         getKey={(location) => {
-          const paths = ["/", "/about", "services"];
+          const paths = ["/", "/about", "/services"];
           return paths.includes(location.pathname)
             ? // home and notifications restore by pathname
               location.pathname

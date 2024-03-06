@@ -65,8 +65,27 @@ export default function Services(props) {
   ];
 
   const articleData = data.filter((set) => set.serviceID == ID)[0];
+  const bgColor = () => {
+    switch (ID) {
+      case "outdoor+signage":
+        return "bg-green-gradient";
+      case "indoor+signage":
+        return "bg-red-gradient";
+      case "digital+signage":
+        return "bg-purple-gradient";
+      case "neon+signs":
+        return "bg-pink-gradient";
+      case "amc+service":
+        return "bg-orange-gradient";
+      case "wayfinding":
+        return "bg-yellow-gradient";
+
+      default:
+        return;
+    }
+  };
   return (
-    <main className="wrapper" {...props}>
+    <main className={bgColor()} {...props}>
       <div className="bg-wrapper">
         <section id="services">
           <h1>{"HOW WE HELP"}</h1>
@@ -75,7 +94,8 @@ export default function Services(props) {
               {links.map((link) => {
                 return (
                   <NavLink
-                    className={"bg-BW"}
+                    preventScrollReset={true}
+                    className={"bg-black-gradient"}
                     key={link.serviceID}
                     to={`/services/${link.serviceID}`}
                   >

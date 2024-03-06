@@ -37,3 +37,43 @@ $hallow: transparent;
   align-items: $align;
   flex-direction: $direction;
 }
+
+@mixin shinyBackgroundGenerator(
+  $colorToChange: black,
+  $circleRadius: 100%,
+  $start: right
+) {
+  background-image: radial-gradient(
+    circle farthest-side at $start,
+    adjust-color(
+        $color: $colorToChange,
+        $hue: 0,
+        $saturation: 0%,
+        $lightness: 15%,
+        $alpha: 1
+      )
+      1%,
+    adjust-color(
+      $color: $colorToChange,
+      $hue: 0,
+      $saturation: 0%,
+      $lightness: 0%,
+      $alpha: 1
+    ),
+    adjust-color(
+      $color: $colorToChange,
+      $hue: 0,
+      $saturation: 0%,
+      $lightness: -5%,
+      $alpha: 1
+    ),
+    adjust-color(
+        $color: $colorToChange,
+        $hue: 0,
+        $saturation: 0%,
+        $lightness: -35%,
+        $alpha: 1
+      )
+      $circleRadius
+  );
+}
