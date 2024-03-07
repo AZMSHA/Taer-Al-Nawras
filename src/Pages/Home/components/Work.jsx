@@ -25,7 +25,7 @@ export default function Work() {
     <div className="bg-wrapper bg-grayscales-fixed">
       <section id="work">
         <h1>{"YOUR TRUST IN US"}</h1>
-        <Carousel images={images} interval={5000} />
+        <Carousel images={images} interval={2000} />
       </section>
     </div>
   );

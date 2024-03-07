@@ -3,7 +3,6 @@ import Logo from "../../assets/Logos/LogoNoOutline.svg?react";
 import Button from "../Button/button";
 import { GContext } from "../../App";
 import { useContext } from "react";
-import { useToast } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
@@ -21,13 +20,23 @@ export default function Footer() {
             <ul>
               <li>
                 <i className="fa-solid fa-phone"></i>
-                <a title="give us a call" href="tel:+971558729424">
+                <a
+                  title="give us a call"
+                  href="tel:+971558729424"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   +971558729424
                 </a>
               </li>
               <li>
                 <i className="fa-solid fa-phone"></i>
-                <a title="give us a call" href="tel:+971509055365">
+                <a
+                  title="give us a call"
+                  href="tel:+971509055365"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   +971509055365
                 </a>
               </li>
@@ -36,13 +45,20 @@ export default function Footer() {
                 <a
                   title="Send us an Email?"
                   href="mailto:nawrassign2@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   nawrassign2@gmail.com
                 </a>
               </li>
               <li>
                 <i className="fa-solid fa-envelope"></i>
-                <a title="Send us an Email?" href="mailto:usmanzh68@gmail.com">
+                <a
+                  title="Send us an Email?"
+                  href="mailto:usmanzh68@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   usmanzh68@gmail.com
                 </a>
               </li>
@@ -52,6 +68,8 @@ export default function Footer() {
                   id="footerAddress"
                   title="Where we're located"
                   href="https://www.google.com/maps/dir//25.338176,55.4133545/@25.3380298,55.4126638,18z?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   United Arab Emirates,
                   <br />
@@ -78,25 +96,42 @@ export default function Footer() {
               <a
                 title="Look at our projects"
                 href="https://www.instagram.com/taer_al_nawras_sign?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {"@taer_al_nawras_sign"}
               </a>
             </li>
             <li>
               <i className="fa-brands fa-facebook-f"></i>
-              <a title="not available" href="https://www.facebook.com">
+              <a
+                title="not available"
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {"FACEBOOK"}
               </a>
             </li>
             <li>
               <i className="fa-brands fa-x-twitter"></i>
-              <a title="not available" href="https://www.x.com">
+              <a
+                title="not available"
+                href="https://www.x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {"X (TWITTER)"}
               </a>
             </li>
             <li>
               <i className="fa-brands fa-linkedin-in"></i>
-              <a title="not available" href="https://www.linkedin.com">
+              <a
+                title="not available"
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {"LINKEDIN"}
               </a>
             </li>
@@ -123,23 +158,11 @@ function Map() {
 
 function Banner() {
   const open = useContext(GContext).openModal;
-  const toast = useToast({
-    title: "Server undergoing maintenance",
-    description:
-      "Sorry for the inconvenience, contact us through our number instead.",
-    status: "warning",
-    duration: 5000,
-    containerStyle: {
-      minWidth: "27rem",
-      width: "30vw",
-      maxWidth: "40vw",
-    },
-    isClosable: true,
-  });
+
   return (
     <aside className="footer flex bg-gold-gradient-fixed">
       <h2>It&apos;s very easy to get a quote</h2>
-      <Button onClick={toast} Class={"btn-sec"}>
+      <Button onClick={open} Class={"btn-sec"}>
         Get a quote now!
       </Button>
     </aside>

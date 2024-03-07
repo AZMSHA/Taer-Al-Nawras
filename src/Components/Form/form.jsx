@@ -12,11 +12,11 @@ import {
   Textarea,
   Spinner,
   FormHelperText,
+  useToast,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import MyButton from "../Button/button";
-import { useEffect } from "react";
 import * as Yup from "yup";
 import "./form.scss";
 
@@ -27,7 +27,10 @@ const validationSchema = Yup.object().shape({
   phoneNumber: Yup.string()
     .notRequired()
     .matches(/^(\+)?(\d{10,12})$/, "Invalid phone number"),
-  message: Yup.string().required("Message is required").min(10, "too short"),
+  message: Yup.string()
+    .required("Message is required")
+    .min(10, "too short")
+    .max(2000, "too long, max characters: 2000"),
 });
 
 const FieldWrapper = ({ label, name, required, helpText, ...rest }) => (
@@ -47,7 +50,7 @@ const FieldWrapper = ({ label, name, required, helpText, ...rest }) => (
               {...field}
               {...rest}
               id={name}
-              maxHeight="10rem"
+              maxHeight="20rem"
               resize="vertical"
             />
           ) : (
@@ -66,7 +69,7 @@ const FieldWrapper = ({ label, name, required, helpText, ...rest }) => (
               {...field}
               {...rest}
               id={name}
-              maxHeight="10rem"
+              maxHeight="20rem"
               resize="vertical"
             />
           ) : (
@@ -88,6 +91,16 @@ FieldWrapper.propTypes = {
 };
 
 export default function ModalForm({ isOpen, onClose }) {
+  const toast = useToast({
+    duration: 5000,
+    containerStyle: {
+      minWidth: "27rem",
+      width: "30vw",
+      maxWidth: "40vw",
+    },
+    isClosable: true,
+  });
+
   return (
     <>
       <Formik
@@ -99,22 +112,61 @@ export default function ModalForm({ isOpen, onClose }) {
           message: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={(values, { setSubmitting, setStatus, resetForm }) => {
+          fetch("form-handler.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams(values).toString(),
+          })
+            .then((response) => {
+              const toastPromise = new Promise((resolve, reject) => {
+                if (response.ok) {
+                  resolve(response.status);
+                } else {
+                  reject(response.status);
+                }
+              });
+
+              toast.promise(toastPromise, {
+                success: {
+                  title: "Message Sent!",
+                  description: "We'll get in touch with you soon.",
+                },
+                loading: {
+                  title: "Please wait",
+                  description: "We're processing your request",
+                },
+                error: {
+                  title: "Oh no!",
+                  description:
+                    "Looks like we've run into a problem, contact us on our phone number instead.",
+                },
+              });
+
+              if (response.ok) {
+                return response.statusText;
+              } else {
+                throw new Error(response.statusText);
+              }
+            })
+            .then((data) => {
+              setStatus(data);
+              setSubmitting(false);
+              resetForm();
+            })
+            .catch(({ message }) => {
+              toast({
+                title: "Oh no!",
+                description: `Looks like we've run into a problem: ${message}, contact us on our phone number instead.`,
+              });
+              setStatus(message);
+              setSubmitting(false);
+            });
         }}
       >
         {(formik) => {
-          useEffect(() => {
-            const timeoutId = setTimeout(() => {
-              if (formik.isSubmitting) {
-                toast();
-              }
-              formik.setSubmitting(false);
-              formik.resetForm();
-            }, 5000);
-            return () => clearTimeout(timeoutId);
-          }, [formik.isSubmitting]);
-
           return (
             <Modal
               id={"modalForm"}
@@ -164,6 +216,7 @@ export default function ModalForm({ isOpen, onClose }) {
                       name="message"
                       as={Textarea}
                       placeholder="Enter message"
+                      helpText={`${formik.values.message.length}/2000`}
                     />
                     <ModalFooter justifyContent={"center"} width={"98%"}>
                       <MyButton
@@ -192,3 +245,8 @@ export default function ModalForm({ isOpen, onClose }) {
     </>
   );
 }
+
+ModalForm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

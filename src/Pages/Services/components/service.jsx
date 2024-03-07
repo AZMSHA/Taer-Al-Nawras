@@ -149,7 +149,7 @@ export default function Service() {
           </>
         )}
       </article>
-      <Carousel interval={10000} images={images} />
+      <Carousel interval={2000} images={images} />
     </section>
   );
 }
