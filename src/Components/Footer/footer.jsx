@@ -110,7 +110,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {"FACEBOOK"}
+                {"In progress"}
               </a>
             </li>
             <li>
@@ -121,7 +121,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {"X (TWITTER)"}
+                {"In progress"}
               </a>
             </li>
             <li>
@@ -132,7 +132,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {"LINKEDIN"}
+                {"In progress"}
               </a>
             </li>
           </ul>

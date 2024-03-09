@@ -1,0 +1,8 @@
+@import "../../global.scss";
+
+#error-page {
+  @include createFlex(column);
+  width: calc(100% - 30rem);
+  padding: 15rem;
+  margin-top: 10rem;
+}
