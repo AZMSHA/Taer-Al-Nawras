@@ -140,15 +140,14 @@ export default function ModalForm({ isOpen, onClose }) {
                 },
                 error: {
                   title: "Oh no!",
-                  description:
-                    "Looks like we've run into a problem, contact us on our phone number instead.",
+                  description: `Looks like we've run into a problem: ${response.json()}, contact us on our phone number instead.`,
                 },
               });
 
               if (response.ok) {
                 return response.statusText;
               } else {
-                throw new Error(response.statusText);
+                throw new Error(response.json());
               }
             })
             .then((data) => {
@@ -157,10 +156,6 @@ export default function ModalForm({ isOpen, onClose }) {
               resetForm();
             })
             .catch(({ message }) => {
-              toast({
-                title: "Oh no!",
-                description: `Looks like we've run into a problem: ${message}, contact us on our phone number instead.`,
-              });
               setStatus(message);
               setSubmitting(false);
             });

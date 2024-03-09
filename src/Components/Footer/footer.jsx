@@ -22,11 +22,11 @@ export default function Footer() {
                 <i className="fa-solid fa-phone"></i>
                 <a
                   title="give us a call"
-                  href="tel:+971558729424"
+                  href="tel:+971553677009"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  +971558729424
+                  +971553677009
                 </a>
               </li>
               <li>
@@ -55,11 +55,11 @@ export default function Footer() {
                 <i className="fa-solid fa-envelope"></i>
                 <a
                   title="Send us an Email?"
-                  href="mailto:usmanzh68@gmail.com"
+                  href="mailto:alnawras.signdxb@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  usmanzh68@gmail.com
+                  alnawras.signdxb@gmail.com
                 </a>
               </li>
               <li>

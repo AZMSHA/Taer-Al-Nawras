@@ -73,9 +73,9 @@ function App() {
             aria-label={"Contact us"}
             key={"contact-us"}
             Class={"btn-pri"}
-            title={"Dial +971509055365"}
+            title={"Dial +971553677009"}
             onClick={() => {
-              window.location.href = "tel:+971509055365";
+              window.location.href = "tel:+971553677009";
             }}
           >
             {"Contact us"}
