@@ -121,30 +121,12 @@ export default function ModalForm({ isOpen, onClose }) {
             body: new URLSearchParams(values).toString(),
           })
             .then((response) => {
-              const toastPromise = new Promise((resolve, reject) => {
-                if (response.ok) {
-                  resolve(response.status);
-                } else {
-                  reject(response.status);
-                }
-              });
-
-              toast.promise(toastPromise, {
-                success: {
+              if (response.ok) {
+                toast({
+                  status: "success",
                   title: "Message Sent!",
                   description: "We'll get in touch with you soon.",
-                },
-                loading: {
-                  title: "Please wait",
-                  description: "We're processing your request",
-                },
-                error: {
-                  title: "Oh no!",
-                  description: `Looks like we've run into a problem: ${response.json()}, contact us on our phone number instead.`,
-                },
-              });
-
-              if (response.ok) {
+                });
                 return response.statusText;
               } else {
                 throw new Error(response.json());
@@ -156,6 +138,11 @@ export default function ModalForm({ isOpen, onClose }) {
               resetForm();
             })
             .catch(({ message }) => {
+              toast({
+                status: "error",
+                title: "Oh no!",
+                description: `Looks like we've run into a problem: ${message}, contact us on our phone number instead.`,
+              });
               setStatus(message);
               setSubmitting(false);
             });
