@@ -8,6 +8,11 @@ export default function Work() {
   const sources = useMemo(() => {
     return [
       {
+        src: "/assets/home/work/work",
+        count: ImageCount.work,
+        format: "jpg",
+      },
+      {
         src: "/assets/services/outdoorSignage/outdoorSignage",
         count: ImageCount.outdoorSignage,
         format: "jpg",
