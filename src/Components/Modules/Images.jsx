@@ -1,4 +1,4 @@
-import useImage from "../Hooks/useImage";
+import useImage from "../Hooks/useImageSrc";
 import PropTypes from "prop-types";
 
 const Images = ({ imageData, style, set, alt, ...rest }) => {
@@ -8,13 +8,13 @@ const Images = ({ imageData, style, set, alt, ...rest }) => {
     <>
       {images.map((image, index) => (
         <img
+          {...rest}
           key={image}
           className={`img${index + images.length * set}`}
           loading="lazy"
           style={style}
           src={image}
           alt={`${alt + " " + index}`}
-          {...rest}
         />
       ))}
     </>

@@ -2,27 +2,11 @@ import "./Styles/Hero.scss";
 import Images from "../../../Components/Modules/Images";
 
 import { GContext } from "../../../App";
-import { useContext, useCallback } from "react";
+import { useContext } from "react";
 
 function Hero() {
   const loaded = useContext(GContext).loaded;
   const animate = { animationPlayState: loaded ? "running" : "paused" };
-  const switches = useCallback((format, index) => {
-    switch (format) {
-      case "jpeg":
-        return import(`./assets/heroImages (${index}).jpeg`);
-      case "jpg":
-        return import(`./assets/heroImages (${index}).jpg`);
-
-      default:
-        return new Promise((resolve, reject) => {
-          if (index < -1) {
-            resolve(format);
-          }
-          reject(format);
-        });
-    }
-  }, []);
 
   return (
     <section id="hero">
@@ -30,9 +14,9 @@ function Hero() {
         <Images
           alt={"Image of Taer Al-Nawras' project"}
           imageData={{
-            switches: switches,
+            source: "/assets/home/hero/hero",
             count: 6,
-            formats: ["jpg", "jpeg"],
+            formats: "jpg",
           }}
           set={0}
           style={animate}

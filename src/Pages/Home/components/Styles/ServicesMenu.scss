@@ -30,6 +30,8 @@
     position: relative;
     height: 100%;
     overflow: hidden;
+    border: solid 2px black;
+    border-radius: calc($borderRadius + 0.05rem);
     &:hover ul,
     &:active ul,
     &.serviceMenu-section.animate ul {

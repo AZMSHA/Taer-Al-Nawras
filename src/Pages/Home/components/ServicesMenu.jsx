@@ -1,26 +1,13 @@
 import Button from "../../../Components/Button/button";
-import useImagePromise from "../../../Components/Hooks/useImage";
+import useImageSrc from "../../../Components/Hooks/useImageSrc";
 import { Link, useNavigate } from "react-router-dom";
 import "./Styles/ServicesMenu.scss";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function ServicesMenu() {
   const Navigation = useNavigate();
-  const switches = useCallback((format, index) => {
-    switch (format) {
-      case "jpg":
-        return import(`./assets/serviceMenuImages (${index}).jpg`);
-      default:
-        return new Promise((resolve, reject) => {
-          if (index < -1) {
-            resolve(format);
-          }
-          reject(format);
-        });
-    }
-  }, []);
 
-  const images = useImagePromise(switches, 6, ["jpg"]);
+  const images = useImageSrc("/assets/home/serviceMenu/serviceMenu", 6, "jpg");
 
   const data = {
     set1: [

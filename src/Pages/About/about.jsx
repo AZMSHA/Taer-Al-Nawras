@@ -1,25 +1,9 @@
 import "./about.scss";
-import useImagePromise from "../../Components/Hooks/useImage";
-import { useCallback, useRef, useEffect, useState } from "react";
+import useImageSrc from "../../Components/Hooks/useImageSrc";
+import { useRef, useEffect, useState } from "react";
 
 export default function About(props) {
-  const switches = useCallback((format, index) => {
-    switch (format) {
-      case "jpeg":
-        return import(`./assets/about${index}.jpeg`);
-      case "jpg":
-        return import(`./assets/about${index}.jpg`);
-      default:
-        return new Promise((resolve, reject) => {
-          if (index < -1) {
-            resolve(format);
-          }
-          reject(format);
-        });
-    }
-  }, []);
-
-  const images = useImagePromise(switches, 5, ["jpg", "jpeg"]);
+  const images = useImageSrc("/assets/about/about", 5, "jpg");
   const [visible1, setIsVisible1] = useState(false);
   const [visible2, setIsVisible2] = useState(false);
 
@@ -50,12 +34,11 @@ export default function About(props) {
 
     return () => observer.disconnect();
   }, []);
-
   return (
     <div
       className="bg-wrapper"
       style={{
-        backgroundImage: `url(${images[4]})`,
+        backgroundImage: `url(${JSON.stringify(images[4])})`,
         backgroundAttachment: "fixed",
       }}
     >

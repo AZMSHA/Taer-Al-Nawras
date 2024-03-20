@@ -1,26 +1,46 @@
 import "./Styles/Work.scss";
 import Carousel from "../../../Components/Carousel/carousel.jsx";
-import useImage from "../../../Components/Hooks/useImage.jsx";
-import { useCallback } from "react";
+import useImages from "../../../Components/Hooks/useImageMultipleSrc";
+import ImageCount from "/ImageCount.js?url";
+import { useMemo } from "react";
 
 export default function Work() {
-  const switches = useCallback((format, index) => {
-    switch (format) {
-      case "jpeg":
-        return import(`./assets/work (${index}).jpeg`);
-      case "jpg":
-        return import(`./assets/work (${index}).jpg`);
-      default:
-        return new Promise((resolve, reject) => {
-          if (index < -1) {
-            resolve(format);
-          }
-          reject(format);
-        });
-    }
+  const sources = useMemo(() => {
+    return [
+      {
+        src: "/assets/services/outdoorSignage/outdoorSignage",
+        count: ImageCount.outdoorSignage,
+        format: "jpg",
+      },
+      {
+        src: "/assets/services/indoorSignage/indoorSignage",
+        count: ImageCount.indoorSignage,
+        format: "jpg",
+      },
+      {
+        src: "/assets/services/digitalSignage/digitalSignage",
+        count: ImageCount.digitalSignage,
+        format: "jpg",
+      },
+      {
+        src: "/assets/services/neonSigns/neonSigns",
+        count: ImageCount.neonSigns,
+        format: "jpg",
+      },
+      {
+        src: "/assets/services/amcService/amcService",
+        count: ImageCount.amcService,
+        format: "jpg",
+      },
+      {
+        src: "/assets/services/wayfinding/wayfinding",
+        count: ImageCount.wayfinding,
+        format: "jpg",
+      },
+    ];
   }, []);
+  const images = useImages(sources);
 
-  const images = useImage(switches, 100, ["jpg", "jpeg"]);
   return (
     <div className="bg-wrapper bg-grayscales-fixed">
       <section id="work">

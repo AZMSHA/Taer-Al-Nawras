@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Button from "../Button/button.jsx";
 import PropTypes from "prop-types";
 import "./carousel.scss";
@@ -60,7 +60,7 @@ const Carousel = ({ images, interval }) => {
     currentImage3: 3,
     next: 4,
   });
-  const lastIndex = images.length - 1;
+  const [lastIndex, setlastIndex] = useState(images.length - 1);
 
   useEffect(() => {
     const timer = setInterval(
@@ -72,6 +72,7 @@ const Carousel = ({ images, interval }) => {
 
   useEffect(() => {
     setPositions({ type: "reset" });
+    setlastIndex(images.length - 1);
   }, [images]);
 
   const getPositionClass = (imageIndex) => {
@@ -105,12 +106,12 @@ const Carousel = ({ images, interval }) => {
         {images.map((image, ind) => {
           return (
             <img
-              onError={(e) => (e.target.src = "./placeholder.webp")}
+              onError={(e) => (e.target.src = "/placeholder.webp")}
               key={image}
               loading="lazy"
               className={getPositionClass(ind)}
               src={image}
-              alt={"A carousel of images showcasing our work " + ind}
+              alt={"Image showing our projects " + ind}
             />
           );
         })}

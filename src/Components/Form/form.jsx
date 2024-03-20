@@ -30,7 +30,7 @@ const validationSchema = Yup.object().shape({
   message: Yup.string()
     .required("Message is required")
     .min(10, "too short")
-    .max(2000, "too long, max characters: 2000"),
+    .max(1000, "too long, max characters: 1000"),
 });
 
 const FieldWrapper = ({ label, name, required, helpText, ...rest }) => (
@@ -129,7 +129,7 @@ export default function ModalForm({ isOpen, onClose }) {
                 });
                 return response.statusText;
               } else {
-                throw new Error(response.json());
+                throw new Error(response.statusText);
               }
             })
             .then((data) => {
@@ -198,7 +198,7 @@ export default function ModalForm({ isOpen, onClose }) {
                       name="message"
                       as={Textarea}
                       placeholder="Enter message"
-                      helpText={`${formik.values.message.length}/2000`}
+                      helpText={`${formik.values.message.length}/1000`}
                     />
                     <ModalFooter justifyContent={"center"} width={"98%"}>
                       <MyButton
