@@ -61,12 +61,14 @@ export default function About(props) {
               className="aboutImages"
             >
               <img
+                onError={(e) => (e.target.src = "/placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible1 ? "running" : "paused" }}
                 src={images[0]}
                 alt="About us section images"
               />
               <img
+                onError={(e) => (e.target.src = "/placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible1 ? "running" : "paused" }}
                 src={images[1]}
@@ -118,12 +120,14 @@ export default function About(props) {
               className="aboutImages"
             >
               <img
+                onError={(e) => (e.target.src = "/placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible2 ? "running" : "paused" }}
                 src={images[2]}
                 alt="About us section images"
               />
               <img
+                onError={(e) => (e.target.src = "/placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible2 ? "running" : "paused" }}
                 src={images[3]}
