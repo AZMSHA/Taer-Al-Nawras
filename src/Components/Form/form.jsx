@@ -113,7 +113,7 @@ export default function ModalForm({ isOpen, onClose }) {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, setStatus, resetForm }) => {
-          fetch("form-handler.php", {
+          fetch("/form-handler.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",

@@ -1,8 +1,12 @@
 import "./about.scss";
 import useImageSrc from "../../Components/Hooks/useImageSrc";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
+import useFetchImages from "../../Components/Hooks/useFetchImages";
 
 export default function About(props) {
+  const pathArray = useMemo(() => ["/assets/about/", "/assets/home/hero/"], []);
+  const imag = useFetchImages(pathArray);
+  console.log(imag);
   const images = useImageSrc("/assets/about/about", 5, "jpg");
   const [visible1, setIsVisible1] = useState(false);
   const [visible2, setIsVisible2] = useState(false);
