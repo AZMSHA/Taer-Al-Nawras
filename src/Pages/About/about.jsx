@@ -1,6 +1,7 @@
 import "./about.scss";
 import useImagePromise from "../../Components/Hooks/useImage";
-import { useCallback, useRef, useEffect, useState } from "react";
+import useFetchImages from "../../Components/Hooks/useFetchImages";
+import { useCallback, useRef, useEffect, useState, useMemo } from "react";
 
 export default function About(props) {
   const switches = useCallback((format, index) => {
@@ -18,6 +19,10 @@ export default function About(props) {
         });
     }
   }, []);
+
+  const pathArr = useMemo(() => ["/assets/home/hero/", "/assets/about"], []);
+  const imag = useFetchImages(pathArr);
+  console.log(imag);
 
   const images = useImagePromise(switches, 5, ["jpg", "jpeg"]);
   const [visible1, setIsVisible1] = useState(false);
@@ -78,12 +83,14 @@ export default function About(props) {
               className="aboutImages"
             >
               <img
+                onError={(e) => (e.target.src = "./placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible1 ? "running" : "paused" }}
                 src={images[0]}
                 alt="About us section images"
               />
               <img
+                onError={(e) => (e.target.src = "./placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible1 ? "running" : "paused" }}
                 src={images[1]}
@@ -135,12 +142,14 @@ export default function About(props) {
               className="aboutImages"
             >
               <img
+                onError={(e) => (e.target.src = "./placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible2 ? "running" : "paused" }}
                 src={images[2]}
                 alt="About us section images"
               />
               <img
+                onError={(e) => (e.target.src = "./placeholder.webp")}
                 loading="lazy"
                 style={{ animationPlayState: visible2 ? "running" : "paused" }}
                 src={images[3]}

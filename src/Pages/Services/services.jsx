@@ -68,7 +68,7 @@ export default function Services(props) {
   const bgColor = () => {
     switch (ID) {
       case "outdoor+signage":
-        return "bg-green-gradient";
+        return "bg-orange-gradient";
       case "indoor+signage":
         return "bg-red-gradient";
       case "digital+signage":
@@ -76,7 +76,7 @@ export default function Services(props) {
       case "neon+signs":
         return "bg-pink-gradient";
       case "amc+service":
-        return "bg-orange-gradient";
+        return "bg-green-gradient";
       case "wayfinding":
         return "bg-yellow-gradient";
 
