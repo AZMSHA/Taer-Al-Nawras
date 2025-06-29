@@ -1,7 +1,7 @@
 import { Outlet, NavLink, ScrollRestoration } from "react-router-dom";
 import Navbar from "./Components/Navbar/navbar.jsx";
 import Footer from "./Components/Footer/footer.jsx";
-import Form from "./Components/Form/Form.jsx";
+import Form from "./Components/Form/form.jsx";
 import Button from "./Components/Button/button.jsx";
 import { useDisclosure } from "@chakra-ui/react";
 import { useState, useEffect, createContext } from "react";
