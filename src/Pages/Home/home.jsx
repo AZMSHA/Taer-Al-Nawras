@@ -1,4 +1,4 @@
-import "./Home.scss";
+import "./home.scss";
 import Hero from "./components/Hero.jsx";
 import ServicesMenu from "./components/ServicesMenu.jsx";
 import Work from "./components/Work.jsx";
