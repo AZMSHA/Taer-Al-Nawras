@@ -5,7 +5,7 @@ import Home from "./Pages/Home/home.jsx";
 import About from "./Pages/About/about.jsx";
 import Services from "./Pages/Services/services.jsx";
 import Service from "./Pages/Services/components/service.jsx";
-import ErrorPage from "./Pages/Error/Error.jsx";
+import ErrorPage from "./Pages/Error/error.jsx";
 import "./index.scss";
 import "./mediaQueries.scss";
 import { ChakraBaseProvider, theme } from "@chakra-ui/react";
